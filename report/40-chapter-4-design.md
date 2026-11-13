@@ -543,29 +543,76 @@ La sección Hero de la Landing Page presenta en su cabecera superior (Navbar) el
 
 ![wireframe-hero](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-hero.png)
 
-**About**
+**Features Marquee**
 
-La sección **Nosotros** (*About Us*) presenta una distribución asimétrica compuesta por un bloque textual a la izquierda y un recurso gráfico a la derecha; el área informativa incluye el kicker superior en mayúsculas *«SOBRE SUMAQAGRO»*, el encabezado de sección (H2) *«Nosotros»*, el subtítulo destacado (H3) *«Democratizamos la agricultura de precisión en el Perú»* y un párrafo institucional que detalla la misión de reducir la brecha de tecnificación en las cuencas de papa y café mediante datos satelitales abiertos y herramientas accesibles de monitoreo, costeo y certificación; mientras que a la derecha se exhibe una composición fotográfica con esquinas redondeadas que muestra una parcela de cultivo tecnificado junto a una mano sosteniendo un smartphone con la interfaz móvil del sistema desplegada.
+Se incorporó una franja horizontal de color verde oscuro que presenta conceptos relacionados con la plataforma, como monitoreo satelital, papa andina, café de especialidad, costos por parcela y certificación QR. Los elementos aparecen separados por pequeños símbolos decorativos amarillos, creando continuidad visual entre las secciones.
 
-![wireframe-about](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-about.png)
+![wireframe-MarqueeandplataformOverview.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-MarqueeandplataformOverview.png)
 
-**Solutions**
+**Problem Section**
 
-La sección **¿A quién ayudamos?** organiza la propuesta de valor mediante tres tarjetas (*cards*) de autoselección por perfil orientadas a *Agricultores independientes*, *Líderes de cooperativas* y *Asesores técnicos y agrónomos*, detallando en cada una su enfoque productivo, una fotografía representativa de campo y un botón de llamado a la acción específico (*Registrar mi parcela*, *Gestionar cooperativa* y *Unirme como asesor*); inmediatamente después, la sección **Soluciones y Características** expone las cuatro capacidades tecnológicas clave del sistema mediante una grilla de tarjetas que describen el monitoreo satelital de vigor y humedad (*Satellite Monitoring of Vigor and Moisture*), la contabilidad de costos por lote (*Batch Cost Accounting*), la certificación digital de cosecha (*Digital Certification of Harvest Quality*) y el sistema de prescripciones agronómicas (*Agronomic Prescriptions and Alerts*), complementando cada bloque funcional con un indicador del impacto operativo directo que genera en campo.
+Se diseñó una estructura de dos columnas: la primera destinada al título, descripción y beneficios; la segunda reservada para una imagen representativa del dashboard. También se contemplaron pequeñas tarjetas informativas superpuestas para destacar indicadores agrícolas.
+![wireframe-problemsection.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-problemsection.png)
 
-![wireframe-solutions](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-solutions.png)
+**Solution**
 
-**Video and Plans**
+Se diseñó una cuadrícula de cuatro tarjetas distribuidas en dos filas y dos columnas. Cada tarjeta contiene espacios para un ícono, título, descripción y objetivo. En la parte superior se ubicaron controles de selección para representar el filtrado de herramientas según el perfil del usuario.
 
-La sección **Conoce SumaqAgro en acción** presenta un contenedor central con fondo verde oscuro que alberga el reproductor del video demostrativo (*About-the-Product*) para evidenciar el funcionamiento en campo; inmediatamente después, la sección **Planes** (*Pricing*) introduce un conmutador de facturación mensual y anual (*«Ahorra 2 meses con el plan anual»*) junto a una grilla de tres tarjetas de suscripción que estructuran el modelo SaaS freemium y B2B: el **Plan Semilla** (S/ 0 para 1 parcela con NDVI básico y botón *«Empezar gratis»*), el **Plan Cooperativa Pro** (destacado con la etiqueta *«Más popular»* a S/ 189/mes para 50 productores con certificación de calidad y botón *«Suscribir cooperativa»*), y el **Plan Asesor Técnico** (S/ 89/mes para supervisar 20 fundos con recetas técnicas y botón *«Prueba de 14 días»*).
+![wireframe-solution.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-solution.png)
 
-![wireframe-plans](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-plans.png)
+**How it works**
 
-**Testimonials , Impact and Footer**
+Se planteó una distribución de dos columnas. La primera contiene una secuencia vertical de tres pasos numerados, mientras que la segunda presenta un espacio destinado a una imagen del sistema. Se reservó un botón de acción debajo de la explicación.
 
-La sección **Impacto** y el cierre del Landing Page se estructuran en tres bloques consecutivos orientados a la credibilidad y la conversión: en primer lugar, el área de métricas cuantitativas presenta tres tarjetas superiores con indicadores clave de respaldo agrario (*333k+ Has. de papa*, *223k+ Familias cafeteras* y *>40% Sin cobertura técnica*), acompañadas en la parte inferior por el bloque testimonial *«Lo que dicen nuestros usuarios»* con tarjetas que incluyen avatar, calificación por estrellas y citas de validación de Juan Huamán (productor de papa) y Elena Vargas (cooperativa cafetalera); a continuación, se ubica el banner final de conversión (*Bottom CTA*) en verde oscuro con el titular *«Empieza a decidir con precisión hoy»*, un texto de apoyo y el botón principal de acción *Registrarse gratis*; finalmente, el pie de página (*Footer*) organiza sobre fondo oscuro el isotipo horizontal de SumaqAgro con su propuesta de valor a la izquierda, junto a una distribución de navegación en tres columnas de enlaces (*Products*, *Quick Links* y *Support*) para centralizar recursos, documentación y canales de soporte de la plataforma.
+![wireframe-howitworks.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-howitworks.png)
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-testimonials-impact-footer.png)
+**Product demo**
+
+Se diseñó una composición centrada con título, descripción y un contenedor rectangular destinado al video. En el centro del contenedor se colocó un botón de reproducción para representar la interacción multimedia.
+
+![wireframes-productdemo.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-productdemo.png)
+
+**Community**
+
+Se planteó un selector superior con tres perfiles y un panel de contenido dividido en dos áreas: ilustración a la izquierda y texto descriptivo a la derecha. La estructura permite representar diferentes tipos de usuarios dentro de un mismo espacio visual.
+![wireframes-Community.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-Community.png)
+
+**Pricing Section**
+
+Se diseñó una estructura de tres tarjetas verticales alineadas horizontalmente. Cada tarjeta contiene un título, precio, lista de características y botón de acción. Se reservó un espacio superior para el selector de modalidad de pago y un tratamiento visual destacado para el plan recomendado.
+Se diseñaron tres tarjetas de testimonios alineadas en una fila. Cada una cuenta con espacios destinados a la valoración, comentario, fotografía, nombre y ocupación del usuario, manteniendo una presentación uniforme.
+![wireframes-pricingsection.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-pricingsection.png)
+
+**Impact / Statistics and Testimonials**
+
+Se planteó una fila horizontal de cuatro tarjetas estadísticas. Cada bloque contiene un espacio para una cifra destacada y una descripción breve, con dimensiones uniformes para facilitar la comparación visual de los indicadores.
+![wireframes-impactandtestimonials.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-impactandtestimonials.png)
+
+**About us**
+
+Se planteó una estructura de dos columnas: la izquierda destinada a la información institucional, misión y visión, y la derecha reservada para una imagen representativa de la agricultura digital. Las tarjetas se organizaron debajo del texto introductorio.
+![wireframes-aboutus.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-aboutus.png)
+
+**Our Team**
+
+Se diseñó una cuadrícula horizontal de cinco tarjetas con dimensiones similares. Se reservaron espacios para las fotografías de los integrantes, sus nombres y responsabilidades, manteniendo una jerarquía visual uniforme.
+![wireframes-ourteam.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-ourteam.png)
+
+**Team viedo**
+
+Se planteó una distribución de dos columnas, con información introductoria en la parte izquierda y un espacio rectangular destinado al video del equipo en la derecha. Se utilizó un contenedor principal para agrupar ambos elementos.
+![wireframes-teamvideo.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-teamvideo.png)
+
+**FAQ section**
+
+Se diseñó una composición de dos columnas. La izquierda contiene el título y una breve descripción con enlace de contacto; la derecha presenta una lista vertical de preguntas dentro de contenedores desplegables.
+![wireframes-faqsection.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-faqsection.png)
+
+**Final CTA and footer**
+
+Se planteó una distribución de dos columnas. La izquierda contiene el mensaje principal y una descripción, mientras que la derecha presenta una tarjeta con tres opciones de usuario, información del plan y un botón de acción.
+Se diseñó un bloque inferior distribuido en cuatro columnas: información de la marca, productos, empresa y soporte. Se reservó una franja adicional para los derechos de autor y los enlaces legales, manteniendo una estructura ordenada.
+![wireframes-ffinalctaandfooter.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-ffinalctaandfooter.png)
 
 #### Mobile Web Browser
 Para garantizar una experiencia de usuario inclusiva y accesible, el diseño responsivo de la Landing Page de SumaqAgro se fundamenta en un sistema de rejilla fluido adaptado a dispositivos móviles (*Mobile Web Browser*), utilizando una retícula de 4 columnas y una escala de espaciado basada en múltiplos de 8 px.
