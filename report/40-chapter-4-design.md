@@ -657,78 +657,93 @@ En la vista móvil (**Mobile Web Browser**) del cierre de la página, los compon
 ### 4.3.2. Landing Page Mock-up
 El mock-up de la página de aterrizaje de Dymbia plasma la apariencia visual definitiva, integrando la paleta cromática, los estilos tipográficos, el material gráfico y la iconografía finales. De este modo, traslada de forma coherente la identidad visual de SumaqAgro a lo largo de cada uno de los bloques y componentes del sitio.
 
-**Hero — SumaqAgro**
+**Nav y Hero**
 
-Presenta una barra de navegación con el logotipo de la marca, enlaces de sección y botones de acceso junto al selector de idioma. De fondo incorpora una fotografía panorámica de campos agrícolas en hileras bajo un cielo con degradado oscuro. El contenido central destaca el titular "Farm with Insight / Decide with Precision" en blanco y verde, un subtítulo sobre el monitoreo satelital de cultivos y costos, y dos botones de acción: el principal "Explore →" y el secundario "How it works?".
+Se implementó una barra de navegación horizontal con el logotipo de SumaqAgro, enlaces a las secciones Home, Solutions, How it works, Plans, Impact y About us. Incorpora un selector de idiomas inglés y español, además de los accesos Sign in y View plans. Presenta un diseño de bordes redondeados, fondo verde oscuro semitransparente y botones que resaltan las acciones principales.
+Se desarrolló una sección de bienvenida con el mensaje principal “Cultivate with Information. Decide with Precision.”, acompañado de una descripción de los beneficios de la plataforma y dos botones: View plans y Watch the demo. El diseño utiliza un fondo verde oscuro con ilustraciones de montañas, terrenos agrícolas, un agricultor y un satélite que proyecta un haz de luz. Los títulos combinan blanco y verde menta para destacar la propuesta de valor.
 
-![mockup-hero.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-hero.png)
+![mockup-heroandnav.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-heroandnav.png)
 
-**About Us — SumaqAgro**
+**Features Marquee**
 
-Presenta un diseño limpio sobre fondo blanco dividido en dos columnas. A la izquierda, incluye el antetítulo en verde "ABOUT SUMAQAGRO", el encabezado principal "About Us?" y el subtítulo "Democratizing precision agriculture in Peru", acompañados por un párrafo explicativo sobre el uso de imágenes satelitales libres para cerrar la brecha tecnológica en cultivos de papa y café sin sensores costosos. A la derecha, destaca una imagen de un campo con sistema de riego tecnificado y una mano sosteniendo un smartphone que visualiza las métricas y gráficos agronómicos de la plataforma.
+Se incorporó una franja horizontal de color verde oscuro que presenta conceptos relacionados con la plataforma, como monitoreo satelital, papa andina, café de especialidad, costos por parcela y certificación QR. Los elementos aparecen separados por pequeños símbolos decorativos amarillos, creando continuidad visual entre las secciones.
+Se implementó una sección que presenta la plataforma mediante el título “Your plot, seen from space”. A la izquierda se muestra una descripción de sus beneficios y tres características principales. A la derecha aparece una vista del dashboard agrícola con indicadores de vigor, gastos y monitoreo de cultivos. Se incorporaron tarjetas flotantes con valores NDVI y precio de equilibrio, utilizando un fondo verde oscuro y detalles en verde menta.
 
-![mockup-about-us.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-about-us.png)
+![mockup-Marqueeeandplataformoveriew.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-Marqueeeandplataformoveriew.png)
 
-**Who do we help? — SumaqAgro**
+**Problem Section**
 
-Presenta el antetítulo en verde "OUR COMMUNITY", el encabezado principal "Who do we help?" y el mensaje de valor "We work with those who make the country's food security possible". En la zona inferior dispone tres tarjetas blancas con esquinas redondeadas orientadas a cada segmento clave: agricultores independientes, directivos de cooperativas y asesores técnicos. Cada tarjeta integra un ícono representativo, un resumen de enfoque, una fotografía de campo alusiva y el enlace de acción "Join as an advisor →".
+Se desarrolló una sección titulada “Farming by eye costs too much”, que expone tres problemáticas: detección tardía de riesgos climáticos, registro manual de costos y dificultades para demostrar la calidad de las cosechas. Cada problema se presenta en una tarjeta blanca con íconos amarillos, numeración y descripción. En la parte inferior se incluye una franja verde oscuro con estadísticas sobre la agricultura peruana.
 
-![mockup-who-do-we-help.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-who-do-we-help.png)
+![mockup-problemsection.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-problemsection.png)
 
-**Solutions and Features — SumaqAgro**
+**Solution**
 
-Presenta el encabezado "Solutions and Features" acompañado del lema de valor para la toma de decisiones en campo. En una cuadrícula de cuatro tarjetas blancas con acentos verdes, detalla sus módulos clave: monitoreo satelital de vigor y humedad, costeo por lote, certificación digital de cosecha y alertas agronómicas, destacando en cada una sus métricas de impacto operativo y económico.
+Se implementó la sección “Four tools, one platform”, que presenta cuatro soluciones: monitoreo satelital, control de costos, certificación digital de cosechas y alertas agronómicas. Las funcionalidades están organizadas en tarjetas blancas de dos columnas, con íconos verdes, descripciones y recuadros celestes que muestran los objetivos de cada herramienta. También incorpora filtros por tipo de usuario: Everyone, Farmers, Cooperatives y Advisors.
 
-![mockup-solutions-and-features.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-solutions-and-features.png)
+![mockup-sloution.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-sloution.png)
 
-**Product Demo — SumaqAgro**
+**How it works**
 
-Presenta un fondo verde corporativo que enmarca el antetítulo "PRODUCT DEMO", el encabezado central "See SumaqAgro in action" y el subtítulo "Demo video". En la zona inferior destaca un reproductor de video de esquinas redondeadas sobre fondo gris claro con un botón central de reproducción (play) en verde brillante para visualizar la demostración interactiva de la plataforma.
+Se desarrolló una sección que explica el funcionamiento de SumaqAgro en tres pasos: registrar una parcela, obtener un diagnóstico satelital y tomar mejores decisiones agrícolas. Los pasos aparecen numerados mediante círculos verdes conectados verticalmente. A la derecha se presenta una captura del módulo Crop Health con un mapa satelital y datos de monitoreo. Incluye un botón para consultar los planes.
 
-![mockup-product-demo.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-product-demo.png)
+![mockup-howitworks.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-howitworks.png)
 
-**Plans — SumaqAgro**
+**Product demo**
 
-Presenta el titular "Choose the plan that fits your needs" sobre el antetítulo "PLANS" y un conmutador de facturación mensual o anual con descuento. En la zona inferior dispone tres tarjetas de suscripción adaptadas a cada perfil: Seed Plan (gratuito, para 1 parcela con NDVI básico y registro de labores), Pro Cooperative (S/189/mes, destacado como el más popular para 50 productores con certificación y exportación de reportes) y Technical Advisor Plan (S/89/mes, para 20 fincas supervisadas con NDVI avanzado y recomendaciones), cada una con su respectivo botón de acción directo.
+Se implementó una sección con fondo verde oscuro y el título “See SumaqAgro in action”. En el centro se muestra una vista previa del video demostrativo de la plataforma, acompañada de un botón circular verde con el ícono de reproducción. El contenedor presenta bordes redondeados y ocupa una parte destacada de la sección.
 
-![mockup-plans.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-plans.png)
+![mockup-productdemo.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-productdemo.png)
 
-**Impact — SumaqAgro**
+**Community**
 
-Presenta el antetítulo en verde "REAL RESULTS", el título principal "Impact" y una breve descripción sobre las métricas que respaldan el compromiso de la plataforma con la pequeña agricultura. A la derecha, distribuye tres tarjetas métricas blancas con íconos de usuario y barras de acento en verde: más de 333 mil hectáreas de papa, más de 223 mil familias cafetaleras y más del 40 % de reducción en la falta de cobertura técnica.
+Se desarrolló la sección “Who do we help?”, que presenta tres perfiles de usuarios: agricultores independientes, cooperativas y asociaciones, y asesores técnicos. Se incorporó un selector horizontal para cambiar de perfil y un panel ilustrado que muestra al agricultor con su teléfono en un entorno rural. El diseño utiliza tonos verdes suaves, ilustraciones vectoriales y textos adaptados al público seleccionado.
 
-![mockup-impact.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-impact.png)
+![mockup-commubity.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-commubity.png)
 
-**Testimonials — SumaqAgro**
+**Pricing Section**
 
-Presenta el bloque "What our users say?" con dos tarjetas de testimonios de cinco estrellas correspondientes a productores de papa y café. Cada testimonio incorpora la experiencia y valoración de los usuarios sobre el uso de SumaqAgro para mejorar la gestión y el monitoreo de sus cultivos.
+Se implementó una sección de planes que presenta Seed Plan, Cooperativa Pro y Technical Advisor Plan, con precios visibles de S/49, S/189 y S/89 mensuales, respectivamente. Incluye un selector de facturación mensual o anual, listas de beneficios y botones de selección. El plan Cooperativa Pro se destaca mediante un fondo verde oscuro y una etiqueta de recomendación.
 
-![mockup-what-our-users-say.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-what-our-users-say.png)
+![mockup-pricingsection.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-pricingsection.png)
 
-**Our Team — SumaqAgro**
+**Impact / Statistics and Testimonials**
 
-Presenta un encabezado con el antetítulo en verde "THE PEOPLE BEHIND THE TECHNOLOGY", el título principal "Our Team" y una breve descripción sobre el compromiso de los integrantes con la agricultura de precisión en el Perú. En la parte inferior se organiza una cuadrícula horizontal de tarjetas con bordes redondeados sobre fondo blanco, mostrando las fotografías formales y los nombres completos de los cinco miembros del equipo de desarrollo: Benjamin Solorzano Sullca, Jose Carlos Vargas Enriquez, Drago Derick Duarte Ruffner, Yamil Jared Tejada Pumacayo y Miguel Sanca Condori.
+Se desarrolló la sección “The impact we are working for”, que presenta cuatro indicadores relacionados con los objetivos de SumaqAgro: reducir en 25 % las pérdidas por heladas y sequías, disminuir en 50 % el tiempo de consolidación de registros, aumentar en 40 % las hectáreas supervisadas y evitar la necesidad de instalar sensores en el campo. Las cifras aparecen en tarjetas celestes con tipografía verde oscuro de gran tamaño.
+Se incorporó la sección “What our users say”, con tres tarjetas de testimonios atribuidos a un agricultor, una representante de una cooperativa cafetalera y un asesor agrónomo. Cada tarjeta incluye cinco estrellas amarillas, un comentario, una imagen de perfil, el nombre y el rol del usuario. Se emplearon fondos blancos, bordes suaves y una distribución horizontal.
 
-![mockup-our-team.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-our-team.png)
+![mockup-impactandtestimonials.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-impactandtestimonials.png)
 
-**Video About the Team — SumaqAgro**
+**About us**
 
-Presenta un encabezado con el antetítulo en verde "Video About the Team", el título principal "Video About the Team" y una breve descripción sobre la presentación de los integrantes, sus roles y las responsabilidades asumidas durante el desarrollo de SumaqAgro. En la parte inferior se muestra un área de reproducción con bordes redondeados y un botón central para iniciar el video de presentación del equipo.
+Se desarrolló una sección institucional con el título “Democratizing precision agriculture in Peru”. Presenta una descripción de SumaqAgro como iniciativa de Dymbia y dos tarjetas que explican su misión y visión. A la derecha se muestra una imagen de un terreno agrícola con un teléfono que representa el monitoreo tecnológico. Se utilizaron fondos claros y detalles verdes para mantener la identidad visual.
 
-![mockup-video-about-the-team.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-video-about-the-team.png)
+![mockup-aboutus.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-aboutus.png)
 
-**Registration — SumaqAgro**
+**Our Team**
 
-Presenta una franja de color verde corporativo orientada a incentivar el registro de nuevos usuarios. El bloque incorpora un mensaje de invitación y el botón principal "Sign up for free", facilitando el acceso directo a la plataforma desde la página de aterrizaje.
+Se implementó la sección “Our team”, que presenta a los cinco integrantes de Dymbia mediante tarjetas individuales. Cada tarjeta contiene una fotografía, nombre y rol dentro del proyecto. El diseño utiliza fondo blanco, bordes redondeados, una distribución horizontal y detalles decorativos verdes.
 
-![mockup-registration.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-registration.png)
+![mockup-ourteam.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-ourteam.png)
 
-**Footer — SumaqAgro**
+**Team video**
 
-Presenta un pie de página sobre fondo oscuro que agrupa el logotipo de SumaqAgro, enlaces a redes sociales y diferentes columnas de navegación organizadas en las categorías "Products", "Quick Links" y "Support". Finalmente, incorpora los enlaces correspondientes a las políticas legales de privacidad y términos de servicio.
+Se incorporó una sección denominada “Meet Dymbia”, destinada a presentar al equipo y su participación en el desarrollo de SumaqAgro. La composición contiene un título y una descripción a la izquierda, mientras que a la derecha aparece una imagen agrícola con la etiqueta “Video coming soon”. El contenido se encuentra dentro de un contenedor blanco con bordes redondeados y sombras suaves.
 
-![mockup-footer.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-footer.png)
+![mockup-teamvideo.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-teamvideo.png)
 
+**FAQ section**
+
+Se desarrolló una sección de preguntas frecuentes titulada “Before you start”. Incluye consultas sobre sensores, conectividad, cultivos compatibles, actualización satelital, planes y privacidad de los datos. Las preguntas se presentan mediante un acordeón interactivo que permite expandir las respuestas. El diseño utiliza tarjetas blancas, bordes redondeados e íconos verdes para indicar la apertura y cierre.
+
+![mockup-faqsection.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-faqsection.png)
+
+**Final CTA and footer**
+
+Se implementó una sección final con el mensaje “Start making precise decisions today”. A la derecha se presenta un formulario visual para seleccionar el perfil Farmer, Cooperative o Advisor, mostrando el plan correspondiente y un botón de selección. El diseño utiliza un fondo degradado verde, tarjetas semitransparentes y botones verde menta para destacar la acción principal.
+Se desarrolló un pie de página con fondo verde oscuro que incluye el logotipo de SumaqAgro, una breve descripción de la plataforma y accesos a redes sociales y contacto. También presenta tres columnas de enlaces: Product, Company y Support. En la parte inferior se muestran los derechos de autor de Dymbia y los enlaces a los términos de servicio, política de privacidad y política de cookies.
+
+![mockup-ffinalctaandfooter.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-ffinalctaandfooter.png)
 ## 4.4. Web Applications UX/UI Design
 
 Esta sección presenta y sustenta la arquitectura de interacción y el diseño visual de la plataforma SaaS de SumaqAgro, desarrollada por la startup Dymbia.
