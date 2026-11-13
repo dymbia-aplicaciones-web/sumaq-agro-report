@@ -3,7 +3,8 @@
 ## 4.1. Style Guidelines
 
 ### 4.1.1. General Style Guidelines
-El diseño visual de la plataforma **SumaqAgro** se inclina hacia una estética moderna, limpia e intuitiva, en línea con nuestro compromiso de ofrecer soluciones agrotecnológicas que transmitan innovación, sostenibilidad, confianza y cercanía. Nuestro objetivo es crear una experiencia digital que sea tanto eficiente como cercana y profesional para los agricultores, cooperativas e ingenieros agrónomos.
+El diseño visual
+de la plataforma **SumaqAgro** se inclina hacia una estética moderna, limpia e intuitiva, en línea con nuestro compromiso de ofrecer soluciones agrotecnológicas que transmitan innovación, sostenibilidad, confianza y cercanía. Nuestro objetivo es crear una experiencia digital que sea tanto eficiente como cercana y profesional para los agricultores, cooperativas e ingenieros agrónomos.
 
 En esta sección, detallaremos cada uno de los elementos visuales y de estilo que guían el desarrollo de la aplicación SumaqAgro, siempre siguiendo los principios de Diseño de Experiencia de Usuario (UX) e Interfaz de Usuario (UI) para garantizar la máxima usabilidad, legibilidad y accesibilidad (a11y).
 
@@ -575,43 +576,51 @@ Se diseñó una composición centrada con título, descripción y un contenedor 
 **Community**
 
 Se planteó un selector superior con tres perfiles y un panel de contenido dividido en dos áreas: ilustración a la izquierda y texto descriptivo a la derecha. La estructura permite representar diferentes tipos de usuarios dentro de un mismo espacio visual.
+
 ![wireframes-Community.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-Community.png)
 
 **Pricing Section**
 
 Se diseñó una estructura de tres tarjetas verticales alineadas horizontalmente. Cada tarjeta contiene un título, precio, lista de características y botón de acción. Se reservó un espacio superior para el selector de modalidad de pago y un tratamiento visual destacado para el plan recomendado.
 Se diseñaron tres tarjetas de testimonios alineadas en una fila. Cada una cuenta con espacios destinados a la valoración, comentario, fotografía, nombre y ocupación del usuario, manteniendo una presentación uniforme.
+
 ![wireframes-pricingsection.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-pricingsection.png)
 
 **Impact / Statistics and Testimonials**
 
 Se planteó una fila horizontal de cuatro tarjetas estadísticas. Cada bloque contiene un espacio para una cifra destacada y una descripción breve, con dimensiones uniformes para facilitar la comparación visual de los indicadores.
+
 ![wireframes-impactandtestimonials.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-impactandtestimonials.png)
 
 **About us**
 
 Se planteó una estructura de dos columnas: la izquierda destinada a la información institucional, misión y visión, y la derecha reservada para una imagen representativa de la agricultura digital. Las tarjetas se organizaron debajo del texto introductorio.
+
 ![wireframes-aboutus.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-aboutus.png)
 
 **Our Team**
 
 Se diseñó una cuadrícula horizontal de cinco tarjetas con dimensiones similares. Se reservaron espacios para las fotografías de los integrantes, sus nombres y responsabilidades, manteniendo una jerarquía visual uniforme.
+
 ![wireframes-ourteam.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-ourteam.png)
 
 **Team viedo**
 
 Se planteó una distribución de dos columnas, con información introductoria en la parte izquierda y un espacio rectangular destinado al video del equipo en la derecha. Se utilizó un contenedor principal para agrupar ambos elementos.
+
 ![wireframes-teamvideo.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-teamvideo.png)
 
 **FAQ section**
 
 Se diseñó una composición de dos columnas. La izquierda contiene el título y una breve descripción con enlace de contacto; la derecha presenta una lista vertical de preguntas dentro de contenedores desplegables.
+
 ![wireframes-faqsection.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-faqsection.png)
 
 **Final CTA and footer**
 
 Se planteó una distribución de dos columnas. La izquierda contiene el mensaje principal y una descripción, mientras que la derecha presenta una tarjeta con tres opciones de usuario, información del plan y un botón de acción.
 Se diseñó un bloque inferior distribuido en cuatro columnas: información de la marca, productos, empresa y soporte. Se reservó una franja adicional para los derechos de autor y los enlaces legales, manteniendo una estructura ordenada.
+
 ![wireframes-ffinalctaandfooter.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-ffinalctaandfooter.png)
 
 #### Mobile Web Browser
@@ -619,40 +628,93 @@ Para garantizar una experiencia de usuario inclusiva y accesible, el diseño res
 
 En esta vista, los componentes de escritorio se reorganizan de manera progresiva en una sola columna (*single-column layout*), condensando la barra de navegación superior en un menú colapsable tipo hamburguesa (*nav-toggle*) y apilando los bloques informativos, tarjetas de segmentos, matrices de soluciones y llamados a la acción (CTAs) de forma lineal para facilitar el desplazamiento continuo (*scrolling*) y la interacción con una sola mano sin pérdida de contexto ni funcionalidad.
 
-**Hero**
+**Nav and Hero**
 
-En la vista móvil, la cabecera superior compacta el menú de navegación horizontal bajo un botón tipo hamburguesa (`nav-toggle`) ubicado en el extremo superior derecho, manteniendo a la izquierda el isotipo circular y el nombre de marca SumaqAgro; inmediatamente abajo, el área principal apila el contenido verticalmente en una sola columna centrada de cuatro retículas, encabezada por el *kicker* introductorio en mayúsculas, el titular principal (H1) distribuido en dos líneas de alto impacto y un bloque de tres líneas de texto descriptivo con la propuesta de valor satelital; finalmente, la zona inferior de interacción organiza dos botones de llamado a la acción (CTAs) de ancho adaptativo dispuestos lado a lado en posición horizontal para facilitar el acceso táctil inmediato con una sola mano.
+Se diseñó una barra superior de distribución horizontal, reservando un espacio para el logotipo y otro para el menú desplegable. Se priorizó una estructura sencilla para facilitar la navegación desde pantallas pequeñas.
+Se planteó una composición de una sola columna con el título, texto descriptivo y botones organizados de arriba hacia abajo. Se reservó la parte inferior para una ilustración agrícola que complementa el mensaje principal.
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-hero.png)
+![wireframe-heroandnav.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-heroandnav.png)
 
-**About**
+**Feature Marquee and Platform Overview**
 
-En la vista móvil (**Mobile Web Browser**) de las secciones institucionales, el contenido se reorganiza en una columna lineal: el bloque superior **Nosotros** (*About Us*) apila verticalmente el kicker, el encabezado principal, el subtítulo y el texto de la propuesta de valor junto al contenedor de la imagen representativa del cultivo tecnificado; inmediatamente abajo, la sección **Nuestro equipo** sitúa el titular y su párrafo descriptivo para dar paso a una disposición adaptada en dos columnas que agrupa las cinco tarjetas (*cards*) con fotografía, nombre de cada integrante y un icono de acción rápida en la esquina superior derecha, rematando con el último perfil centrado al pie para optimizar el espacio vertical en pantallas compactas.
+Se diseñó una banda horizontal compacta para presentar las principales características de la plataforma, considerando una visualización parcial del contenido dentro del espacio disponible.
+Se planteó una estructura vertical con un bloque superior de información y un espacio inferior destinado a la imagen de la plataforma. Se consideraron elementos informativos superpuestos para representar los indicadores agrícolas.
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-about.png)
+![wireframes-featuresMarquee-plataformOverview.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-featuresMarquee-plataformOverview.png)
 
-**Solutions**
+**Problem Section**
 
-En la vista móvil (**Mobile Web Browser**) de las secciones comerciales y funcionales, el contenido se adapta a una columna única vertical: en la parte superior, la sección **¿A quién ayudamos?** apila secuencialmente las tres tarjetas de autoselección por rol (*Agricultores independientes*, *Líderes de cooperativas* y *Asesores técnicos*), situando en cada una su icono, titular, descripción de enfoque, vista previa gráfica y el botón de acción (*CTA*) con ancho completo al pie para facilitar el toque con una sola mano; a continuación, la sección **Soluciones y Características** transforma la grilla de escritorio en un apilamiento lineal de cuatro tarjetas de funcionalidades (monitoreo satelital NDVI, costos por lote, certificación de calidad y prescripciones agronómicas), cada una con su barra decorativa superior, icono de módulo, título, párrafo descriptivo y una tarjeta inferior de impacto cuantificable orientada al valor en campo.
+Se diseñó una columna de tres tarjetas informativas y una cuadrícula inferior de cuatro indicadores distribuidos en dos filas. Esta estructura permite mantener la legibilidad y el orden de la información.
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-help.png)
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-solutions.png)
+![wireframes-problemSection.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-problemSection.png)
 
-**Video and Plans**
+**Solution **
 
-En la vista móvil (**Mobile Web Browser**) de los bloques de demostración y monetización, la interfaz se compacta en una sola columna vertical: en la parte superior, la sección **Conoce SumaqAgro en acción** (*About-the-Product*) enmarca el contenedor del reproductor de video demostrativo centrado sobre un bloque de fondo verde oscuro (#233413) que incluye el botón de reproducción (*Play*) para evidenciar el funcionamiento en campo; inmediatamente después, la sección **Planes** (*Pricing*) sitúa el encabezado de sección, el texto descriptivo y un conmutador de facturación mensual/anual (*switch toggle*), dando paso al apilamiento secuencial de las tres tarjetas de suscripción (*Plan Semilla*, *Plan Cooperativa Pro* y *Plan Asesor Técnico*), donde cada una presenta su nombre de plan, tarifa destacada en Soles, resumen de características y su botón de llamado a la acción (*CTA*) en ancho completo al pie para una pulsación táctil accesible con una sola mano.
+Se planteó una columna de cuatro tarjetas con espacios para los elementos descriptivos y objetivos. En la parte superior se ubicaron botones de filtrado que pueden distribuirse en más de una fila.
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-video.png)
+![wireframes-Solution.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-Solution.png)
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-plans.png)
+**How It Works**
 
-**Impact, Testimonials and Footer**
+Se diseñó una estructura vertical con tres pasos, un botón de acción y un espacio inferior para la captura de la plataforma. Se mantuvieron los indicadores numerados para representar la secuencia del proceso.
 
-En la vista móvil (**Mobile Web Browser**) del cierre de la página, los componentes se reorganizan en una secuencia vertical de cuatro bloques lineales: en la parte superior, la sección **Impacto** apila las tres tarjetas de métricas agrarias (*333k+ Has. de papa*, *223k+ Familias cafeteras* y *>40% Sin cobertura técnica*); inmediatamente después, el bloque de testimonios (*«Lo que dicen nuestros usuarios»*) presenta de forma vertical las dos tarjetas de validación social con el avatar, nombre, rol y cita de cada usuario; a continuación, el banner final de conversión (*Bottom CTA*) condensa el titular, el texto de apoyo y el botón de acción *«Registrarse gratis»* adaptado a pantalla completa para facilitar la pulsación táctil con una sola mano; finalmente, el pie de página (*Footer*) sobre fondo oscuro (#031416) apila el isotipo de la marca, la descripción institucional y una botonera de enlaces sociales, rematando con tres columnas colapsadas verticalmente (*Products*, *Quick Links* y *Support*) que distribuyen el acceso a los recursos y enlaces ético-legales del sistema.
+![wireframes-howItWorks.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-howItWorks.png)
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-impact.png)
+**Product Demo**
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-testimonials-and-footer.png)
+Se diseñó una composición centrada con título, descripción y un contenedor horizontal para el video. Se reservó un espacio central para el botón de reproducción.
+
+![wireframes-ProductDemo.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-ProductDemo.png)
+
+**Target Audience/Community**
+
+Se planteó una estructura con un selector de perfiles en la parte superior y una tarjeta vertical que contiene la ilustración, el título y la información correspondiente al usuario seleccionado.
+
+![wireframes-TargetAudience.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-TargetAudience.png)
+
+**Pricing Section**
+
+Se diseñó una distribución de una sola columna para las tarjetas de precios. Cada plan contiene un espacio para el nombre, precio, características y botón de acción, destacando visualmente el plan recomendado.
+
+![wireframes-PricingSection.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-PricingSection.png)
+
+**Impact and Testimonials**
+
+Se planteó una cuadrícula de cuatro tarjetas estadísticas distribuidas en dos filas, con espacios para cifras destacadas y descripciones breves.
+Se diseñó un carrusel de testimonios que permite mostrar una tarjeta principal por vez. Se reservaron espacios para la valoración, el comentario y la identificación del usuario, además de controles para cambiar de testimonio.
+
+![wireframes-ImpactandTestimonials.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-ImpactandTestimonials.png)
+
+**About Us**
+
+Se planteó una composición vertical con un bloque introductorio, dos tarjetas informativas y un espacio inferior destinado a una imagen representativa de la plataforma.
+
+![wireframes-aboutUs.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-aboutUs.png)
+
+**Our Team**
+
+Se diseñó una cuadrícula de dos columnas con tarjetas individuales para los integrantes. Cada tarjeta reserva espacios para fotografía, nombre y responsabilidad dentro del proyecto.
+
+![wireframes-OurTeam.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-OurTeam.png)
+
+**Team Video**
+
+Se planteó una tarjeta de una sola columna con información introductoria y un contenedor inferior destinado al video de presentación del equipo.
+
+![wireframes-TeamVideo.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-TeamVideo.png)
+
+**FAQ Section**
+
+Se diseñó una estructura vertical con un encabezado informativo y una lista de preguntas en formato acordeón. Cada elemento dispone de un espacio para la pregunta y otro para mostrar la respuesta al expandirse.
+
+![wireframes-FAQ-Section.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-FAQ-Section.png)
+
+**Final CTA and Footer**
+
+Se planteó una estructura de una columna con el mensaje principal en la parte superior y una tarjeta inferior para seleccionar el perfil, visualizar el plan y acceder al botón de acción.
+Se diseñó un pie de página vertical con un bloque inicial de identidad de marca, espacios para enlaces organizados por categorías y una franja inferior para los derechos de autor y documentos legales.
+
+![wireframes-FinalCTA-Footer.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-FinalCTA-Footer.png)
 
 ### 4.3.2. Landing Page Mock-up
 El mock-up de la página de aterrizaje de Dymbia plasma la apariencia visual definitiva, integrando la paleta cromática, los estilos tipográficos, el material gráfico y la iconografía finales. De este modo, traslada de forma coherente la identidad visual de SumaqAgro a lo largo de cada uno de los bloques y componentes del sitio.
