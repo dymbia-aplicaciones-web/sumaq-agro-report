@@ -541,7 +541,7 @@ El wireframe del landing page de **SumaqAgro** muestra la estructura inicial de 
 
 La sección Hero de la Landing Page presenta en su cabecera superior (Navbar) el isotipo y nombre de marca a la izquierda, los enlaces de anclaje (*Inicio*, *Nosotros*, *Soluciones*, *Planes*, *Impacto*), los botones de acceso (*Iniciar sesión* y *Registrarse*) y el selector de internacionalización (*ES*); seguidamente, el área principal de impacto despliega el subtítulo en mayúsculas *«AGRICULTURA INTELIGENTE PARA UN MEJOR MAÑANA»*, el encabezado principal (H1) *«Cultiva con Información. Decide con Precisión»*, un párrafo descriptivo que sintetiza la transformación de datos satelitales para el monitoreo de cultivos, costos y valor de la producción, y dos llamados a la acción primarios representados por los botones *Explorar* y *Cómo funciona* sobre un fondo fotográfico agrícola de campo.
 
-![wireframe-hero](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-hero.png)
+![wireframe-heroandnav.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-heroandnav.png)
 
 **Features Marquee**
 
