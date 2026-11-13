@@ -556,6 +556,10 @@ A continuación, se adjuntan las capturas de pantalla de las vistas principales 
 ![landinpage-7](assets/img/chapter-V/landing-page/landingpage-7.png)
 ![landinpage-8](assets/img/chapter-V/landing-page/landingpage-8.png)
 ![landinpage-9](assets/img/chapter-V/landing-page/landingpage-9.png)
+![landinpage-10](assets/img/chapter-V/landing-page/landingpage-10.png)
+![landinpage-11](assets/img/chapter-V/landing-page/landingpage-11.png)
+![landinpage-12](assets/img/chapter-V/landing-page/landingpage-12.png)
+![landinpage-13](assets/img/chapter-V/landing-page/landingpage-13.png)
 
 **Mobile View:**
 
@@ -568,7 +572,10 @@ A continuación, se adjuntan las capturas de pantalla de las vistas principales 
 ![mobile-7](assets/img/chapter-V/landing-page/mobile-7.png)
 ![mobile-8](assets/img/chapter-V/landing-page/mobile-8.png)
 ![mobile-9](assets/img/chapter-V/landing-page/mobile-9.png)
-
+![mobile-10](assets/img/chapter-V/landing-page/mobile-10.png)
+![mobile-11](assets/img/chapter-V/landing-page/mobile-11.png)
+![mobile-12](assets/img/chapter-V/landing-page/mobile-12.png)
+![mobile-13](assets/img/chapter-V/landing-page/mobile-13.png)
 
 **Evidencia Funcional: Video Demostrativo de Navegación**
 Para evidenciar el correcto comportamiento de los componentes interactivos, el menú de navegación fijo (*sticky navbar*), el desplazamiento suave (*smooth scroll*) hacia las anclas de las secciones y el intercambio dinámico de idioma, se ha registrado la navegación real del producto operando en su entorno de producción.
