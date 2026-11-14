@@ -1612,27 +1612,34 @@ La orquestación entre los contextos delimitados se rige por políticas eventual
 
 ### 4.6.2. Software Architecture Context Diagram
 
-En esta sección se presenta el Diagrama de Contexto del Sistema (Nivel 1 del modelo C4), el cual delimita las fronteras operativas y de software de la plataforma **SumaqAgro**, ubicándola como la solución central del ecosistema. A través de esta vista de alto nivel, se establecen los canales de comunicación y flujos de información que mantiene el sistema tanto con los distintos perfiles de usuario identificados en la investigación como con los servicios externos de terceros necesarios para la operación agrícola. Siguiendo los lineamientos de arquitectura y el enfoque *Diagram-as-Code* exigido para el proyecto, el modelado se desarrolló mediante la herramienta **Structurizr** a través de su especificación formal en Structurizr DSL.
+En este apartado se presenta el Diagrama de Contexto del Sistema, correspondiente al nivel 1 del modelo C4. Este diagrama delimita el alcance de SumaqAgro y representa sus relaciones con los perfiles de usuario y los sistemas externos previstos para su operación.
+
+SumaqAgro se ubica como el sistema central del ecosistema y concentra las funcionalidades de monitoreo agrícola, registro de costos operativos y gestión de la trazabilidad y certificación de calidad de los lotes de café de especialidad y papa andina.
+
+Siguiendo el enfoque Diagram-as-Code, el modelo se define mediante Structurizr DSL. Esta vista presenta las responsabilidades generales y las interacciones del sistema. La aplicación web con Vue 3 y los servicios de backend con .NET y C# se detallarán en el diagrama de contenedores, correspondiente al nivel 2 del modelo C4.
 
 **Herramienta utilizada:** Structurizr (*Diagrams as Code*, mediante Structurizr DSL).
 
-![C4 Model - Diagrama de Contexto del Sistema (Nivel 1)](assets/img/chapter-IV/c4/c4-system-context-diagram.png)
+![c4-system-context-diagram.png](assets/img/c4/c4-system-context-diagram.png)
 
 #### Explicación del Diagrama de Contexto
 
-El diagrama sitúa en el centro a **SumaqAgro Platform**, plataforma web distribuida orientada a la agricultura de precisión, el cálculo de costos operativos de campo y la certificación de calidad para las cadenas de café de especialidad y papa andina. A su alrededor se articulan las siguientes interacciones:
+El diagrama sitúa en el centro a SumaqAgro Platform, plataforma web que permite gestionar parcelas, consultar indicadores de vegetación, registrar costos de producción y administrar información de calidad y trazabilidad de las cosechas.
+
+A su alrededor se representan los siguientes actores y sistemas externos.
 
 ##### 1. Actores y Usuarios del Dominio
-* **Agricultural Producer (Productor Agrícola):** Agricultor que accede mediante navegadores web o dispositivos móviles para registrar la delimitación geográfica de sus parcelas, monitorear el vigor foliar satelital (NDVI/NDWI) y registrar sus compras de insumos, jornales y fletes en la bitácora de costos.
-* **Cooperative Manager (Directivo de Cooperativa):** Usuario administrativo que utiliza la plataforma desde terminales de escritorio para auditar el volumen de acopio de los socios, monitorear los balances financieros por hectárea y aprobar formalmente la emisión de los certificados de calidad de cosecha.
-* **Technical Field Advisor (Asesor Técnico de Campo):** Ingeniero agrónomo que hace seguimiento a las alertas satelitales tempranas de estrés hídrico o plagas para priorizar sus visitas presenciales en parcelas críticas, emitiendo recetas agronómicas y dosis correctivas desde la aplicación.
-* **Visitor (Visitante):** Persona que no necesita una cuenta. Consulta la landing page para conocer la propuesta de valor y los planes, o escanea el código QR de un saco o lote para verificar en línea su procedencia, su variedad y su puntaje de calidad certificado.
+* **Agricultural Producer (Productor Agrícola):** Agricultor que utiliza la plataforma mediante un navegador web, desde un dispositivo móvil o una computadora, para registrar sus parcelas, consultar indicadores de vegetación NDVI y NDWI y registrar gastos de insumos, jornales y transporte.
+* **Cooperative Manager (Directivo de Cooperativa):** Usuario administrativo que supervisa el acopio de los socios, consulta los costos y resultados económicos por parcela y aprueba la emisión de certificados de calidad conforme al proceso definido por la cooperativa.
+* **Technical Field Advisor (Asesor Técnico de Campo):** Profesional agrónomo que consulta indicadores y alertas sobre posibles condiciones de estrés del cultivo, prioriza visitas de campo y registra recomendaciones agronómicas. Las alertas apoyan la evaluación técnica y requieren interpretación y verificación en campo.
+* **Visitor (Visitante):** Usuario que consulta, sin iniciar sesión, la información pública de un lote mediante el código QR asociado. Puede verificar la procedencia registrada, la variedad y el certificado de calidad disponible, de acuerdo con los datos publicados por la plataforma.
 
 ##### 2. Sistemas Externos e Integraciones
-* **AgroMonitoring API:** Servicio de OpenWeather que recibe el polígono de cada parcela y entrega, mediante HTTPS/JSON, las imágenes satelitales de Sentinel-2 y Landsat-8, los índices NDVI y NDWI y el pronóstico del clima. Con esta información el sistema calcula el vigor foliar, detecta estrés hídrico y anticipa heladas sin depender de sensores instalados en campo.
-* **Twilio SMS / WhatsApp Gateway:** Pasarela de mensajería externa utilizada por SumaqAgro para remitir notificaciones prioritarias y alertas agroclimáticas urgentes a productores ubicados en zonas rurales con baja cobertura móvil de datos.
-* **Niubiz Payment Gateway:** Pasarela de procesamiento de pagos electrónicos integrada mediante API REST (HTTPS/JSON) para la gestión y cobro transaccional de los planes de suscripción de cooperativas agrarias y asesores técnicos.
-* **Brevo Email Service:** Servicio de correo transaccional que SumaqAgro usa, mediante SMTP o HTTPS, para enviar el enlace de recuperación de contraseña y la invitación que recibe un agrónomo cuando una cooperativa lo agrega a su equipo.
+* **Sentinel-2 Imagery Service (ESA/Copernicus):** Servicio externo de acceso a imágenes multiespectrales Sentinel-2. SumaqAgro obtiene las imágenes necesarias para calcular los índices NDVI y NDWI y apoyar el seguimiento de las parcelas. El proveedor y el mecanismo de acceso se precisarán durante la implementación.
+* **SENAMHI Weather Service:** Fuente externa de información meteorológica utilizada para complementar el monitoreo agrícola y generar alertas ante condiciones que puedan afectar los cultivos, como heladas o periodos de déficit hídrico. La integración dependerá de los mecanismos de acceso disponibles.
+* **Twilio Messaging Gateway:** Servicio externo de mensajería utilizado para enviar notificaciones y alertas mediante SMS o WhatsApp, según el canal habilitado y la conectividad del destinatario.
+* **Payment Gateway (Stripe / Niubiz):** Proveedor externo encargado de procesar los pagos de los planes de suscripción. La selección del proveedor y las condiciones de integración se definirán durante la implementación.
+* **MIDAGRI Producer Registry (PPA):** Sistema externo previsto para contrastar información de inscripción de los productores agrarios, sujeto a la disponibilidad y autorización de acceso. Esta consulta no se considera una acreditación de propiedad ni una validación catastral del predio.
 
 ### 4.6.3. Software Architecture Container Diagrams
 
