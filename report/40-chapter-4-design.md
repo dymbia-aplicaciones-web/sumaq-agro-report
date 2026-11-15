@@ -1643,37 +1643,35 @@ A su alrededor se representan los siguientes actores y sistemas externos.
 
 ### 4.6.3. Software Architecture Container Diagrams
 
-En esta sección se presenta y describe el Diagrama de Contenedores (Nivel 2 del modelo C4) de la plataforma **SumaqAgro**, el cual profundiza en la frontera del sistema para exponer su arquitectura técnica distribuida. Este diagrama muestra las unidades de despliegue y ejecución independientes que componen la solución, la distribución de responsabilidades entre ellas, las principales decisiones de tecnología adoptadas y los protocolos de red empleados para la comunicación interna y con sistemas externos. El modelado fue estructurado y generado formalmente mediante la especificación DSL de la herramienta **Structurizr**.
+En esta sección se presenta y describe el Diagrama de Contenedores (Nivel 2 del modelo C4) de la plataforma SumaqAgro, el cual profundiza en la frontera del sistema para exponer su arquitectura técnica distribuida. Este diagrama muestra las unidades de despliegue y ejecución independientes que componen la solución, la distribución de responsabilidades entre ellas, las principales decisiones tecnológicas adoptadas y los protocolos empleados para la comunicación interna y con sistemas externos. El modelado se define mediante la especificación DSL de la herramienta Structurizr.
 
 **Herramienta utilizada:** Structurizr (*Diagrams as Code*, mediante Structurizr DSL).
 
-![C4 Model - Diagrama de Contenedores (Nivel 2)](assets/img/chapter-IV/c4/c4-container-diagram.png)
+![SumaqAgroContainers-backend.png](assets/img/c4/SumaqAgroContainers-backend.png)
 
 #### Asignación de Responsabilidades y Decisiones Tecnológicas
 
-La topología de ejecución del sistema está conformada por cinco contenedores:
-
-* **Static Content Container:**
-  Carpeta con los archivos compilados de la Web Application (HTML, CSS, JavaScript e imágenes), publicada en Cloudflare Pages. Desde aquí el navegador del productor, del directivo y del agrónomo descarga la aplicación Vue. El visitante también la usa para abrir la vista pública del certificado al escanear un código QR.
+La topología de ejecución del sistema está conformada por cuatro contenedores independientes:
 
 * **Landing Page Container:**
-  Sitio web público estático desarrollado con HTML5, CSS3 y JavaScript vanilla, alojado en un servicio cloud de distribución estática. Diseñado con una carga ligera para garantizar un rendimiento óptimo en terminales móviles bajo redes rurales 3G/4G. Su propósito es exponer la propuesta de valor del producto, presentar los planes de suscripción comercial (Semilla, Cooperativa Pro y Asesor Técnico) y llevar al visitante al registro de la Web Application. No se comunica con el backend: es un sitio estático.
+Sitio web público desarrollado con HTML5, CSS3 y Vue 3, alojado en un servicio cloud de distribución estática. Diseñado con una carga ligera para favorecer su rendimiento en dispositivos móviles bajo redes rurales 3G/4G. Su propósito es exponer la propuesta de valor del producto, presentar los planes de suscripción comercial (Semilla, Cooperativa Pro y Asesor Técnico) y canalizar prospectos comerciales hacia el backend mediante llamadas asíncronas HTTPS/JSON.
 
 * **Web Application Container (Single Page Application - SPA):**
-  Aplicación web cliente desarrollada sobre el framework Vue 3, utilizando TypeScript y la biblioteca Vue Material. Provee una interfaz reactiva y accesible tanto para productores de campo como para administradores de cooperativas e ingenieros agrónomos. Integra capacidades de almacenamiento local mediante *Service Workers* e *IndexedDB*, lo que permite soportar operaciones en modo desconectado (*offline-first*) para el registro de gastos de campo y de reportes de plagas en predios rurales sin cobertura de datos móvil, sincronizando la información automáticamente contra la API REST al recuperar la conexión a internet. Asimismo, aloja el visor público interactivo que permite auditar las credenciales y trazabilidad de los lotes cuando un visitante escanea el código QR impreso.
+  Aplicación web cliente desarrollada con Vue 3, utilizando TypeScript y PrimeVue. Provee una interfaz reactiva y accesible para productores de campo, administradores de cooperativas e ingenieros agrónomos. Integra capacidades de operación sin conexión mediante Service Workers e IndexedDB, permitiendo el registro local de jornales, compras e insumos en predios rurales sin cobertura de datos móviles. La información pendiente se sincroniza con la API REST cuando se recupera la conexión a internet. Asimismo, aloja el visor público interactivo que permite consultar las credenciales y la trazabilidad de los lotes cuando un comprador escanea el código QR impreso.
 
 * **RESTful API Backend Container:**
-  Servidor de aplicaciones distribuido implementado en Java 21 utilizando el framework Spring Boot 3.x (Spring MVC, Spring Security y Spring Data JPA). Representa el núcleo transaccional del sistema y aloja la lógica de negocio basada en DDD para los 6 Bounded Contexts identificados y el Shared Kernel que todos reutilizan. Sus responsabilidades abarcan la emisión y validación de tokens criptográficos JWT para el control de accesos, el cómputo de las matrices financieras de costo unitario y punto de equilibrio rural, el procesamiento de las imágenes e índices satelitales y la exposición de endpoints documentados formalmente bajo OpenAPI 3.0 (Swagger UI).
+  Servidor de aplicaciones implementado en C# sobre .NET, utilizando ASP.NET Core y Entity Framework Core para el acceso y la persistencia de datos. Representa el núcleo transaccional del sistema y aloja la lógica de negocio basada en DDD para los 7 Bounded Contexts identificados. Sus responsabilidades abarcan la emisión y validación de tokens JWT para el control de acceso, el cálculo de costos unitarios y puntos de equilibrio rural, el procesamiento desacoplado de reflectancia satelital y la exposición de endpoints documentados mediante OpenAPI 3.0 y Swagger UI.
 
-* **Database Container:**
-  Base de datos relacional MySQL 8.0 (`sumaqagro_db`). Guarda en una sola base las tablas de los 6 bounded contexts, con transacciones ACID y claves primarias y foráneas que mantienen la integridad referencial. Los vértices del polígono de cada parcela se guardan como pares de latitud y longitud.
+* **Database Engine Container:**
+  Motor relacional MySQL 8.0 configurado como la unidad de persistencia de datos. Almacena las tablas normalizadas del dominio, utilizando el motor InnoDB para asegurar transacciones ACID e integridad referencial mediante claves foráneas. Asimismo, utiliza tipos de datos espaciales para almacenar las geometrías perimetrales de las parcelas agrícolas.
 
 #### Protocolos de Interoperabilidad y Comunicación
 
-* **Acceso de Usuarios:** Los usuarios entran por HTTPS. El visitante navega la *Landing Page*, y desde ella pasa al registro de la *Web Application*. Los usuarios registrados cargan la *Web Application* desde el *Static Content*.
-* **Cliente Web a Backend:** La Web Application llama a los endpoints REST del backend con JSON sobre HTTPS, enviando el token Bearer JWT en cada petición. Por este mismo canal sincroniza los datos guardados sin conexión.
-* **Backend a Base de Datos:** El backend lee y escribe los agregados mediante el controlador JDBC de MySQL, sobre el puerto 3306.
-* **Backend a Servicios Externos:** El backend se comunica con AgroMonitoring API, Twilio y Niubiz con JSON sobre HTTPS. Niubiz, además, confirma cada pago llamando a un webhook del backend. Los correos de recuperación de contraseña e invitación de agrónomos se envían a Brevo mediante SMTP.
+* **Acceso de Usuarios:** Los usuarios finales interactúan con los contenedores web (Landing Page y Web Application) mediante conexiones seguras sobre HTTPS.
+* **Cliente Web a Backend:** La Single Page Application consume los endpoints de negocio y sincroniza los registros almacenados localmente mediante solicitudes REST sobre HTTPS/JSON. Las operaciones protegidas utilizan tokens de autorización Bearer JWT, mientras que los endpoints destinados a la consulta pública por QR permiten el acceso sin iniciar sesión.
+* **Landing Page a Backend:** El sitio público envía los formularios de contacto y los datos de prospectos comerciales a la API REST mediante llamadas asíncronas sobre HTTPS, utilizando JSON como formato de intercambio.
+* **Backend a Base de Datos:**  Las operaciones transaccionales y de persistencia de los agregados se ejecutan mediante Entity Framework Core y un proveedor compatible con MySQL para .NET, utilizando el protocolo de MySQL sobre TCP, en el puerto 3306, con cifrado TLS para proteger la conexión.
+* **Backend a Servicios Externos:** Las consultas salientes hacia Sentinel-2 API, SENAMHI Weather API, Twilio Gateway, Stripe/Niubiz y MIDAGRI PPA se realizan mediante clientes HTTP desacoplados de .NET, utilizando conexiones seguras HTTPS. Se emplea JSON para los intercambios estructurados y el formato correspondiente para la descarga de imágenes satelitales.
 
 ### 4.6.4. Software Architecture Components Diagrams
 
@@ -1683,66 +1681,72 @@ En esta sección se presentan y explican los Diagramas de Componentes (Nivel 3 d
 
 #### 4.6.4.1. Landing Page Container Components Diagram
 
-El contenedor de la Landing Page descompone la estructura del sitio web estático público, diseñado con una arquitectura liviana orientada a maximizar la velocidad de carga y la tasa de conversión en dispositivos móviles bajo redes rurales 3G/4G.
+El diagrama de componentes del contenedor Landing Page descompone la estructura del sitio web público de SumaqAgro, desarrollado con Vue 3, TypeScript, HTML5 y CSS3. Su arquitectura liviana está orientada a maximizar la velocidad de carga y facilitar la conversión de visitantes en dispositivos móviles bajo redes rurales 3G/4G.
 
-![C4 Model - Diagrama de Componentes de la Landing Page (Nivel 3)](assets/img/chapter-IV/c4/c4-components-landing-diagram.png)
+![SumaqAgroContainers-backend.png](assets/img/c4/SumaqAgroContainers-backend.png)
 
 ##### Desglose de Componentes de la Landing Page:
-* **`Navigation & Hero Component`:** Bloque estructural desarrollado con HTML5 semántico y maquetado responsivo mediante CSS3 Flexbox. Administra la barra de navegación superior, la identidad visual corporativa de SumaqAgro, la propuesta de valor agroclimática orientada a café de especialidad y papa andina, y el llamado a la acción (CTA) que lleva al visitante al registro de la Web Application.
-* **`Pricing & Plans Catalog Component`:** Componente visual maquetado mediante CSS3 Grid. Presenta la matriz comparativa de los planes de suscripción comercial SaaS: el plan *Semilla* (gratuito para pequeños productores familiares), el plan *Cooperativa Pro* (para gremios con monitoreo consolidado de socios) y el plan *Asesor Técnico* (para agrónomos independientes con carteras de clientes).
+* **`Navigation & Hero Component`:** Componente de presentación desarrollado con Vue 3, HTML5 semántico y maquetación responsiva mediante CSS3 Flexbox. Administra la barra de navegación superior, la identidad visual corporativa de SumaqAgro, la propuesta de valor agroclimática orientada a café de especialidad y papa andina, y el llamado a la acción (CTA) que conduce al formulario de registro y demostración.
+* **`Pricing & Plans Catalog Component`:** Componente visual desarrollado con Vue 3 y maquetado mediante CSS3 Grid. Presenta la matriz comparativa de los planes de suscripción comercial SaaS: el plan Semilla (gratuito para pequeños productores familiares), el plan Cooperativa Pro (para gremios con monitoreo consolidado de socios) y el plan Asesor Técnico (para agrónomos independientes con carteras de clientes).
+* **`Lead Capture Form Component`:**  Módulo interactivo implementado con Vue 3 y TypeScript. Gestiona de forma reactiva los datos ingresados para solicitudes de contacto y demostraciones técnicas. Ejecuta validaciones sintácticas del lado del cliente, como formato de correo electrónico, longitud del número celular y campos obligatorios, para prevenir envíos incompletos. Los datos validados se transfieren al componente de comunicación HTTP.
+* **`Landing HTTP Client:`:** Componente de comunicación asíncrona implementado en TypeScript, utilizando la API nativa Fetch del navegador. Serializa los datos del formulario en una carga útil JSON y envía una petición POST sobre HTTPS hacia el endpoint /api/v1/users del backend implementado en C# con ASP.NET Core sobre .NET. Gestiona las respuestas y comunica al formulario los estados de envío, confirmación o error ante incidencias de conectividad.
 
 #### 4.6.4.2. Web Application Container Components Diagram (Vue 3 **SPA**)
 
-La Web Application, construida con **Vue 3**, se organiza por bounded context siguiendo DDD. Cada componente del diagrama es una carpeta de Vue dentro de `src/app` y todas tienen las mismas capas: `domain/model` (entidades), `application` (store con el estado), `infrastructure` (llamadas a la API) y `presentation` (vistas). Además existe una carpeta `shared` con lo que usan todos los contextos.
+El contenedor de la aplicación cliente SPA, implementado con Vue 3, TypeScript y PrimeVue, descompone sus módulos para brindar una experiencia de usuario interactiva y garantizar la persistencia local de datos en campo mediante capacidades desconectadas (offline-first).
 
-![C4 Model - Diagrama de Componentes de la Web Application (Nivel 3)](assets/img/chapter-IV/c4/c4-components-webapp-diagram.png)
+![WebApplicationComponents-backend.png](assets/img/c4/WebApplicationComponents-backend.png)
 
 ##### Desglose de Componentes de la Web Application:
-* **`IAM Component`:** Formularios de registro, inicio de sesión y recuperación de contraseña. Contiene el *guard* que protege las rutas privadas según la sesión y el rol, y el *interceptor* que agrega el token JWT a cada petición.
-* **`Profiles Component`:** Configuración del perfil, registro de la cooperativa, padrón de socios y asignación de agrónomos a las parcelas.
-* **`Subscriptions and Payments Component`:** Catálogo de planes, pago (*checkout*) e historial de cobros.
-* **`Field Management Component`:** Registro de parcelas con el mapa para marcar el polígono GPS (Leaflet.js), campañas agrícolas y bitácora de costos, donde los gastos se pueden registrar sin conexión.
-* **`Crop Health Component`:** Mapa con los índices NDVI y NDWI (Leaflet.js), alertas agroclimáticas, reportes de plagas, inspecciones y recetas técnicas.
-* **`Harvest Certification Component`:** Lotes de acopio, fichas de catación SCA para café y de calibres MIDAGRI para papa, certificados de calidad y la vista pública que se abre al escanear el código QR.
-* **`Shared Component`:** Lo que usan todos los contextos: el *layout* con el menú, el selector de idioma, las clases base para llamar a la API, la sincronización sin conexión con IndexedDB (Dexie.js) y la caché del Service Worker.
-
-##### Relaciones entre Componentes:
-* **Usuarios:** el productor usa Field Management, Crop Health y Subscriptions and Payments; el directivo usa Profiles y Harvest Certification; el agrónomo usa Crop Health; y el visitante se registra en IAM o verifica un certificado en Harvest Certification. La Landing Page envía al visitante al registro en IAM.
-* **IAM:** los otros cinco componentes revisan la sesión y el rol del usuario con el *guard* de IAM antes de abrir sus rutas. Shared también lee el rol desde IAM para mostrar el menú que le corresponde a cada usuario.
-* **Shared:** todos los componentes usan su *layout* y sus clases base de API. Field Management y Crop Health, además, usan su sincronización sin conexión.
-* **RESTful API:** cada componente llama solo al componente de su mismo bounded context en el backend, con JSON sobre HTTPS.
+* **`Auth & Role Guard`:** Componente de control de navegación implementado mediante guardias de Vue Router, utilizando router.beforeEach y metadatos de ruta. Intercepta la navegación hacia rutas protegidas, comprueba la presencia y expiración del token JWT almacenado en sessionStorage y aplica restricciones de navegación basadas en roles (RBAC) para productores, directivos y agrónomos. La validación criptográfica del token y la autorización de las operaciones se realizan también en el backend ASP.NET Core. Las rutas de consulta pública por QR permanecen accesibles sin iniciar sesión.
+* **`Plot Management View Component`:** Interfaz gráfica desarrollada con Vue 3, PrimeVue y Composition API, utilizando ref, reactive y v-model para gestionar formularios y validaciones. Permite la georreferenciación de predios, la captura interactiva de vértices perimetrales GPS y el registro botánico y fenológico de las campañas agrícolas.
+* **`Vegetation & Alerting View Component`:** Componente analítico que integra Leaflet con Vue 3. Renderiza capas geoespaciales y series temporales de índices de vegetación NDVI y NDWI. Asimismo, presenta el buzón de alertas agroclimáticas y las recetas fitosanitarias emitidas por el asesor técnico.
+* **`Field Cost Ledger View Component`:**  Módulo de captura contable rural desarrollado con Vue 3 y PrimeVue, utilizando formularios con estado reactivo para registrar compras de fertilizantes, jornales diarios y fletes. Estos registros alimentan los paneles de estimación de costos unitarios y punto de equilibrio.
+* **`Harvest & Traceability View Component`:**  Conjunto de vistas desarrollado con Vue 3 y PrimeVue para registrar la calificación física de calibres de tubérculo conforme a la norma técnica MIDAGRI contemplada por el proyecto y los resultados de catación sensorial de café conforme al estándar SCA. Incluye el visor público accesible mediante el escaneo del código QR para consultar los certificados y auditar la procedencia de los lotes.
+* **`Client State & Offline Store`:**  Capa de gestión de estado y almacenamiento transaccional local implementada con Pinia e IndexedDB mediante Dexie.js. Mantiene el estado reactivo compartido y conserva las operaciones efectuadas en parcelas sin señal de red celular. Coordina el envío diferido en lote mediante el cliente REST cuando se recupera la conectividad y el backend está disponible, manteniendo pendientes los registros cuyo envío no se haya confirmado.
+* **`Service Worker Cache Engine`:**  Módulo de Progressive Web App implementado mediante vite-plugin-pwa y Workbox. Almacena en caché los recursos estáticos compilados de la aplicación, incluidos HTML, CSS, archivos de aplicación e iconografía vectorial. Permite cargar la interfaz previamente almacenada sin conexión y consultar los recursos cartográficos disponibles en caché, de acuerdo con la estrategia configurada.
+* **`REST API Client Service`:** Módulo centralizado de comunicación implementado en TypeScript con Axios, reutilizable desde los componentes y los stores de Vue 3. Encapsula las solicitudes HTTPS/JSON hacia el backend implementado en C# con ASP.NET Core sobre .NET. Utiliza interceptores de solicitudes para incorporar el encabezado Authorization: Bearer <JWT> en las operaciones protegidas e interceptores de respuestas para unificar la gestión de errores HTTP y problemas de conectividad. Las consultas públicas por QR no requieren un token de autenticación.
 
 #### 4.6.4.3. RESTful API Backend Container Components Diagram (Spring Boot)
 
-El backend, desarrollado en **Java 21 con Spring Boot 3.x**, también se organiza por bounded context. Cada componente del diagrama es un bounded context y contiene sus propios controllers REST, servicios de Spring y repositorios de Spring Data JPA. El Shared Kernel agrupa lo que todos comparten.
+El contenedor transaccional de backend, desarrollado en C# con ASP.NET Core sobre .NET, implementa una arquitectura en capas desacopladas orientada al dominio (Layered Architecture / DDD). Centraliza las reglas de negocio de los 7 Bounded Contexts y sus respectivos agregados, exponiendo servicios REST para la aplicación cliente desarrollada con Vue 3.
 
-![C4 Model - Diagrama de Componentes del API Backend (Nivel 3)](assets/img/chapter-IV/c4/c4-components-backend-diagram.png)
+![BackendComponents.png](assets/img/c4/BackendComponents.png)
 
-##### Desglose de Componentes del Backend:
-* **`IAM Component`:** Registro, inicio de sesión, emisión del token JWT, roles y recuperación de contraseña.
-* **`Profiles Component`:** Perfiles de usuario, cooperativas, padrón de socios e invitación y asignación de agrónomos a las parcelas.
-* **`Subscriptions and Payments Component`:** Planes (Semilla, Cooperativa Pro y Asesor Técnico), cobros y cupo de parcelas de cada plan.
-* **`Field Management Component`:** Parcelas con su polígono GPS, campañas agrícolas, bitácora de costos y precio de equilibrio. También recibe los gastos registrados sin conexión.
-* **`Crop Health Component`:** Índices NDVI y NDWI, pronóstico del clima, alertas agroclimáticas, reportes de plagas, inspecciones y recetas técnicas.
-* **`Harvest Certification Component`:** Lotes de acopio, calificación de calibres de papa y catación de café, y emisión de certificados de calidad con código QR.
-* **`Shared Kernel Component`:** Clases base, value objects compartidos, manejo de excepciones, configuración de OpenAPI y el envío de notificaciones que usan los demás contextos.
+##### Desglose de Componentes del Backend por Capa Técnica:
 
-##### Relaciones entre Componentes:
-* **Domain events (políticas):**
-  * IAM publica `UserSignedUp` y Subscriptions and Payments asigna el plan Semilla (P1).
-  * Field Management publica `SowingDateRecorded` y Crop Health programa el monitoreo satelital (P4).
-  * Harvest Certification publica `DeliveredBatchWeighed` y Field Management registra el rendimiento real (P10).
-* **Consultas mediante ACL (facades):**
-  * Profiles asigna roles mediante IAM y valida las parcelas en Field Management.
-  * Field Management revisa el cupo de parcelas del plan en Subscriptions and Payments.
-  * Crop Health lee los polígonos de las parcelas en Field Management y busca el agrónomo asignado en Profiles.
-  * Harvest Certification valida los socios de la cooperativa en Profiles y lee el origen de la parcela en Field Management.
-* **Sistemas externos:**
-  * Subscriptions and Payments cobra con Niubiz, y Niubiz confirma cada pago llamando a un webhook.
-  * Field Management registra los polígonos de las parcelas en AgroMonitoring.
-  * Crop Health obtiene de AgroMonitoring las imágenes, los índices y el clima, y envía las alertas por SMS o WhatsApp con Twilio.
-  * IAM envía el correo de recuperación de contraseña y Profiles el de invitación al agrónomo, ambos con Brevo mediante SMTP.
-* **Shared Kernel y base de datos:** todos los componentes usan las clases base y los value objects del Shared Kernel, y leen y escriben en la base de datos MySQL mediante JDBC.
+* **Capa de Controladores REST (Inbound Controllers):**
+  Controladores anotados con `ControllerBase`  identificados mediante los atributos [ApiController] y [Route]. Exponen los endpoints del sistema sobre HTTPS/JSON, reciben las peticiones del cliente Vue 3 y validan los DTOs de entrada mediante Data Annotations, como [Required], [EmailAddress] y [Range]. Delegan la ejecución de los casos de uso en los servicios de aplicación:
+  * `IamController`: Expone `/api/v1/auth` y `/api/v1/users` para registro, inicio de sesión seguro, emisión de JWT y gestión de perfiles institucionales.
+  * `SubscriptionController`: Expone `/api/v1/subscriptions` para consulta de membresías y confirmación transaccional de planes comerciales.
+  * `PlotController`: Expone `/api/v1/plots` para catastro de coordenadas GPS, delimitación perimetral y calendarios de siembra.
+  * `MonitoringController`: Expone `/api/v1/monitoring` para mapas multiespectrales, series NDVI/NDWI y recetas agronómicas.
+  * `CostController`: Expone `/api/v1/finances` para la bitácora financiera, sincronización diferida de asientos y cálculo de punto de equilibrio.
+  * `QualityController`: Expone `/api/v1/harvests` para pesaje de acopio, catación SCA, graduación de calibres y certificados.
+  * `SettlementController`: Expone `/api/v1/settlements` para publicación comercial de lotes y liquidaciones de venta.
+
+* **Capa de Servicios de Aplicación (Domain Application Services):** Clases de C# registradas en el contenedor de inyección de dependencias de ASP.NET Core mediante AddScoped. Orquestan los casos de uso y las transacciones locales, invocan el comportamiento de los agregados para preservar sus invariantes y coordinan el acceso a repositorios y adaptadores salientes:  
+  * `UserAccountService`: Administra el ciclo de vida del agregado `UserAccount`, gestionando el hashing seguro de claves y la asignación de permisos.
+  * `SubscriptionService`: Gobierna el agregado `Subscription`, controlando la vigencia de membresías y cuotas de predios asignados.
+  * `FieldPlotService`: Administra el agregado `FieldPlot`, validando que los polígonos perimetrales no presenten autointersecciones.
+  * `VegetationAnalysisService`: Gestiona el agregado `VegetationAnalysis`, calculando algoritmos de reflectancia sobre bandas satelitales y despachando alertas preventivas de estrés foliar.
+  * `LotFinancialLedgerService`: Orquesta el agregado `LotFinancialLedger`, calculando la sumatoria de egresos operativos para deducir el costo unitario de producción y el precio de equilibrio.
+  * `HarvestBatchService`: Supervisa el agregado `HarvestBatch`, validando umbrales mínimos de calidad sensorial y física antes de autorizar la emisión de acreditaciones.
+  * `CommercialSettlementService`: Gobierna el agregado `CommercialSettlement`, protegiendo que la postura comercial aceptada cubra el margen mínimo de ganancia sobre el costo acumulado.
+
+* **Capa de Adaptadores de Infraestructura (Outbound Adapters):**
+  Componentes de integración implementados en C# e incorporados mediante inyección de dependencias. Los adaptadores de servicios externos utilizan clientes HttpClient administrados mediante IHttpClientFactory, mientras que el generador documental encapsula la creación de archivos PDF y códigos QR:
+  * `StripeClientAdapter`: Consume mediante cliente REST la API de Stripe/Niubiz para la tokenización de cobros y facturación recurrente.
+  * `MidagriClientAdapter`: Consulta el servicio gubernamental del Padrón de Productores Agrarios (PPA) para verificar la titularidad catastral.
+  * `SatelliteClientAdapter`: Descarga baldosas ópticas multiespectrales (Bandas B4, B8 y B8A) desde la API abierta de Sentinel-2 (ESA).
+  * `WeatherClientAdapter`: Consume los pronósticos agroclimáticos y alertas meteorológicas de SENAMHI.
+  * `TwilioNotificationAdapter`: Invoca la API de Twilio para remitir notificaciones prioritarias de emergencia vía SMS y WhatsApp.
+  * `PdfQrGeneratorAdapter`: Compila dinámicamente constancias técnicas en formato PDF y codifica el código QR de validación criptográfica pública.
+
+* **Capa de Persistencia (ASP.NET Core Data Repositories):**
+  Implementaciones de repositorios en C# que cumplen contratos específicos por agregado. Estos contratos pueden compartir una interfaz base IRepository<T> definida por el proyecto. Los repositorios utilizan Entity Framework Core, un DbContext y un proveedor compatible con MySQL para mapear los agregados a las tablas de MySQL 8.0.  
+  La comunicación con la base de datos utiliza el protocolo MySQL sobre TCP, en el puerto 3306, con TLS para proteger la conexión.
+  * `UserAccountRepository`, `SubscriptionRepository`, `FieldPlotRepository`, `VegetationAnalysisRepository`, `CostLedgerRepository`, `HarvestBatchRepository` y `CommercialSettlementRepository`.
 
 ## 4.7. Software Object-Oriented Design
 
