@@ -3,7 +3,8 @@
 ## 4.1. Style Guidelines
 
 ### 4.1.1. General Style Guidelines
-El diseño visual de la plataforma **SumaqAgro** se inclina hacia una estética moderna, limpia e intuitiva, en línea con nuestro compromiso de ofrecer soluciones agrotecnológicas que transmitan innovación, sostenibilidad, confianza y cercanía. Nuestro objetivo es crear una experiencia digital que sea tanto eficiente como cercana y profesional para los agricultores, cooperativas e ingenieros agrónomos.
+El diseño visual
+de la plataforma **SumaqAgro** se inclina hacia una estética moderna, limpia e intuitiva, en línea con nuestro compromiso de ofrecer soluciones agrotecnológicas que transmitan innovación, sostenibilidad, confianza y cercanía. Nuestro objetivo es crear una experiencia digital que sea tanto eficiente como cercana y profesional para los agricultores, cooperativas e ingenieros agrónomos.
 
 En esta sección, detallaremos cada uno de los elementos visuales y de estilo que guían el desarrollo de la aplicación SumaqAgro, siempre siguiendo los principios de Diseño de Experiencia de Usuario (UX) e Interfaz de Usuario (UI) para garantizar la máxima usabilidad, legibilidad y accesibilidad (a11y).
 
@@ -541,147 +542,270 @@ El wireframe del landing page de **SumaqAgro** muestra la estructura inicial de 
 
 La sección Hero de la Landing Page presenta en su cabecera superior (Navbar) el isotipo y nombre de marca a la izquierda, los enlaces de anclaje (*Inicio*, *Nosotros*, *Soluciones*, *Planes*, *Impacto*), los botones de acceso (*Iniciar sesión* y *Registrarse*) y el selector de internacionalización (*ES*); seguidamente, el área principal de impacto despliega el subtítulo en mayúsculas *«AGRICULTURA INTELIGENTE PARA UN MEJOR MAÑANA»*, el encabezado principal (H1) *«Cultiva con Información. Decide con Precisión»*, un párrafo descriptivo que sintetiza la transformación de datos satelitales para el monitoreo de cultivos, costos y valor de la producción, y dos llamados a la acción primarios representados por los botones *Explorar* y *Cómo funciona* sobre un fondo fotográfico agrícola de campo.
 
-![wireframe-hero](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-hero.png)
+![wireframe-heroandnav.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-heroandnav.png)
 
-**About**
+**Features Marquee**
 
-La sección **Nosotros** (*About Us*) presenta una distribución asimétrica compuesta por un bloque textual a la izquierda y un recurso gráfico a la derecha; el área informativa incluye el kicker superior en mayúsculas *«SOBRE SUMAQAGRO»*, el encabezado de sección (H2) *«Nosotros»*, el subtítulo destacado (H3) *«Democratizamos la agricultura de precisión en el Perú»* y un párrafo institucional que detalla la misión de reducir la brecha de tecnificación en las cuencas de papa y café mediante datos satelitales abiertos y herramientas accesibles de monitoreo, costeo y certificación; mientras que a la derecha se exhibe una composición fotográfica con esquinas redondeadas que muestra una parcela de cultivo tecnificado junto a una mano sosteniendo un smartphone con la interfaz móvil del sistema desplegada.
+Se incorporó una franja horizontal de color verde oscuro que presenta conceptos relacionados con la plataforma, como monitoreo satelital, papa andina, café de especialidad, costos por parcela y certificación QR. Los elementos aparecen separados por pequeños símbolos decorativos amarillos, creando continuidad visual entre las secciones.
 
-![wireframe-about](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-about.png)
+![wireframe-MarqueeandplataformOverview.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-MarqueeandplataformOverview.png)
 
-**Solutions**
+**Problem Section**
 
-La sección **¿A quién ayudamos?** organiza la propuesta de valor mediante tres tarjetas (*cards*) de autoselección por perfil orientadas a *Agricultores independientes*, *Líderes de cooperativas* y *Asesores técnicos y agrónomos*, detallando en cada una su enfoque productivo, una fotografía representativa de campo y un botón de llamado a la acción específico (*Registrar mi parcela*, *Gestionar cooperativa* y *Unirme como asesor*); inmediatamente después, la sección **Soluciones y Características** expone las cuatro capacidades tecnológicas clave del sistema mediante una grilla de tarjetas que describen el monitoreo satelital de vigor y humedad (*Satellite Monitoring of Vigor and Moisture*), la contabilidad de costos por lote (*Batch Cost Accounting*), la certificación digital de cosecha (*Digital Certification of Harvest Quality*) y el sistema de prescripciones agronómicas (*Agronomic Prescriptions and Alerts*), complementando cada bloque funcional con un indicador del impacto operativo directo que genera en campo.
+Se diseñó una estructura de dos columnas: la primera destinada al título, descripción y beneficios; la segunda reservada para una imagen representativa del dashboard. También se contemplaron pequeñas tarjetas informativas superpuestas para destacar indicadores agrícolas.
+![wireframe-problemsection.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-problemsection.png)
 
-![wireframe-solutions](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-solutions.png)
+**Solution**
 
-**Video and Plans**
+Se diseñó una cuadrícula de cuatro tarjetas distribuidas en dos filas y dos columnas. Cada tarjeta contiene espacios para un ícono, título, descripción y objetivo. En la parte superior se ubicaron controles de selección para representar el filtrado de herramientas según el perfil del usuario.
 
-La sección **Conoce SumaqAgro en acción** presenta un contenedor central con fondo verde oscuro que alberga el reproductor del video demostrativo (*About-the-Product*) para evidenciar el funcionamiento en campo; inmediatamente después, la sección **Planes** (*Pricing*) introduce un conmutador de facturación mensual y anual (*«Ahorra 2 meses con el plan anual»*) junto a una grilla de tres tarjetas de suscripción que estructuran el modelo SaaS freemium y B2B: el **Plan Semilla** (S/ 0 para 1 parcela con NDVI básico y botón *«Empezar gratis»*), el **Plan Cooperativa Pro** (destacado con la etiqueta *«Más popular»* a S/ 189/mes para 50 productores con certificación de calidad y botón *«Suscribir cooperativa»*), y el **Plan Asesor Técnico** (S/ 89/mes para supervisar 20 fundos con recetas técnicas y botón *«Prueba de 14 días»*).
+![wireframe-solution.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-solution.png)
 
-![wireframe-plans](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-plans.png)
+**How it works**
 
-**Testimonials , Impact and Footer**
+Se planteó una distribución de dos columnas. La primera contiene una secuencia vertical de tres pasos numerados, mientras que la segunda presenta un espacio destinado a una imagen del sistema. Se reservó un botón de acción debajo de la explicación.
 
-La sección **Impacto** y el cierre del Landing Page se estructuran en tres bloques consecutivos orientados a la credibilidad y la conversión: en primer lugar, el área de métricas cuantitativas presenta tres tarjetas superiores con indicadores clave de respaldo agrario (*333k+ Has. de papa*, *223k+ Familias cafeteras* y *>40% Sin cobertura técnica*), acompañadas en la parte inferior por el bloque testimonial *«Lo que dicen nuestros usuarios»* con tarjetas que incluyen avatar, calificación por estrellas y citas de validación de Juan Huamán (productor de papa) y Elena Vargas (cooperativa cafetalera); a continuación, se ubica el banner final de conversión (*Bottom CTA*) en verde oscuro con el titular *«Empieza a decidir con precisión hoy»*, un texto de apoyo y el botón principal de acción *Registrarse gratis*; finalmente, el pie de página (*Footer*) organiza sobre fondo oscuro el isotipo horizontal de SumaqAgro con su propuesta de valor a la izquierda, junto a una distribución de navegación en tres columnas de enlaces (*Products*, *Quick Links* y *Support*) para centralizar recursos, documentación y canales de soporte de la plataforma.
+![wireframe-howitworks.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-howitworks.png)
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframe-testimonials-impact-footer.png)
+**Product demo**
+
+Se diseñó una composición centrada con título, descripción y un contenedor rectangular destinado al video. En el centro del contenedor se colocó un botón de reproducción para representar la interacción multimedia.
+
+![wireframes-productdemo.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-productdemo.png)
+
+**Community**
+
+Se planteó un selector superior con tres perfiles y un panel de contenido dividido en dos áreas: ilustración a la izquierda y texto descriptivo a la derecha. La estructura permite representar diferentes tipos de usuarios dentro de un mismo espacio visual.
+
+![wireframes-Community.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-Community.png)
+
+**Pricing Section**
+
+Se diseñó una estructura de tres tarjetas verticales alineadas horizontalmente. Cada tarjeta contiene un título, precio, lista de características y botón de acción. Se reservó un espacio superior para el selector de modalidad de pago y un tratamiento visual destacado para el plan recomendado.
+Se diseñaron tres tarjetas de testimonios alineadas en una fila. Cada una cuenta con espacios destinados a la valoración, comentario, fotografía, nombre y ocupación del usuario, manteniendo una presentación uniforme.
+
+![wireframes-pricingsection.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-pricingsection.png)
+
+**Impact / Statistics and Testimonials**
+
+Se planteó una fila horizontal de cuatro tarjetas estadísticas. Cada bloque contiene un espacio para una cifra destacada y una descripción breve, con dimensiones uniformes para facilitar la comparación visual de los indicadores.
+
+![wireframes-impactandtestimonials.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-impactandtestimonials.png)
+
+**About us**
+
+Se planteó una estructura de dos columnas: la izquierda destinada a la información institucional, misión y visión, y la derecha reservada para una imagen representativa de la agricultura digital. Las tarjetas se organizaron debajo del texto introductorio.
+
+![wireframes-aboutus.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-aboutus.png)
+
+**Our Team**
+
+Se diseñó una cuadrícula horizontal de cinco tarjetas con dimensiones similares. Se reservaron espacios para las fotografías de los integrantes, sus nombres y responsabilidades, manteniendo una jerarquía visual uniforme.
+
+![wireframes-ourteam.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-ourteam.png)
+
+**Team viedo**
+
+Se planteó una distribución de dos columnas, con información introductoria en la parte izquierda y un espacio rectangular destinado al video del equipo en la derecha. Se utilizó un contenedor principal para agrupar ambos elementos.
+
+![wireframes-teamvideo.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-teamvideo.png)
+
+**FAQ section**
+
+Se diseñó una composición de dos columnas. La izquierda contiene el título y una breve descripción con enlace de contacto; la derecha presenta una lista vertical de preguntas dentro de contenedores desplegables.
+
+![wireframes-faqsection.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-faqsection.png)
+
+**Final CTA and footer**
+
+Se planteó una distribución de dos columnas. La izquierda contiene el mensaje principal y una descripción, mientras que la derecha presenta una tarjeta con tres opciones de usuario, información del plan y un botón de acción.
+Se diseñó un bloque inferior distribuido en cuatro columnas: información de la marca, productos, empresa y soporte. Se reservó una franja adicional para los derechos de autor y los enlaces legales, manteniendo una estructura ordenada.
+
+![wireframes-ffinalctaandfooter.png](assets/img/chapter-IV/landing-page/wireframe/desktop/wireframes-ffinalctaandfooter.png)
 
 #### Mobile Web Browser
 Para garantizar una experiencia de usuario inclusiva y accesible, el diseño responsivo de la Landing Page de SumaqAgro se fundamenta en un sistema de rejilla fluido adaptado a dispositivos móviles (*Mobile Web Browser*), utilizando una retícula de 4 columnas y una escala de espaciado basada en múltiplos de 8 px.
 
 En esta vista, los componentes de escritorio se reorganizan de manera progresiva en una sola columna (*single-column layout*), condensando la barra de navegación superior en un menú colapsable tipo hamburguesa (*nav-toggle*) y apilando los bloques informativos, tarjetas de segmentos, matrices de soluciones y llamados a la acción (CTAs) de forma lineal para facilitar el desplazamiento continuo (*scrolling*) y la interacción con una sola mano sin pérdida de contexto ni funcionalidad.
 
-**Hero**
+**Nav and Hero**
 
-En la vista móvil, la cabecera superior compacta el menú de navegación horizontal bajo un botón tipo hamburguesa (`nav-toggle`) ubicado en el extremo superior derecho, manteniendo a la izquierda el isotipo circular y el nombre de marca SumaqAgro; inmediatamente abajo, el área principal apila el contenido verticalmente en una sola columna centrada de cuatro retículas, encabezada por el *kicker* introductorio en mayúsculas, el titular principal (H1) distribuido en dos líneas de alto impacto y un bloque de tres líneas de texto descriptivo con la propuesta de valor satelital; finalmente, la zona inferior de interacción organiza dos botones de llamado a la acción (CTAs) de ancho adaptativo dispuestos lado a lado en posición horizontal para facilitar el acceso táctil inmediato con una sola mano.
+Se diseñó una barra superior de distribución horizontal, reservando un espacio para el logotipo y otro para el menú desplegable. Se priorizó una estructura sencilla para facilitar la navegación desde pantallas pequeñas.
+Se planteó una composición de una sola columna con el título, texto descriptivo y botones organizados de arriba hacia abajo. Se reservó la parte inferior para una ilustración agrícola que complementa el mensaje principal.
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-hero.png)
+![wireframe-heroandnav.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-heroandnav.png)
 
-**About**
+**Feature Marquee and Platform Overview**
 
-En la vista móvil (**Mobile Web Browser**) de las secciones institucionales, el contenido se reorganiza en una columna lineal: el bloque superior **Nosotros** (*About Us*) apila verticalmente el kicker, el encabezado principal, el subtítulo y el texto de la propuesta de valor junto al contenedor de la imagen representativa del cultivo tecnificado; inmediatamente abajo, la sección **Nuestro equipo** sitúa el titular y su párrafo descriptivo para dar paso a una disposición adaptada en dos columnas que agrupa las cinco tarjetas (*cards*) con fotografía, nombre de cada integrante y un icono de acción rápida en la esquina superior derecha, rematando con el último perfil centrado al pie para optimizar el espacio vertical en pantallas compactas.
+Se diseñó una banda horizontal compacta para presentar las principales características de la plataforma, considerando una visualización parcial del contenido dentro del espacio disponible.
+Se planteó una estructura vertical con un bloque superior de información y un espacio inferior destinado a la imagen de la plataforma. Se consideraron elementos informativos superpuestos para representar los indicadores agrícolas.
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-about.png)
+![wireframes-featuresMarquee-plataformOverview.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-featuresMarquee-plataformOverview.png)
 
-**Solutions**
+**Problem Section**
 
-En la vista móvil (**Mobile Web Browser**) de las secciones comerciales y funcionales, el contenido se adapta a una columna única vertical: en la parte superior, la sección **¿A quién ayudamos?** apila secuencialmente las tres tarjetas de autoselección por rol (*Agricultores independientes*, *Líderes de cooperativas* y *Asesores técnicos*), situando en cada una su icono, titular, descripción de enfoque, vista previa gráfica y el botón de acción (*CTA*) con ancho completo al pie para facilitar el toque con una sola mano; a continuación, la sección **Soluciones y Características** transforma la grilla de escritorio en un apilamiento lineal de cuatro tarjetas de funcionalidades (monitoreo satelital NDVI, costos por lote, certificación de calidad y prescripciones agronómicas), cada una con su barra decorativa superior, icono de módulo, título, párrafo descriptivo y una tarjeta inferior de impacto cuantificable orientada al valor en campo.
+Se diseñó una columna de tres tarjetas informativas y una cuadrícula inferior de cuatro indicadores distribuidos en dos filas. Esta estructura permite mantener la legibilidad y el orden de la información.
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-help.png)
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-solutions.png)
+![wireframes-problemSection.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-problemSection.png)
 
-**Video and Plans**
+**Solution **
 
-En la vista móvil (**Mobile Web Browser**) de los bloques de demostración y monetización, la interfaz se compacta en una sola columna vertical: en la parte superior, la sección **Conoce SumaqAgro en acción** (*About-the-Product*) enmarca el contenedor del reproductor de video demostrativo centrado sobre un bloque de fondo verde oscuro (#233413) que incluye el botón de reproducción (*Play*) para evidenciar el funcionamiento en campo; inmediatamente después, la sección **Planes** (*Pricing*) sitúa el encabezado de sección, el texto descriptivo y un conmutador de facturación mensual/anual (*switch toggle*), dando paso al apilamiento secuencial de las tres tarjetas de suscripción (*Plan Semilla*, *Plan Cooperativa Pro* y *Plan Asesor Técnico*), donde cada una presenta su nombre de plan, tarifa destacada en Soles, resumen de características y su botón de llamado a la acción (*CTA*) en ancho completo al pie para una pulsación táctil accesible con una sola mano.
+Se planteó una columna de cuatro tarjetas con espacios para los elementos descriptivos y objetivos. En la parte superior se ubicaron botones de filtrado que pueden distribuirse en más de una fila.
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-video.png)
+![wireframes-Solution.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-Solution.png)
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-plans.png)
+**How It Works**
 
-**Impact, Testimonials and Footer**
+Se diseñó una estructura vertical con tres pasos, un botón de acción y un espacio inferior para la captura de la plataforma. Se mantuvieron los indicadores numerados para representar la secuencia del proceso.
 
-En la vista móvil (**Mobile Web Browser**) del cierre de la página, los componentes se reorganizan en una secuencia vertical de cuatro bloques lineales: en la parte superior, la sección **Impacto** apila las tres tarjetas de métricas agrarias (*333k+ Has. de papa*, *223k+ Familias cafeteras* y *>40% Sin cobertura técnica*); inmediatamente después, el bloque de testimonios (*«Lo que dicen nuestros usuarios»*) presenta de forma vertical las dos tarjetas de validación social con el avatar, nombre, rol y cita de cada usuario; a continuación, el banner final de conversión (*Bottom CTA*) condensa el titular, el texto de apoyo y el botón de acción *«Registrarse gratis»* adaptado a pantalla completa para facilitar la pulsación táctil con una sola mano; finalmente, el pie de página (*Footer*) sobre fondo oscuro (#031416) apila el isotipo de la marca, la descripción institucional y una botonera de enlaces sociales, rematando con tres columnas colapsadas verticalmente (*Products*, *Quick Links* y *Support*) que distribuyen el acceso a los recursos y enlaces ético-legales del sistema.
+![wireframes-howItWorks.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-howItWorks.png)
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-impact.png)
+**Product Demo**
 
-![wireframe-testimonials-impact-footer](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframe-mobile-testimonials-and-footer.png)
+Se diseñó una composición centrada con título, descripción y un contenedor horizontal para el video. Se reservó un espacio central para el botón de reproducción.
+
+![wireframes-ProductDemo.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-ProductDemo.png)
+
+**Target Audience/Community**
+
+Se planteó una estructura con un selector de perfiles en la parte superior y una tarjeta vertical que contiene la ilustración, el título y la información correspondiente al usuario seleccionado.
+
+![wireframes-TargetAudience.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-TargetAudience.png)
+
+**Pricing Section**
+
+Se diseñó una distribución de una sola columna para las tarjetas de precios. Cada plan contiene un espacio para el nombre, precio, características y botón de acción, destacando visualmente el plan recomendado.
+
+![wireframes-PricingSection.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-PricingSection.png)
+
+**Impact and Testimonials**
+
+Se planteó una cuadrícula de cuatro tarjetas estadísticas distribuidas en dos filas, con espacios para cifras destacadas y descripciones breves.
+Se diseñó un carrusel de testimonios que permite mostrar una tarjeta principal por vez. Se reservaron espacios para la valoración, el comentario y la identificación del usuario, además de controles para cambiar de testimonio.
+
+![wireframes-ImpactandTestimonials.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-ImpactandTestimonials.png)
+
+**About Us**
+
+Se planteó una composición vertical con un bloque introductorio, dos tarjetas informativas y un espacio inferior destinado a una imagen representativa de la plataforma.
+
+![wireframes-aboutUs.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-aboutUs.png)
+
+**Our Team**
+
+Se diseñó una cuadrícula de dos columnas con tarjetas individuales para los integrantes. Cada tarjeta reserva espacios para fotografía, nombre y responsabilidad dentro del proyecto.
+
+![wireframes-OurTeam.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-OurTeam.png)
+
+**Team Video**
+
+Se planteó una tarjeta de una sola columna con información introductoria y un contenedor inferior destinado al video de presentación del equipo.
+
+![wireframes-TeamVideo.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-TeamVideo.png)
+
+**FAQ Section**
+
+Se diseñó una estructura vertical con un encabezado informativo y una lista de preguntas en formato acordeón. Cada elemento dispone de un espacio para la pregunta y otro para mostrar la respuesta al expandirse.
+
+![wireframes-FAQ-Section.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-FAQ-Section.png)
+
+**Final CTA and Footer**
+
+Se planteó una estructura de una columna con el mensaje principal en la parte superior y una tarjeta inferior para seleccionar el perfil, visualizar el plan y acceder al botón de acción.
+Se diseñó un pie de página vertical con un bloque inicial de identidad de marca, espacios para enlaces organizados por categorías y una franja inferior para los derechos de autor y documentos legales.
+
+![wireframes-FinalCTA-Footer.png](assets/img/chapter-IV/landing-page/wireframe/mobile/wireframes-FinalCTA-Footer.png)
 
 ### 4.3.2. Landing Page Mock-up
 El mock-up de la página de aterrizaje de Dymbia plasma la apariencia visual definitiva, integrando la paleta cromática, los estilos tipográficos, el material gráfico y la iconografía finales. De este modo, traslada de forma coherente la identidad visual de SumaqAgro a lo largo de cada uno de los bloques y componentes del sitio.
 
-**Hero — SumaqAgro**
+**Nav y Hero**
 
-Presenta una barra de navegación con el logotipo de la marca, enlaces de sección y botones de acceso junto al selector de idioma. De fondo incorpora una fotografía panorámica de campos agrícolas en hileras bajo un cielo con degradado oscuro. El contenido central destaca el titular "Farm with Insight / Decide with Precision" en blanco y verde, un subtítulo sobre el monitoreo satelital de cultivos y costos, y dos botones de acción: el principal "Explore →" y el secundario "How it works?".
+Se implementó una barra de navegación horizontal con el logotipo de SumaqAgro, enlaces a las secciones Home, Solutions, How it works, Plans, Impact y About us. Incorpora un selector de idiomas inglés y español, además de los accesos Sign in y View plans. Presenta un diseño de bordes redondeados, fondo verde oscuro semitransparente y botones que resaltan las acciones principales.
+Se desarrolló una sección de bienvenida con el mensaje principal “Cultivate with Information. Decide with Precision.”, acompañado de una descripción de los beneficios de la plataforma y dos botones: View plans y Watch the demo. El diseño utiliza un fondo verde oscuro con ilustraciones de montañas, terrenos agrícolas, un agricultor y un satélite que proyecta un haz de luz. Los títulos combinan blanco y verde menta para destacar la propuesta de valor.
 
-![mockup-hero.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-hero.png)
+![mockup-heroandnav.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-heroandnav.png)
 
-**About Us — SumaqAgro**
+**Features Marquee**
 
-Presenta un diseño limpio sobre fondo blanco dividido en dos columnas. A la izquierda, incluye el antetítulo en verde "ABOUT SUMAQAGRO", el encabezado principal "About Us?" y el subtítulo "Democratizing precision agriculture in Peru", acompañados por un párrafo explicativo sobre el uso de imágenes satelitales libres para cerrar la brecha tecnológica en cultivos de papa y café sin sensores costosos. A la derecha, destaca una imagen de un campo con sistema de riego tecnificado y una mano sosteniendo un smartphone que visualiza las métricas y gráficos agronómicos de la plataforma.
+Se incorporó una franja horizontal de color verde oscuro que presenta conceptos relacionados con la plataforma, como monitoreo satelital, papa andina, café de especialidad, costos por parcela y certificación QR. Los elementos aparecen separados por pequeños símbolos decorativos amarillos, creando continuidad visual entre las secciones.
+Se implementó una sección que presenta la plataforma mediante el título “Your plot, seen from space”. A la izquierda se muestra una descripción de sus beneficios y tres características principales. A la derecha aparece una vista del dashboard agrícola con indicadores de vigor, gastos y monitoreo de cultivos. Se incorporaron tarjetas flotantes con valores NDVI y precio de equilibrio, utilizando un fondo verde oscuro y detalles en verde menta.
 
-![mockup-about-us.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-about-us.png)
+![mockup-Marqueeeandplataformoveriew.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-Marqueeeandplataformoveriew.png)
 
-**Who do we help? — SumaqAgro**
+**Problem Section**
 
-Presenta el antetítulo en verde "OUR COMMUNITY", el encabezado principal "Who do we help?" y el mensaje de valor "We work with those who make the country's food security possible". En la zona inferior dispone tres tarjetas blancas con esquinas redondeadas orientadas a cada segmento clave: agricultores independientes, directivos de cooperativas y asesores técnicos. Cada tarjeta integra un ícono representativo, un resumen de enfoque, una fotografía de campo alusiva y el enlace de acción "Join as an advisor →".
+Se desarrolló una sección titulada “Farming by eye costs too much”, que expone tres problemáticas: detección tardía de riesgos climáticos, registro manual de costos y dificultades para demostrar la calidad de las cosechas. Cada problema se presenta en una tarjeta blanca con íconos amarillos, numeración y descripción. En la parte inferior se incluye una franja verde oscuro con estadísticas sobre la agricultura peruana.
 
-![mockup-who-do-we-help.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-who-do-we-help.png)
+![mockup-problemsection.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-problemsection.png)
 
-**Solutions and Features — SumaqAgro**
+**Solution**
 
-Presenta el encabezado "Solutions and Features" acompañado del lema de valor para la toma de decisiones en campo. En una cuadrícula de cuatro tarjetas blancas con acentos verdes, detalla sus módulos clave: monitoreo satelital de vigor y humedad, costeo por lote, certificación digital de cosecha y alertas agronómicas, destacando en cada una sus métricas de impacto operativo y económico.
+Se implementó la sección “Four tools, one platform”, que presenta cuatro soluciones: monitoreo satelital, control de costos, certificación digital de cosechas y alertas agronómicas. Las funcionalidades están organizadas en tarjetas blancas de dos columnas, con íconos verdes, descripciones y recuadros celestes que muestran los objetivos de cada herramienta. También incorpora filtros por tipo de usuario: Everyone, Farmers, Cooperatives y Advisors.
 
-![mockup-solutions-and-features.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-solutions-and-features.png)
+![mockup-sloution.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-sloution.png)
 
-**Product Demo — SumaqAgro**
+**How it works**
 
-Presenta un fondo verde corporativo que enmarca el antetítulo "PRODUCT DEMO", el encabezado central "See SumaqAgro in action" y el subtítulo "Demo video". En la zona inferior destaca un reproductor de video de esquinas redondeadas sobre fondo gris claro con un botón central de reproducción (play) en verde brillante para visualizar la demostración interactiva de la plataforma.
+Se desarrolló una sección que explica el funcionamiento de SumaqAgro en tres pasos: registrar una parcela, obtener un diagnóstico satelital y tomar mejores decisiones agrícolas. Los pasos aparecen numerados mediante círculos verdes conectados verticalmente. A la derecha se presenta una captura del módulo Crop Health con un mapa satelital y datos de monitoreo. Incluye un botón para consultar los planes.
 
-![mockup-product-demo.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-product-demo.png)
+![mockup-howitworks.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-howitworks.png)
 
-**Plans — SumaqAgro**
+**Product demo**
 
-Presenta el titular "Choose the plan that fits your needs" sobre el antetítulo "PLANS" y un conmutador de facturación mensual o anual con descuento. En la zona inferior dispone tres tarjetas de suscripción adaptadas a cada perfil: Seed Plan (gratuito, para 1 parcela con NDVI básico y registro de labores), Pro Cooperative (S/189/mes, destacado como el más popular para 50 productores con certificación y exportación de reportes) y Technical Advisor Plan (S/89/mes, para 20 fincas supervisadas con NDVI avanzado y recomendaciones), cada una con su respectivo botón de acción directo.
+Se implementó una sección con fondo verde oscuro y el título “See SumaqAgro in action”. En el centro se muestra una vista previa del video demostrativo de la plataforma, acompañada de un botón circular verde con el ícono de reproducción. El contenedor presenta bordes redondeados y ocupa una parte destacada de la sección.
 
-![mockup-plans.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-plans.png)
+![mockup-productdemo.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-productdemo.png)
 
-**Impact — SumaqAgro**
+**Community**
 
-Presenta el antetítulo en verde "REAL RESULTS", el título principal "Impact" y una breve descripción sobre las métricas que respaldan el compromiso de la plataforma con la pequeña agricultura. A la derecha, distribuye tres tarjetas métricas blancas con íconos de usuario y barras de acento en verde: más de 333 mil hectáreas de papa, más de 223 mil familias cafetaleras y más del 40 % de reducción en la falta de cobertura técnica.
+Se desarrolló la sección “Who do we help?”, que presenta tres perfiles de usuarios: agricultores independientes, cooperativas y asociaciones, y asesores técnicos. Se incorporó un selector horizontal para cambiar de perfil y un panel ilustrado que muestra al agricultor con su teléfono en un entorno rural. El diseño utiliza tonos verdes suaves, ilustraciones vectoriales y textos adaptados al público seleccionado.
 
-![mockup-impact.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-impact.png)
+![mockup-commubity.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-commubity.png)
 
-**Testimonials — SumaqAgro**
+**Pricing Section**
 
-Presenta el bloque "What our users say?" con dos tarjetas de testimonios de cinco estrellas correspondientes a productores de papa y café. Cada testimonio incorpora la experiencia y valoración de los usuarios sobre el uso de SumaqAgro para mejorar la gestión y el monitoreo de sus cultivos.
+Se implementó una sección de planes que presenta Seed Plan, Cooperativa Pro y Technical Advisor Plan, con precios visibles de S/49, S/189 y S/89 mensuales, respectivamente. Incluye un selector de facturación mensual o anual, listas de beneficios y botones de selección. El plan Cooperativa Pro se destaca mediante un fondo verde oscuro y una etiqueta de recomendación.
 
-![mockup-what-our-users-say.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-what-our-users-say.png)
+![mockup-pricingsection.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-pricingsection.png)
 
-**Our Team — SumaqAgro**
+**Impact / Statistics and Testimonials**
 
-Presenta un encabezado con el antetítulo en verde "THE PEOPLE BEHIND THE TECHNOLOGY", el título principal "Our Team" y una breve descripción sobre el compromiso de los integrantes con la agricultura de precisión en el Perú. En la parte inferior se organiza una cuadrícula horizontal de tarjetas con bordes redondeados sobre fondo blanco, mostrando las fotografías formales y los nombres completos de los cinco miembros del equipo de desarrollo: Benjamin Solorzano Sullca, Jose Carlos Vargas Enriquez, Drago Derick Duarte Ruffner, Yamil Jared Tejada Pumacayo y Miguel Sanca Condori.
+Se desarrolló la sección “The impact we are working for”, que presenta cuatro indicadores relacionados con los objetivos de SumaqAgro: reducir en 25 % las pérdidas por heladas y sequías, disminuir en 50 % el tiempo de consolidación de registros, aumentar en 40 % las hectáreas supervisadas y evitar la necesidad de instalar sensores en el campo. Las cifras aparecen en tarjetas celestes con tipografía verde oscuro de gran tamaño.
+Se incorporó la sección “What our users say”, con tres tarjetas de testimonios atribuidos a un agricultor, una representante de una cooperativa cafetalera y un asesor agrónomo. Cada tarjeta incluye cinco estrellas amarillas, un comentario, una imagen de perfil, el nombre y el rol del usuario. Se emplearon fondos blancos, bordes suaves y una distribución horizontal.
 
-![mockup-our-team.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-our-team.png)
+![mockup-impactandtestimonials.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-impactandtestimonials.png)
 
-**Video About the Team — SumaqAgro**
+**About us**
 
-Presenta un encabezado con el antetítulo en verde "Video About the Team", el título principal "Video About the Team" y una breve descripción sobre la presentación de los integrantes, sus roles y las responsabilidades asumidas durante el desarrollo de SumaqAgro. En la parte inferior se muestra un área de reproducción con bordes redondeados y un botón central para iniciar el video de presentación del equipo.
+Se desarrolló una sección institucional con el título “Democratizing precision agriculture in Peru”. Presenta una descripción de SumaqAgro como iniciativa de Dymbia y dos tarjetas que explican su misión y visión. A la derecha se muestra una imagen de un terreno agrícola con un teléfono que representa el monitoreo tecnológico. Se utilizaron fondos claros y detalles verdes para mantener la identidad visual.
 
-![mockup-video-about-the-team.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-video-about-the-team.png)
+![mockup-aboutus.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-aboutus.png)
 
-**Registration — SumaqAgro**
+**Our Team**
 
-Presenta una franja de color verde corporativo orientada a incentivar el registro de nuevos usuarios. El bloque incorpora un mensaje de invitación y el botón principal "Sign up for free", facilitando el acceso directo a la plataforma desde la página de aterrizaje.
+Se implementó la sección “Our team”, que presenta a los cinco integrantes de Dymbia mediante tarjetas individuales. Cada tarjeta contiene una fotografía, nombre y rol dentro del proyecto. El diseño utiliza fondo blanco, bordes redondeados, una distribución horizontal y detalles decorativos verdes.
 
-![mockup-registration.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-registration.png)
+![mockup-ourteam.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-ourteam.png)
 
-**Footer — SumaqAgro**
+**Team video**
 
-Presenta un pie de página sobre fondo oscuro que agrupa el logotipo de SumaqAgro, enlaces a redes sociales y diferentes columnas de navegación organizadas en las categorías "Products", "Quick Links" y "Support". Finalmente, incorpora los enlaces correspondientes a las políticas legales de privacidad y términos de servicio.
+Se incorporó una sección denominada “Meet Dymbia”, destinada a presentar al equipo y su participación en el desarrollo de SumaqAgro. La composición contiene un título y una descripción a la izquierda, mientras que a la derecha aparece una imagen agrícola con la etiqueta “Video coming soon”. El contenido se encuentra dentro de un contenedor blanco con bordes redondeados y sombras suaves.
 
-![mockup-footer.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-footer.png)
+![mockup-teamvideo.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-teamvideo.png)
 
+**FAQ section**
+
+Se desarrolló una sección de preguntas frecuentes titulada “Before you start”. Incluye consultas sobre sensores, conectividad, cultivos compatibles, actualización satelital, planes y privacidad de los datos. Las preguntas se presentan mediante un acordeón interactivo que permite expandir las respuestas. El diseño utiliza tarjetas blancas, bordes redondeados e íconos verdes para indicar la apertura y cierre.
+
+![mockup-faqsection.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-faqsection.png)
+
+**Final CTA and footer**
+
+Se implementó una sección final con el mensaje “Start making precise decisions today”. A la derecha se presenta un formulario visual para seleccionar el perfil Farmer, Cooperative o Advisor, mostrando el plan correspondiente y un botón de selección. El diseño utiliza un fondo degradado verde, tarjetas semitransparentes y botones verde menta para destacar la acción principal.
+Se desarrolló un pie de página con fondo verde oscuro que incluye el logotipo de SumaqAgro, una breve descripción de la plataforma y accesos a redes sociales y contacto. También presenta tres columnas de enlaces: Product, Company y Support. En la parte inferior se muestran los derechos de autor de Dymbia y los enlaces a los términos de servicio, política de privacidad y política de cookies.
+
+![mockup-ffinalctaandfooter.png](assets/img/chapter-IV/landing-page/mock-up/desktop/mockup-ffinalctaandfooter.png)
 ## 4.4. Web Applications UX/UI Design
 
 Esta sección presenta y sustenta la arquitectura de interacción y el diseño visual de la plataforma SaaS de SumaqAgro, desarrollada por la startup Dymbia.
@@ -1488,61 +1612,66 @@ La orquestación entre los contextos delimitados se rige por políticas eventual
 
 ### 4.6.2. Software Architecture Context Diagram
 
-En esta sección se presenta el Diagrama de Contexto del Sistema (Nivel 1 del modelo C4), el cual delimita las fronteras operativas y de software de la plataforma **SumaqAgro**, ubicándola como la solución central del ecosistema. A través de esta vista de alto nivel, se establecen los canales de comunicación y flujos de información que mantiene el sistema tanto con los distintos perfiles de usuario identificados en la investigación como con los servicios externos de terceros necesarios para la operación agrícola. Siguiendo los lineamientos de arquitectura y el enfoque *Diagram-as-Code* exigido para el proyecto, el modelado se desarrolló mediante la herramienta **Structurizr** a través de su especificación formal en Structurizr DSL.
+En este apartado se presenta el Diagrama de Contexto del Sistema, correspondiente al nivel 1 del modelo C4. Este diagrama delimita el alcance de SumaqAgro y representa sus relaciones con los perfiles de usuario y los sistemas externos previstos para su operación.
+
+SumaqAgro se ubica como el sistema central del ecosistema y concentra las funcionalidades de monitoreo agrícola, registro de costos operativos y gestión de la trazabilidad y certificación de calidad de los lotes de café de especialidad y papa andina.
+
+Siguiendo el enfoque Diagram-as-Code, el modelo se define mediante Structurizr DSL. Esta vista presenta las responsabilidades generales y las interacciones del sistema. La aplicación web con Vue 3 y los servicios de backend con .NET y C# se detallarán en el diagrama de contenedores, correspondiente al nivel 2 del modelo C4.
 
 **Herramienta utilizada:** Structurizr (*Diagrams as Code*, mediante Structurizr DSL).
 
-![C4 Model - Diagrama de Contexto del Sistema (Nivel 1)](assets/img/chapter-IV/c4/c4-system-context-diagram.png)
+![c4-system-context-diagram.png](assets/img/c4/c4-system-context-diagram.png)
 
 #### Explicación del Diagrama de Contexto
 
-El diagrama sitúa en el centro a **SumaqAgro Platform**, plataforma web distribuida orientada a la agricultura de precisión, el cálculo de costos operativos de campo y la certificación de calidad para las cadenas de café de especialidad y papa andina. A su alrededor se articulan las siguientes interacciones:
+El diagrama sitúa en el centro a SumaqAgro Platform, plataforma web que permite gestionar parcelas, consultar indicadores de vegetación, registrar costos de producción y administrar información de calidad y trazabilidad de las cosechas.
+
+A su alrededor se representan los siguientes actores y sistemas externos.
 
 ##### 1. Actores y Usuarios del Dominio
-* **Agricultural Producer (Productor Agrícola):** Agricultor que accede mediante navegadores web o dispositivos móviles para registrar la delimitación geográfica de sus parcelas, monitorear el vigor foliar satelital (NDVI/NDWI) y registrar sus compras de insumos, jornales y fletes en la bitácora de costos.
-* **Cooperative Manager (Directivo de Cooperativa):** Usuario administrativo que utiliza la plataforma desde terminales de escritorio para auditar el volumen de acopio de los socios, monitorear los balances financieros por hectárea y aprobar formalmente la emisión de los certificados de calidad de cosecha.
-* **Technical Field Advisor (Asesor Técnico de Campo):** Ingeniero agrónomo que hace seguimiento a las alertas satelitales tempranas de estrés hídrico o plagas para priorizar sus visitas presenciales en parcelas críticas, emitiendo recetas agronómicas y dosis correctivas desde la aplicación.
-* **Visitor (Visitante):** Persona que no necesita una cuenta. Consulta la landing page para conocer la propuesta de valor y los planes, o escanea el código QR de un saco o lote para verificar en línea su procedencia, su variedad y su puntaje de calidad certificado.
+* **Agricultural Producer (Productor Agrícola):** Agricultor que utiliza la plataforma mediante un navegador web, desde un dispositivo móvil o una computadora, para registrar sus parcelas, consultar indicadores de vegetación NDVI y NDWI y registrar gastos de insumos, jornales y transporte.
+* **Cooperative Manager (Directivo de Cooperativa):** Usuario administrativo que supervisa el acopio de los socios, consulta los costos y resultados económicos por parcela y aprueba la emisión de certificados de calidad conforme al proceso definido por la cooperativa.
+* **Technical Field Advisor (Asesor Técnico de Campo):** Profesional agrónomo que consulta indicadores y alertas sobre posibles condiciones de estrés del cultivo, prioriza visitas de campo y registra recomendaciones agronómicas. Las alertas apoyan la evaluación técnica y requieren interpretación y verificación en campo.
+* **Visitor (Visitante):** Usuario que consulta, sin iniciar sesión, la información pública de un lote mediante el código QR asociado. Puede verificar la procedencia registrada, la variedad y el certificado de calidad disponible, de acuerdo con los datos publicados por la plataforma.
 
 ##### 2. Sistemas Externos e Integraciones
-* **AgroMonitoring API:** Servicio de OpenWeather que recibe el polígono de cada parcela y entrega, mediante HTTPS/JSON, las imágenes satelitales de Sentinel-2 y Landsat-8, los índices NDVI y NDWI y el pronóstico del clima. Con esta información el sistema calcula el vigor foliar, detecta estrés hídrico y anticipa heladas sin depender de sensores instalados en campo.
-* **Twilio SMS / WhatsApp Gateway:** Pasarela de mensajería externa utilizada por SumaqAgro para remitir notificaciones prioritarias y alertas agroclimáticas urgentes a productores ubicados en zonas rurales con baja cobertura móvil de datos.
-* **Niubiz Payment Gateway:** Pasarela de procesamiento de pagos electrónicos integrada mediante API REST (HTTPS/JSON) para la gestión y cobro transaccional de los planes de suscripción de cooperativas agrarias y asesores técnicos.
-* **Brevo Email Service:** Servicio de correo transaccional que SumaqAgro usa, mediante SMTP o HTTPS, para enviar el enlace de recuperación de contraseña y la invitación que recibe un agrónomo cuando una cooperativa lo agrega a su equipo.
+* **Sentinel-2 Imagery Service (ESA/Copernicus):** Servicio externo de acceso a imágenes multiespectrales Sentinel-2. SumaqAgro obtiene las imágenes necesarias para calcular los índices NDVI y NDWI y apoyar el seguimiento de las parcelas. El proveedor y el mecanismo de acceso se precisarán durante la implementación.
+* **SENAMHI Weather Service:** Fuente externa de información meteorológica utilizada para complementar el monitoreo agrícola y generar alertas ante condiciones que puedan afectar los cultivos, como heladas o periodos de déficit hídrico. La integración dependerá de los mecanismos de acceso disponibles.
+* **Twilio Messaging Gateway:** Servicio externo de mensajería utilizado para enviar notificaciones y alertas mediante SMS o WhatsApp, según el canal habilitado y la conectividad del destinatario.
+* **Payment Gateway (Stripe / Niubiz):** Proveedor externo encargado de procesar los pagos de los planes de suscripción. La selección del proveedor y las condiciones de integración se definirán durante la implementación.
+* **MIDAGRI Producer Registry (PPA):** Sistema externo previsto para contrastar información de inscripción de los productores agrarios, sujeto a la disponibilidad y autorización de acceso. Esta consulta no se considera una acreditación de propiedad ni una validación catastral del predio.
 
 ### 4.6.3. Software Architecture Container Diagrams
 
-En esta sección se presenta y describe el Diagrama de Contenedores (Nivel 2 del modelo C4) de la plataforma **SumaqAgro**, el cual profundiza en la frontera del sistema para exponer su arquitectura técnica distribuida. Este diagrama muestra las unidades de despliegue y ejecución independientes que componen la solución, la distribución de responsabilidades entre ellas, las principales decisiones de tecnología adoptadas y los protocolos de red empleados para la comunicación interna y con sistemas externos. El modelado fue estructurado y generado formalmente mediante la especificación DSL de la herramienta **Structurizr**.
+En esta sección se presenta y describe el Diagrama de Contenedores (Nivel 2 del modelo C4) de la plataforma SumaqAgro, el cual profundiza en la frontera del sistema para exponer su arquitectura técnica distribuida. Este diagrama muestra las unidades de despliegue y ejecución independientes que componen la solución, la distribución de responsabilidades entre ellas, las principales decisiones tecnológicas adoptadas y los protocolos empleados para la comunicación interna y con sistemas externos. El modelado se define mediante la especificación DSL de la herramienta Structurizr.
 
 **Herramienta utilizada:** Structurizr (*Diagrams as Code*, mediante Structurizr DSL).
 
-![C4 Model - Diagrama de Contenedores (Nivel 2)](assets/img/chapter-IV/c4/c4-container-diagram.png)
+![SumaqAgroContainers-backend.png](assets/img/c4/SumaqAgroContainers-backend.png)
 
 #### Asignación de Responsabilidades y Decisiones Tecnológicas
 
-La topología de ejecución del sistema está conformada por cinco contenedores:
-
-* **Static Content Container:**
-  Carpeta con los archivos compilados de la Web Application (HTML, CSS, JavaScript e imágenes), publicada en Cloudflare Pages. Desde aquí el navegador del productor, del directivo y del agrónomo descarga la aplicación Vue. El visitante también la usa para abrir la vista pública del certificado al escanear un código QR.
+La topología de ejecución del sistema está conformada por cuatro contenedores independientes:
 
 * **Landing Page Container:**
-  Sitio web público estático desarrollado con HTML5, CSS3 y JavaScript vanilla, alojado en un servicio cloud de distribución estática. Diseñado con una carga ligera para garantizar un rendimiento óptimo en terminales móviles bajo redes rurales 3G/4G. Su propósito es exponer la propuesta de valor del producto, presentar los planes de suscripción comercial (Semilla, Cooperativa Pro y Asesor Técnico) y llevar al visitante al registro de la Web Application. No se comunica con el backend: es un sitio estático.
+Sitio web público desarrollado con HTML5, CSS3 y Vue 3, alojado en un servicio cloud de distribución estática. Diseñado con una carga ligera para favorecer su rendimiento en dispositivos móviles bajo redes rurales 3G/4G. Su propósito es exponer la propuesta de valor del producto, presentar los planes de suscripción comercial (Semilla, Cooperativa Pro y Asesor Técnico) y canalizar prospectos comerciales hacia el backend mediante llamadas asíncronas HTTPS/JSON.
 
 * **Web Application Container (Single Page Application - SPA):**
-  Aplicación web cliente desarrollada sobre el framework Vue 3, utilizando TypeScript y la biblioteca Vue Material. Provee una interfaz reactiva y accesible tanto para productores de campo como para administradores de cooperativas e ingenieros agrónomos. Integra capacidades de almacenamiento local mediante *Service Workers* e *IndexedDB*, lo que permite soportar operaciones en modo desconectado (*offline-first*) para el registro de gastos de campo y de reportes de plagas en predios rurales sin cobertura de datos móvil, sincronizando la información automáticamente contra la API REST al recuperar la conexión a internet. Asimismo, aloja el visor público interactivo que permite auditar las credenciales y trazabilidad de los lotes cuando un visitante escanea el código QR impreso.
+  Aplicación web cliente desarrollada con Vue 3, utilizando TypeScript y PrimeVue. Provee una interfaz reactiva y accesible para productores de campo, administradores de cooperativas e ingenieros agrónomos. Integra capacidades de operación sin conexión mediante Service Workers e IndexedDB, permitiendo el registro local de jornales, compras e insumos en predios rurales sin cobertura de datos móviles. La información pendiente se sincroniza con la API REST cuando se recupera la conexión a internet. Asimismo, aloja el visor público interactivo que permite consultar las credenciales y la trazabilidad de los lotes cuando un comprador escanea el código QR impreso.
 
 * **RESTful API Backend Container:**
-  Servidor de aplicaciones distribuido implementado en Java 21 utilizando el framework Spring Boot 3.x (Spring MVC, Spring Security y Spring Data JPA). Representa el núcleo transaccional del sistema y aloja la lógica de negocio basada en DDD para los 6 Bounded Contexts identificados y el Shared Kernel que todos reutilizan. Sus responsabilidades abarcan la emisión y validación de tokens criptográficos JWT para el control de accesos, el cómputo de las matrices financieras de costo unitario y punto de equilibrio rural, el procesamiento de las imágenes e índices satelitales y la exposición de endpoints documentados formalmente bajo OpenAPI 3.0 (Swagger UI).
+  Servidor de aplicaciones implementado en C# sobre .NET, utilizando ASP.NET Core y Entity Framework Core para el acceso y la persistencia de datos. Representa el núcleo transaccional del sistema y aloja la lógica de negocio basada en DDD para los 7 Bounded Contexts identificados. Sus responsabilidades abarcan la emisión y validación de tokens JWT para el control de acceso, el cálculo de costos unitarios y puntos de equilibrio rural, el procesamiento desacoplado de reflectancia satelital y la exposición de endpoints documentados mediante OpenAPI 3.0 y Swagger UI.
 
-* **Database Container:**
-  Base de datos relacional MySQL 8.0 (`sumaqagro_db`). Guarda en una sola base las tablas de los 6 bounded contexts, con transacciones ACID y claves primarias y foráneas que mantienen la integridad referencial. Los vértices del polígono de cada parcela se guardan como pares de latitud y longitud.
+* **Database Engine Container:**
+  Motor relacional MySQL 8.0 configurado como la unidad de persistencia de datos. Almacena las tablas normalizadas del dominio, utilizando el motor InnoDB para asegurar transacciones ACID e integridad referencial mediante claves foráneas. Asimismo, utiliza tipos de datos espaciales para almacenar las geometrías perimetrales de las parcelas agrícolas.
 
 #### Protocolos de Interoperabilidad y Comunicación
 
-* **Acceso de Usuarios:** Los usuarios entran por HTTPS. El visitante navega la *Landing Page*, y desde ella pasa al registro de la *Web Application*. Los usuarios registrados cargan la *Web Application* desde el *Static Content*.
-* **Cliente Web a Backend:** La Web Application llama a los endpoints REST del backend con JSON sobre HTTPS, enviando el token Bearer JWT en cada petición. Por este mismo canal sincroniza los datos guardados sin conexión.
-* **Backend a Base de Datos:** El backend lee y escribe los agregados mediante el controlador JDBC de MySQL, sobre el puerto 3306.
-* **Backend a Servicios Externos:** El backend se comunica con AgroMonitoring API, Twilio y Niubiz con JSON sobre HTTPS. Niubiz, además, confirma cada pago llamando a un webhook del backend. Los correos de recuperación de contraseña e invitación de agrónomos se envían a Brevo mediante SMTP.
+* **Acceso de Usuarios:** Los usuarios finales interactúan con los contenedores web (Landing Page y Web Application) mediante conexiones seguras sobre HTTPS.
+* **Cliente Web a Backend:** La Single Page Application consume los endpoints de negocio y sincroniza los registros almacenados localmente mediante solicitudes REST sobre HTTPS/JSON. Las operaciones protegidas utilizan tokens de autorización Bearer JWT, mientras que los endpoints destinados a la consulta pública por QR permiten el acceso sin iniciar sesión.
+* **Landing Page a Backend:** El sitio público envía los formularios de contacto y los datos de prospectos comerciales a la API REST mediante llamadas asíncronas sobre HTTPS, utilizando JSON como formato de intercambio.
+* **Backend a Base de Datos:**  Las operaciones transaccionales y de persistencia de los agregados se ejecutan mediante Entity Framework Core y un proveedor compatible con MySQL para .NET, utilizando el protocolo de MySQL sobre TCP, en el puerto 3306, con cifrado TLS para proteger la conexión.
+* **Backend a Servicios Externos:** Las consultas salientes hacia Sentinel-2 API, SENAMHI Weather API, Twilio Gateway, Stripe/Niubiz y MIDAGRI PPA se realizan mediante clientes HTTP desacoplados de .NET, utilizando conexiones seguras HTTPS. Se emplea JSON para los intercambios estructurados y el formato correspondiente para la descarga de imágenes satelitales.
 
 ### 4.6.4. Software Architecture Components Diagrams
 
@@ -1552,66 +1681,72 @@ En esta sección se presentan y explican los Diagramas de Componentes (Nivel 3 d
 
 #### 4.6.4.1. Landing Page Container Components Diagram
 
-El contenedor de la Landing Page descompone la estructura del sitio web estático público, diseñado con una arquitectura liviana orientada a maximizar la velocidad de carga y la tasa de conversión en dispositivos móviles bajo redes rurales 3G/4G.
+El diagrama de componentes del contenedor Landing Page descompone la estructura del sitio web público de SumaqAgro, desarrollado con Vue 3, TypeScript, HTML5 y CSS3. Su arquitectura liviana está orientada a maximizar la velocidad de carga y facilitar la conversión de visitantes en dispositivos móviles bajo redes rurales 3G/4G.
 
-![C4 Model - Diagrama de Componentes de la Landing Page (Nivel 3)](assets/img/chapter-IV/c4/c4-components-landing-diagram.png)
+![SumaqAgroContainers-backend.png](assets/img/c4/SumaqAgroContainers-backend.png)
 
 ##### Desglose de Componentes de la Landing Page:
-* **`Navigation & Hero Component`:** Bloque estructural desarrollado con HTML5 semántico y maquetado responsivo mediante CSS3 Flexbox. Administra la barra de navegación superior, la identidad visual corporativa de SumaqAgro, la propuesta de valor agroclimática orientada a café de especialidad y papa andina, y el llamado a la acción (CTA) que lleva al visitante al registro de la Web Application.
-* **`Pricing & Plans Catalog Component`:** Componente visual maquetado mediante CSS3 Grid. Presenta la matriz comparativa de los planes de suscripción comercial SaaS: el plan *Semilla* (gratuito para pequeños productores familiares), el plan *Cooperativa Pro* (para gremios con monitoreo consolidado de socios) y el plan *Asesor Técnico* (para agrónomos independientes con carteras de clientes).
+* **`Navigation & Hero Component`:** Componente de presentación desarrollado con Vue 3, HTML5 semántico y maquetación responsiva mediante CSS3 Flexbox. Administra la barra de navegación superior, la identidad visual corporativa de SumaqAgro, la propuesta de valor agroclimática orientada a café de especialidad y papa andina, y el llamado a la acción (CTA) que conduce al formulario de registro y demostración.
+* **`Pricing & Plans Catalog Component`:** Componente visual desarrollado con Vue 3 y maquetado mediante CSS3 Grid. Presenta la matriz comparativa de los planes de suscripción comercial SaaS: el plan Semilla (gratuito para pequeños productores familiares), el plan Cooperativa Pro (para gremios con monitoreo consolidado de socios) y el plan Asesor Técnico (para agrónomos independientes con carteras de clientes).
+* **`Lead Capture Form Component`:**  Módulo interactivo implementado con Vue 3 y TypeScript. Gestiona de forma reactiva los datos ingresados para solicitudes de contacto y demostraciones técnicas. Ejecuta validaciones sintácticas del lado del cliente, como formato de correo electrónico, longitud del número celular y campos obligatorios, para prevenir envíos incompletos. Los datos validados se transfieren al componente de comunicación HTTP.
+* **`Landing HTTP Client:`:** Componente de comunicación asíncrona implementado en TypeScript, utilizando la API nativa Fetch del navegador. Serializa los datos del formulario en una carga útil JSON y envía una petición POST sobre HTTPS hacia el endpoint /api/v1/users del backend implementado en C# con ASP.NET Core sobre .NET. Gestiona las respuestas y comunica al formulario los estados de envío, confirmación o error ante incidencias de conectividad.
 
 #### 4.6.4.2. Web Application Container Components Diagram (Vue 3 **SPA**)
 
-La Web Application, construida con **Vue 3**, se organiza por bounded context siguiendo DDD. Cada componente del diagrama es una carpeta de Vue dentro de `src/app` y todas tienen las mismas capas: `domain/model` (entidades), `application` (store con el estado), `infrastructure` (llamadas a la API) y `presentation` (vistas). Además existe una carpeta `shared` con lo que usan todos los contextos.
+El contenedor de la aplicación cliente SPA, implementado con Vue 3, TypeScript y PrimeVue, descompone sus módulos para brindar una experiencia de usuario interactiva y garantizar la persistencia local de datos en campo mediante capacidades desconectadas (offline-first).
 
-![C4 Model - Diagrama de Componentes de la Web Application (Nivel 3)](assets/img/chapter-IV/c4/c4-components-webapp-diagram.png)
+![WebApplicationComponents-backend.png](assets/img/c4/WebApplicationComponents-backend.png)
 
 ##### Desglose de Componentes de la Web Application:
-* **`IAM Component`:** Formularios de registro, inicio de sesión y recuperación de contraseña. Contiene el *guard* que protege las rutas privadas según la sesión y el rol, y el *interceptor* que agrega el token JWT a cada petición.
-* **`Profiles Component`:** Configuración del perfil, registro de la cooperativa, padrón de socios y asignación de agrónomos a las parcelas.
-* **`Subscriptions and Payments Component`:** Catálogo de planes, pago (*checkout*) e historial de cobros.
-* **`Field Management Component`:** Registro de parcelas con el mapa para marcar el polígono GPS (Leaflet.js), campañas agrícolas y bitácora de costos, donde los gastos se pueden registrar sin conexión.
-* **`Crop Health Component`:** Mapa con los índices NDVI y NDWI (Leaflet.js), alertas agroclimáticas, reportes de plagas, inspecciones y recetas técnicas.
-* **`Harvest Certification Component`:** Lotes de acopio, fichas de catación SCA para café y de calibres MIDAGRI para papa, certificados de calidad y la vista pública que se abre al escanear el código QR.
-* **`Shared Component`:** Lo que usan todos los contextos: el *layout* con el menú, el selector de idioma, las clases base para llamar a la API, la sincronización sin conexión con IndexedDB (Dexie.js) y la caché del Service Worker.
-
-##### Relaciones entre Componentes:
-* **Usuarios:** el productor usa Field Management, Crop Health y Subscriptions and Payments; el directivo usa Profiles y Harvest Certification; el agrónomo usa Crop Health; y el visitante se registra en IAM o verifica un certificado en Harvest Certification. La Landing Page envía al visitante al registro en IAM.
-* **IAM:** los otros cinco componentes revisan la sesión y el rol del usuario con el *guard* de IAM antes de abrir sus rutas. Shared también lee el rol desde IAM para mostrar el menú que le corresponde a cada usuario.
-* **Shared:** todos los componentes usan su *layout* y sus clases base de API. Field Management y Crop Health, además, usan su sincronización sin conexión.
-* **RESTful API:** cada componente llama solo al componente de su mismo bounded context en el backend, con JSON sobre HTTPS.
+* **`Auth & Role Guard`:** Componente de control de navegación implementado mediante guardias de Vue Router, utilizando router.beforeEach y metadatos de ruta. Intercepta la navegación hacia rutas protegidas, comprueba la presencia y expiración del token JWT almacenado en sessionStorage y aplica restricciones de navegación basadas en roles (RBAC) para productores, directivos y agrónomos. La validación criptográfica del token y la autorización de las operaciones se realizan también en el backend ASP.NET Core. Las rutas de consulta pública por QR permanecen accesibles sin iniciar sesión.
+* **`Plot Management View Component`:** Interfaz gráfica desarrollada con Vue 3, PrimeVue y Composition API, utilizando ref, reactive y v-model para gestionar formularios y validaciones. Permite la georreferenciación de predios, la captura interactiva de vértices perimetrales GPS y el registro botánico y fenológico de las campañas agrícolas.
+* **`Vegetation & Alerting View Component`:** Componente analítico que integra Leaflet con Vue 3. Renderiza capas geoespaciales y series temporales de índices de vegetación NDVI y NDWI. Asimismo, presenta el buzón de alertas agroclimáticas y las recetas fitosanitarias emitidas por el asesor técnico.
+* **`Field Cost Ledger View Component`:**  Módulo de captura contable rural desarrollado con Vue 3 y PrimeVue, utilizando formularios con estado reactivo para registrar compras de fertilizantes, jornales diarios y fletes. Estos registros alimentan los paneles de estimación de costos unitarios y punto de equilibrio.
+* **`Harvest & Traceability View Component`:**  Conjunto de vistas desarrollado con Vue 3 y PrimeVue para registrar la calificación física de calibres de tubérculo conforme a la norma técnica MIDAGRI contemplada por el proyecto y los resultados de catación sensorial de café conforme al estándar SCA. Incluye el visor público accesible mediante el escaneo del código QR para consultar los certificados y auditar la procedencia de los lotes.
+* **`Client State & Offline Store`:**  Capa de gestión de estado y almacenamiento transaccional local implementada con Pinia e IndexedDB mediante Dexie.js. Mantiene el estado reactivo compartido y conserva las operaciones efectuadas en parcelas sin señal de red celular. Coordina el envío diferido en lote mediante el cliente REST cuando se recupera la conectividad y el backend está disponible, manteniendo pendientes los registros cuyo envío no se haya confirmado.
+* **`Service Worker Cache Engine`:**  Módulo de Progressive Web App implementado mediante vite-plugin-pwa y Workbox. Almacena en caché los recursos estáticos compilados de la aplicación, incluidos HTML, CSS, archivos de aplicación e iconografía vectorial. Permite cargar la interfaz previamente almacenada sin conexión y consultar los recursos cartográficos disponibles en caché, de acuerdo con la estrategia configurada.
+* **`REST API Client Service`:** Módulo centralizado de comunicación implementado en TypeScript con Axios, reutilizable desde los componentes y los stores de Vue 3. Encapsula las solicitudes HTTPS/JSON hacia el backend implementado en C# con ASP.NET Core sobre .NET. Utiliza interceptores de solicitudes para incorporar el encabezado Authorization: Bearer <JWT> en las operaciones protegidas e interceptores de respuestas para unificar la gestión de errores HTTP y problemas de conectividad. Las consultas públicas por QR no requieren un token de autenticación.
 
 #### 4.6.4.3. RESTful API Backend Container Components Diagram (Spring Boot)
 
-El backend, desarrollado en **Java 21 con Spring Boot 3.x**, también se organiza por bounded context. Cada componente del diagrama es un bounded context y contiene sus propios controllers REST, servicios de Spring y repositorios de Spring Data JPA. El Shared Kernel agrupa lo que todos comparten.
+El contenedor transaccional de backend, desarrollado en C# con ASP.NET Core sobre .NET, implementa una arquitectura en capas desacopladas orientada al dominio (Layered Architecture / DDD). Centraliza las reglas de negocio de los 7 Bounded Contexts y sus respectivos agregados, exponiendo servicios REST para la aplicación cliente desarrollada con Vue 3.
 
-![C4 Model - Diagrama de Componentes del API Backend (Nivel 3)](assets/img/chapter-IV/c4/c4-components-backend-diagram.png)
+![BackendComponents.png](assets/img/c4/BackendComponents.png)
 
-##### Desglose de Componentes del Backend:
-* **`IAM Component`:** Registro, inicio de sesión, emisión del token JWT, roles y recuperación de contraseña.
-* **`Profiles Component`:** Perfiles de usuario, cooperativas, padrón de socios e invitación y asignación de agrónomos a las parcelas.
-* **`Subscriptions and Payments Component`:** Planes (Semilla, Cooperativa Pro y Asesor Técnico), cobros y cupo de parcelas de cada plan.
-* **`Field Management Component`:** Parcelas con su polígono GPS, campañas agrícolas, bitácora de costos y precio de equilibrio. También recibe los gastos registrados sin conexión.
-* **`Crop Health Component`:** Índices NDVI y NDWI, pronóstico del clima, alertas agroclimáticas, reportes de plagas, inspecciones y recetas técnicas.
-* **`Harvest Certification Component`:** Lotes de acopio, calificación de calibres de papa y catación de café, y emisión de certificados de calidad con código QR.
-* **`Shared Kernel Component`:** Clases base, value objects compartidos, manejo de excepciones, configuración de OpenAPI y el envío de notificaciones que usan los demás contextos.
+##### Desglose de Componentes del Backend por Capa Técnica:
 
-##### Relaciones entre Componentes:
-* **Domain events (políticas):**
-  * IAM publica `UserSignedUp` y Subscriptions and Payments asigna el plan Semilla (P1).
-  * Field Management publica `SowingDateRecorded` y Crop Health programa el monitoreo satelital (P4).
-  * Harvest Certification publica `DeliveredBatchWeighed` y Field Management registra el rendimiento real (P10).
-* **Consultas mediante ACL (facades):**
-  * Profiles asigna roles mediante IAM y valida las parcelas en Field Management.
-  * Field Management revisa el cupo de parcelas del plan en Subscriptions and Payments.
-  * Crop Health lee los polígonos de las parcelas en Field Management y busca el agrónomo asignado en Profiles.
-  * Harvest Certification valida los socios de la cooperativa en Profiles y lee el origen de la parcela en Field Management.
-* **Sistemas externos:**
-  * Subscriptions and Payments cobra con Niubiz, y Niubiz confirma cada pago llamando a un webhook.
-  * Field Management registra los polígonos de las parcelas en AgroMonitoring.
-  * Crop Health obtiene de AgroMonitoring las imágenes, los índices y el clima, y envía las alertas por SMS o WhatsApp con Twilio.
-  * IAM envía el correo de recuperación de contraseña y Profiles el de invitación al agrónomo, ambos con Brevo mediante SMTP.
-* **Shared Kernel y base de datos:** todos los componentes usan las clases base y los value objects del Shared Kernel, y leen y escriben en la base de datos MySQL mediante JDBC.
+* **Capa de Controladores REST (Inbound Controllers):**
+  Controladores anotados con `ControllerBase`  identificados mediante los atributos [ApiController] y [Route]. Exponen los endpoints del sistema sobre HTTPS/JSON, reciben las peticiones del cliente Vue 3 y validan los DTOs de entrada mediante Data Annotations, como [Required], [EmailAddress] y [Range]. Delegan la ejecución de los casos de uso en los servicios de aplicación:
+  * `IamController`: Expone `/api/v1/auth` y `/api/v1/users` para registro, inicio de sesión seguro, emisión de JWT y gestión de perfiles institucionales.
+  * `SubscriptionController`: Expone `/api/v1/subscriptions` para consulta de membresías y confirmación transaccional de planes comerciales.
+  * `PlotController`: Expone `/api/v1/plots` para catastro de coordenadas GPS, delimitación perimetral y calendarios de siembra.
+  * `MonitoringController`: Expone `/api/v1/monitoring` para mapas multiespectrales, series NDVI/NDWI y recetas agronómicas.
+  * `CostController`: Expone `/api/v1/finances` para la bitácora financiera, sincronización diferida de asientos y cálculo de punto de equilibrio.
+  * `QualityController`: Expone `/api/v1/harvests` para pesaje de acopio, catación SCA, graduación de calibres y certificados.
+  * `SettlementController`: Expone `/api/v1/settlements` para publicación comercial de lotes y liquidaciones de venta.
+
+* **Capa de Servicios de Aplicación (Domain Application Services):** Clases de C# registradas en el contenedor de inyección de dependencias de ASP.NET Core mediante AddScoped. Orquestan los casos de uso y las transacciones locales, invocan el comportamiento de los agregados para preservar sus invariantes y coordinan el acceso a repositorios y adaptadores salientes:  
+  * `UserAccountService`: Administra el ciclo de vida del agregado `UserAccount`, gestionando el hashing seguro de claves y la asignación de permisos.
+  * `SubscriptionService`: Gobierna el agregado `Subscription`, controlando la vigencia de membresías y cuotas de predios asignados.
+  * `FieldPlotService`: Administra el agregado `FieldPlot`, validando que los polígonos perimetrales no presenten autointersecciones.
+  * `VegetationAnalysisService`: Gestiona el agregado `VegetationAnalysis`, calculando algoritmos de reflectancia sobre bandas satelitales y despachando alertas preventivas de estrés foliar.
+  * `LotFinancialLedgerService`: Orquesta el agregado `LotFinancialLedger`, calculando la sumatoria de egresos operativos para deducir el costo unitario de producción y el precio de equilibrio.
+  * `HarvestBatchService`: Supervisa el agregado `HarvestBatch`, validando umbrales mínimos de calidad sensorial y física antes de autorizar la emisión de acreditaciones.
+  * `CommercialSettlementService`: Gobierna el agregado `CommercialSettlement`, protegiendo que la postura comercial aceptada cubra el margen mínimo de ganancia sobre el costo acumulado.
+
+* **Capa de Adaptadores de Infraestructura (Outbound Adapters):**
+  Componentes de integración implementados en C# e incorporados mediante inyección de dependencias. Los adaptadores de servicios externos utilizan clientes HttpClient administrados mediante IHttpClientFactory, mientras que el generador documental encapsula la creación de archivos PDF y códigos QR:
+  * `StripeClientAdapter`: Consume mediante cliente REST la API de Stripe/Niubiz para la tokenización de cobros y facturación recurrente.
+  * `MidagriClientAdapter`: Consulta el servicio gubernamental del Padrón de Productores Agrarios (PPA) para verificar la titularidad catastral.
+  * `SatelliteClientAdapter`: Descarga baldosas ópticas multiespectrales (Bandas B4, B8 y B8A) desde la API abierta de Sentinel-2 (ESA).
+  * `WeatherClientAdapter`: Consume los pronósticos agroclimáticos y alertas meteorológicas de SENAMHI.
+  * `TwilioNotificationAdapter`: Invoca la API de Twilio para remitir notificaciones prioritarias de emergencia vía SMS y WhatsApp.
+  * `PdfQrGeneratorAdapter`: Compila dinámicamente constancias técnicas en formato PDF y codifica el código QR de validación criptográfica pública.
+
+* **Capa de Persistencia (ASP.NET Core Data Repositories):**
+  Implementaciones de repositorios en C# que cumplen contratos específicos por agregado. Estos contratos pueden compartir una interfaz base IRepository<T> definida por el proyecto. Los repositorios utilizan Entity Framework Core, un DbContext y un proveedor compatible con MySQL para mapear los agregados a las tablas de MySQL 8.0.  
+  La comunicación con la base de datos utiliza el protocolo MySQL sobre TCP, en el puerto 3306, con TLS para proteger la conexión.
+  * `UserAccountRepository`, `SubscriptionRepository`, `FieldPlotRepository`, `VegetationAnalysisRepository`, `CostLedgerRepository`, `HarvestBatchRepository` y `CommercialSettlementRepository`.
 
 ## 4.7. Software Object-Oriented Design
 
