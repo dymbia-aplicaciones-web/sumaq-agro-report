@@ -1050,13 +1050,13 @@ La captura del panel de Firebase Hosting muestra el proyecto `sumaqagro-appweb`,
 
 Se configuró un **Web Service** denominado **`sumaqAgro-fake-api`** en Render, utilizando el entorno de ejecución **Node** y una instancia gratuita.
 
-El servicio se vinculó con el repositorio **`dymbia-opensource/sumaqAgro-appweb`** y la rama **`develop`**. La configuración documentada en el proyecto es la siguiente:
+El servicio se vinculó con el repositorio **`dymbia-aplicaciones-web/sumaq-agro-web-app`** y la rama **`develop`**. La configuración documentada en el proyecto es la siguiente:
 
 | Parámetro | Configuración |
 | :--- | :--- |
 | Tipo de servicio | Web Service |
 | Nombre | `sumaqAgro-fake-api` |
-| Repositorio | `dymbia-opensource/sumaqAgro-appweb` |
+| Repositorio | `dymbia-aplicaciones-web/sumaq-agro-web-app` |
 | Rama | `develop` |
 | Entorno de ejecución | Node |
 | Comando de instalación | `npm install --include=dev` |
@@ -1126,10 +1126,10 @@ En esta sección se especifican los aspectos principales de la reunión de plani
 | Location | Discord / GitHub / Jira Software |
 | Prepared By | Sanca Condori, Miguel |
 | Attendees (to planning meeting) | Vargas Enrique, Jose vargas / Sanca Condori, Miguel / Solorzano Sullca, Benjamin / Tejada Pumacayo, Yamil Jared / Duarte Ruffner, Drago Derick |
-| Sprint 2 Review Summary | Se publicó la primera versión de la Web Application en Angular (`v1.0.0`, y su *patch* `v1.0.1` con el CHANGELOG y la guía de contribución) en Firebase Hosting, conectada a una Fake REST API (`json-server`) desplegada en Render. Asimismo, se publicó la nueva versión de la Landing Page (`v2.0.0` y `v2.0.1`) con las secciones reorganizadas, contenido i18n en español e inglés y la sección del video About-the-Team. Se demostraron los flujos de Crop Health (visor Leaflet con NDVI/NDWI, alertas regionales, reportes de plagas, bandeja, inspecciones y recetas agronómicas) y las vistas iniciales de Field Management, Profiles y Harvest Certification. Quedaron pendientes la preparación de alertas demo por región (TSK-08), la validación integrada del circuito productor–ingeniero (TSK-22) y la consistencia de los datos relacionados (TSK-23). |
+| Sprint 2 Review Summary | Se publicó la primera versión de la Web Application en Vue (`v1.0.0`, y su *patch* `v1.0.1` con el CHANGELOG y la guía de contribución) en Firebase Hosting, conectada a una Fake REST API (`json-server`) desplegada en Render. Asimismo, se publicó la nueva versión de la Landing Page (`v2.0.0` y `v2.0.1`) con las secciones reorganizadas, contenido i18n en español e inglés y la sección del video About-the-Team. Se demostraron los flujos de Crop Health (visor Leaflet con NDVI/NDWI, alertas regionales, reportes de plagas, bandeja, inspecciones y recetas agronómicas) y las vistas iniciales de Field Management, Profiles y Harvest Certification. Quedaron pendientes la preparación de alertas demo por región (TSK-08), la validación integrada del circuito productor–ingeniero (TSK-22) y la consistencia de los datos relacionados (TSK-23). |
 | Sprint 2 Retrospective Summary | El equipo valoró la organización por Bounded Contexts y el uso de GitFlow con Conventional Commits. Como oportunidades de mejora se identificó que la Fake REST API no permite validar reglas de negocio ni seguridad, que los datos demo entre contextos eran inconsistentes y que la integración de ramas se concentró al final del sprint. Se acordó: (1) modelar primero el dominio de cada contexto en el backend antes de exponer endpoints, (2) separar el modelo de dominio de las entidades de persistencia JPA mediante puertos de repositorio, (3) integrar a `develop` cada funcionalidad terminada sin esperar al cierre y (4) asignar a cada nuevo integrante un Bounded Context completo para acelerar su incorporación. |
 | **Sprint Goal & User Stories** | |
-| Sprint 3 Goal | Our focus is on delivering the first deployed version of the SumaqAgro RESTful Web Services, built with Spring Boot, Spring Data JPA and MySQL and documented with OpenAPI/Swagger, and connecting it to a new version of the Angular Web Application. Users will sign up, sign in and sign out with JWT-based authentication, producers will register plots with validated GPS boundaries and open crop campaigns, farmers will report pests and consult regional agroclimatic alerts, users will update their profiles and register cooperatives, and collection centers will register harvest batches, all stored in a real database instead of the fake API. We believe it delivers a secure and persistent foundation for the platform. This will be confirmed when the Web Services v1.0.0 and the Web App v2.0.0 are publicly deployed, every endpoint is documented in Swagger UI, and these flows work end to end. |
+| Sprint 3 Goal | Our focus is on delivering the first deployed version of the SumaqAgro RESTful Web Services, built with Spring Boot, Spring Data JPA and MySQL and documented with OpenAPI/Swagger, and connecting it to a new version of the Vue Web Application. Users will sign up, sign in and sign out with JWT-based authentication, producers will register plots with validated GPS boundaries and open crop campaigns, farmers will report pests and consult regional agroclimatic alerts, users will update their profiles and register cooperatives, and collection centers will register harvest batches, all stored in a real database instead of the fake API. We believe it delivers a secure and persistent foundation for the platform. This will be confirmed when the Web Services v1.0.0 and the Web App v2.0.0 are publicly deployed, every endpoint is documented in Swagger UI, and these flows work end to end. |
 | Sprint 3 Velocity | 111 Story Points |
 | Sum of Story Points | 111 Story Points |
 
@@ -1167,14 +1167,14 @@ A continuación, se detallan las historias de usuario y técnicas comprometidas 
 | Transversal | **US-05** | Demostración del producto mediante video | 2 |
 | **Total** | | | **111** |
 
-simismo, el equipo acordó las versiones que cada producto debe alcanzar al cierre del Sprint 3, aplicando **Semantic Versioning 2.0.0** y publicándolas mediante ramas `release/*` integradas en `main`:
+Asimismo, el equipo acordó las versiones que cada producto debe alcanzar al cierre del Sprint 3, aplicando **Semantic Versioning 2.0.0** y publicándolas mediante ramas `release/*` integradas en `main`:
 
 | Producto | Repositorio | Versión al cierre del Sprint 2 | Versión objetivo del Sprint 3 |
 | :--- | :--- | :---: | :---: |
-| Report | `dymbia-aplicacionbesweb/sumaqAgro-report` | 2.0.0 | 3.0.0 |
-| Landing Page (Website) | `dymbia-aplicacionbesweb/sumaqAgro-landing-page` | 2.0.1 | 3.0.0 |
-| Web Application | `dymbia-aplicacionbesweb/sumaqAgro-appweb` | 1.0.1 | 2.0.0 |
-| RESTful Web Services | `dymbia-aplicacionbesweb/sumaqAgro-backend` | — | 1.0.0 |
+| Report | `dymbia-aplicaciones-web/sumaq-agro-report` | 2.0.0 | 3.0.0 |
+| Landing Page (Website) | `dymbia-aplicaciones-web/sumaq-agro-website` | 2.0.1 | 3.0.0 |
+| Web Application | `dymbia-aplicaciones-web/sumaq-agro-web-app` | 1.0.1 | 2.0.0 |
+| RESTful Web Services | `dymbia-aplicaciones-web/sumaq-agro-platform` | — | 1.0.0 |
 
 #### 5.2.3.2. Aspect Leaders and Collaborators
 
@@ -1515,7 +1515,7 @@ La entrega de AV2 comprende tres productos. Se comprobó el acceso público a la
 ##### Web Application en Firebase Hosting
 
 1. El proyecto `sumaqagro-appweb` está vinculado mediante `.firebaserc`. La compilación con `npm run build` genera el contenido en `dist/sumaqAgro-appweb/browser`, directorio indicado en `firebase.json`.
-2. La publicación usa `firebase deploy --only hosting`. Firebase redirige las rutas internas a `index.html`, de modo que Angular resuelva enlaces como `/demo-access`.
+2. La publicación usa `firebase deploy --only hosting`. Firebase redirige las rutas internas a `index.html`, de modo que Vue resuelva enlaces como `/demo-access`.
 3. Se comprobó la [ruta publicada de acceso](https://sumaqagro-appweb.web.app/demo-access) y su redirección al formulario de inicio de sesión. El commit [`e70e5ff`](https://github.com/dymbia-opensource/sumaq-agro-web-app/commit/e70e5ff) configura el backend de Render en la rama `feature/update-frontend` el 15 de noviembre. Se requiere el historial de Firebase Hosting para identificar qué compilación está activa y comprobar si incluye ese cambio. La captura se guarda en `assets/img/chapter-5/sprint-3/deploy-firebase.jpg`.
   ![img-firebase.png](assets/img/chapter-V/sprint-3/despliegue/img-firebase.png)
 
