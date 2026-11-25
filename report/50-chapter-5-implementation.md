@@ -1674,7 +1674,7 @@ expectativas del producto, enfocado en identificar los beneficios esperados; eva
 
 ### Preguntas para el Segmento: Agricultores independientes
 
-¿**Perfil y contexto**
+**Perfil y contexto**
 
 1. ¿Cuántos años lleva trabajando en la agricultura y qué cultivos produce actualmente?
 2. ¿Cómo registra actualmente los gastos de fertilizantes, semillas, jornales y otros insumos?
@@ -1699,33 +1699,53 @@ expectativas del producto, enfocado en identificar los beneficios esperados; eva
 
 ### Preguntas para el Segmento: Directivos de cooperativas agrícolas
 
-1. ¿Cuáles fueron tus primeras impresiones al ver la aplicación?
+**Perfil y contexto**
 
-2. ¿Te resultó claro qué información puedes encontrar en el panel de control?
+1. ¿Cuál es su cargo y cuántos productores o socios tiene actualmente bajo su responsabilidad?
+2. ¿Cómo gestionan actualmente los registros de producción, calidad y procedencia de los productos agrícolas?
+3. ¿Cuáles son las principales dificultades que enfrenta durante los procesos de control de calidad y certificación?
 
-3. ¿Crees que el Padrón facilitaría la administración de los socios?
+**Expectativas del producto**
 
-4. ¿La información de Salud de Parcelas y Alertas te serviría para supervisar la cooperativa?
+4. ¿Qué beneficios esperaría obtener de una plataforma que centralice la información agrícola de los productores asociados?
+5. ¿Qué tan importante sería disponer de registros digitales para verificar la trazabilidad y procedencia de cada lote?
+6. ¿Qué información considera indispensable para evaluar la calidad de los productos antes de su comercialización?
 
-5. ¿Te pareció claro el proceso para atender un reporte de plagas?
+**Evaluación del prototipo**
 
-6. ¿Qué parte de la aplicación te resultó confusa?
+7. Después de observar el módulo de gestión y certificación, ¿qué tan fácil le resultó consultar la información de los productores y sus parcelas?
+8. ¿Considera que los certificados digitales permitirían mejorar la organización y disponibilidad de la documentación durante las auditorías? ¿Por qué?
+9. ¿Qué tan útil considera disponer de información centralizada sobre la calidad y trazabilidad de los lotes?
 
-7. ¿Qué mejorarías para que la aplicación sea más útil en tu trabajo diario?
+**Cierre**
+
+10. ¿Consideraría implementar SumaqAgro en su cooperativa? ¿Qué factores influirían en esa decisión?
+11. ¿Qué mejoras considera necesarias para que la plataforma responda a las necesidades administrativas y comerciales de su organización?
 
 ### Preguntas para el Segmento: Ingenieros agrónomos y asesores técnicos
 
-¿Cuáles fueron tus primeras impresiones al ver SumaqAgro como asesor agrónomo?
+**Perfil y contexto**
 
-¿Consideras que las funciones de la página pueden ayudarte a monitorear las parcelas que tienes asignadas?
+1. ¿Cuántos años de experiencia tiene como ingeniero agrónomo o asesor técnico?
+2. ¿Cuántos agricultores y parcelas supervisa aproximadamente durante un mes?
+3. ¿Qué herramientas utiliza actualmente para registrar sus visitas técnicas, diagnósticos y recomendaciones?
 
-Al revisar un reporte de plagas, ¿la información te parece suficiente para decidir qué caso atender primero?
+**Expectativas del producto**
 
-¿Te pareció fácil seguir el proceso desde la inspección hasta la receta técnica?
+4. ¿Qué beneficios esperaría obtener de una herramienta que permita monitorear parcelas mediante información satelital?
+5. ¿Qué información considera necesaria para identificar oportunamente posibles afectaciones en los cultivos?
+6. ¿Qué tan importante sería contar con registros digitales de las visitas técnicas y recomendaciones realizadas a cada productor?
 
-¿Qué parte de la aplicación te resultó confusa o necesitaría una explicación adicional?
+**Evaluación del prototipo**
 
-¿Qué mejorarías para que SumaqAgro te ayude más en tu trabajo diario?
+7. Después de observar el módulo de monitoreo, ¿qué tan útil considera la información satelital para complementar sus evaluaciones de campo?
+8. ¿Qué tan sencillo le resultó localizar parcelas y consultar su información geográfica?
+9. ¿Considera que los registros e informes digitales facilitan el seguimiento de sus recomendaciones técnicas? ¿Por qué?
+
+**Cierre**
+
+10. ¿Incorporaría SumaqAgro como herramienta de apoyo en sus actividades de asesoría agrícola? ¿Por qué?
+11. ¿Qué mejoras recomendaría para facilitar el trabajo de los asesores técnicos?
 
 ### 5.3.2. Registro de Entrevistas
 
