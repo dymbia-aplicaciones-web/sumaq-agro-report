@@ -1637,6 +1637,30 @@ El historial registra la reorganización de las vistas y recursos compartidos y 
 Los cinco integrantes registraron commits en la rama de integración durante el sprint. El historial permite seguir el trabajo de los formularios de acceso, el catálogo de suscripciones y las vistas de cooperativa, así como la integración posterior con el backend. [Historial de commits](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app/commits/develop/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app/graphs/contributors?from=15%2F8%2F2026)
 
 
+
+### 5.2.4. Sprint 4
+
+#### 5.2.4.1. Sprint Planning 4
+
+#### 5.2.4.2. Aspect Leaders and Collaborators
+
+#### 5.2.4.3. Sprint Backlog 4
+
+#### 5.2.4.4. Development Evidence for Sprint Review
+
+#### 5.2.4.5. Execution Evidence for Sprint Review
+
+#### 5.2.4.6. Services Documentation Evidence for Sprint Review
+
+#### 5.2.4.7. Software Deployment Evidence for Sprint Review
+
+#### 5.2.4.8. Team Collaboration Insights during Sprint
+
+
+
+
+
+
 ##### RESTful Web Services
 
 Benjamin Solorzano trabajó en IAM y suscripciones. Miguel Sanca se encargó de Farming y el *Shared Kernel*. Yamil Tejada implementó servicios de Crop e integración satelital. Jose Vargas trabajó en Profiles y cooperativas, Drago Duarte en Certification. La evidencia de desarrollo de 5.2.3.4 identifica los commits por contexto. [Historial de commits](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform/commits/develop/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform/graphs/contributors?from=15%2F8%2F2026)
@@ -1755,4 +1779,26 @@ Finalmente, manifestó que utilizaría principalmente el módulo de registro de 
 | Duración | 05:15                                             |
 | URL del video (Microsoft Stream) |(https://lix.li/UtN9TM)                              |
 | Minutaje | 17:35 - 25:30                                     |
+
+
+
+### 5.3.3. Evaluaciones según heurísticas
+
+
+
+## 5.4. Video About-the-Product
+El video "About the Product" presenta la propuesta de valor de SumaqAgro, el problema que resuelve y cómo funciona la plataforma para sus tres segmentos objetivo: pequeños y medianos agricultores independientes, directivos de cooperativas agrarias e ingenieros agrónomos y asesores técnicos. Está dirigido a los visitantes del Landing Page, que desean conocer el modelo de negocio y las características del producto, y a los usuarios de la aplicación, que desean realizar tareas de monitoreo, costos y certificación. El tono es cercano, claro y confiable, consistente con el del producto.
+
+#### Información General del Video
+
+| Campo | Detalle |
+| :--- | :--- |
+| **Título del Video** | SumaqAgro: Accessible Precision Agriculture for Potato and Coffee Farmers |
+| **Nombre del archivo** |  |
+| **Duración** |  |
+| **Fecha de Grabación** |  |
+| **URL YouTube** |  |
+| **URL Microsoft Stream** |  |
+
+**Screenshot del video:**
 
