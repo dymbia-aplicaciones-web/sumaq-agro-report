@@ -1795,7 +1795,11 @@ Finalmente, manifestó que utilizaría principalmente el módulo de registro de 
 | URL del video (Microsoft Stream) |(https://lix.li/UtN9TM)                              |
 | Minutaje | 17:35 - 25:30                                     |
 
+### 5.3.2. Evaluaciones según heurísticas
 
+Se evaluó la experiencia de usuario de la Web Application de SumaqAgro mediante la revisión de seis tareas relacionadas con el registro de cuentas, la gestión de parcelas, la interpretación de indicadores de salud del cultivo, las suscripciones y el registro de cooperativas. La evaluación identificó seis problemas de usabilidad y diseño inclusivo, clasificados según su severidad para orientar la prioridad de las mejoras.
+
+El [Anexo D: Evaluación de User Experience según Heurísticas](annexes/annex-d-evaluation-based-on-heuristics.md) presenta el alcance, la escala de severidad, la tabla resumen y el detalle de cada hallazgo con sus evidencias y recomendaciones.
 
 ## 5.4. Video About-the-Product
 
