@@ -137,13 +137,13 @@ Todos los componentes de software y la documentación del proyecto están agrupa
 * **Organización Oficial en GitHub:** https://github.com/dymbia-aplicaciones-web
 
 
-* **Repositorio del Landing Page (Sitio Web Estático):** https://github.com/dymbia-aplicaciones-web/sumaqAgro-landing-page
+* **Repositorio del Landing Page (Sitio Web Estático):** https://github.com/dymbia-aplicaciones-web/sumaq-agro-website
 
 
-* **Repositorio de Web Services (RESTful API backend):**  *Próximamente*
+* **Repositorio de Web Services (RESTful API backend):**  https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform
 
 
-* **Repositorio de Frontend Web Application:**  *Próximamente*
+* **Repositorio de Frontend Web Application:**  https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app
 
 
 
@@ -204,7 +204,7 @@ El equipo aplica estrictamente la especificación **Conventional Commits** para 
 #### Tipos de Commits Permitidos (`type`):
 * `feat`: Nueva funcionalidad implementada para el usuario final.
 * `fix`: Corrección de un fallo o error en el código.
-* `docs`: Modificaciones exclusivas en documentación (archivos Markdown, comentarios, Swagger).
+* `docs`: Modificaciones exclusivas en documentación (archivos Markdown, comentarios, OpenAPI/Scalar).
 * `style`: Cambios de formato, identación o reglas de estilo CSS/HTML sin alterar la lógica.
 * `refactor`: Reestructuración de código que no corrige errores ni añade características.
 * `test`: Adición o corrección de pruebas unitarias o de integración.
@@ -314,7 +314,7 @@ La estructura de la solución no utiliza paquetes invertidos, sino **Namespaces*
 * **Persistencia de Datos:** Se utilizará exclusivamente **Entity Framework Core** para el mapeo relacional. No se permite escribir consultas SQL en texto plano dentro de los controladores.
 * **Uso de DTOs (Data Transfer Objects):** La capa REST no debe exponer directamente entidades de Entity Framework Core. Se exige el uso de `Records` o clases DTO simples para las peticiones (`RequestDTO`) y respuestas (`ResponseDTO`).
 * **Propiedades Autoinmplementadas:** En C# no se usan librerías externas (como Lombok en Java) para getters y setters. Se exige el uso de propiedades nativas: `public string Name { get; set; }`.
-* **Documentación:** Es obligatorio que todos los Endpoints estén documentados aplicando **OpenAPI Specification vía Swagger**.
+* **Documentación:** Es obligatorio que todos los Endpoints estén documentados aplicando **OpenAPI Specification con Scalar**.
 * **Diseño de Endpoints RESTful:**
   * URIs en minúsculas, plurales (o `kebab-case`), en idioma inglés y versionadas: `/api/v1/parcels`, `/api/v1/crop-certificates`.
   * Verbos HTTP adecuados: `GET` (lectura), `POST` (creación), `PUT` (actualización completa), `PATCH` (actualización parcial), `DELETE` (eliminación).
