@@ -56,12 +56,12 @@ Para garantizar una colaboración fluida y estandarizada a lo largo del ciclo de
 
 ![GitHub](assets/img/chapter-V/img-github.png)
 
-##### **IntelliJ IDEA**
+##### **JetBrains Rider**
 
 * **Propósito en el proyecto:** Entorno de Desarrollo Integrado (IDE) principal para la programación del backend. Se utiliza para la construcción de los servicios Web RESTful utilizando C# y ASP.NET Core.
-* **Ruta de Descarga:** [https://www.jetbrains.com/idea/download](https://www.jetbrains.com/idea/download)
+* **Ruta de Descarga:** [https://www.jetbrains.com/rider/download](https://www.jetbrains.com/rider/download)
 
-![IntelliJ IDEA](assets/img/chapter-V/img-intellij-idea.png)
+![JetBrains Rider](assets/img/chapter-V/img-rider-idea.png)
 
 ##### **WebStorm**
 
@@ -97,7 +97,7 @@ Para garantizar una colaboración fluida y estandarizada a lo largo del ciclo de
 
 ##### **Railway**
 
-* **Propósito en el proyecto:** Infraestructura Cloud PaaS utilizada para el despliegue continuo y alojamiento del backend RESTful desarrollado en ASP.NET Core, así como el aprovisionamiento del servidor de base de datos relacional SQL Server en entorno de producción.
+* **Propósito en el proyecto:** Infraestructura Cloud PaaS utilizada para el despliegue continuo y alojamiento del backend RESTful desarrollado en ASP.NET Core, así como el aprovisionamiento del servidor de base de datos relacional MySQL en entorno de producción.
 * **Ruta de Referencia:** [https://railway.app](https://railway.app)
 
 ![Railway](assets/img/chapter-V/img-railway.png)
@@ -106,12 +106,12 @@ Para garantizar una colaboración fluida y estandarizada a lo largo del ciclo de
 
 #### 6. Software Documentation
 
-##### **Swagger UI**
+##### **Scalar / OpenAPI**
 
-* **Propósito en el proyecto:** Generación automática de la documentación interactiva de la API RESTful. Permite a los desarrolladores explorar los endpoints, probar llamadas HTTP directamente desde el navegador y consultar los esquemas de petición y respuesta JSON.
-* **Ruta de Referencia:** [https://swagger.io/tools/swagger-ui](https://swagger.io/tools/swagger-ui)
+* **Propósito en el proyecto:** Documentación de los contratos HTTP mediante OpenAPI y consulta interactiva a través de Scalar. Permite a los desarrolladores explorar los endpoints, probar llamadas HTTP directamente desde el navegador y consultar los esquemas de petición y respuesta JSON.
+* **Ruta de Referencia:** [https://scalar.com/](https://scalar.com/)
 
-![Swagger UI](assets/img/chapter-V/img-swagger.png)
+![Scalar](assets/img/chapter-V/sprint-3/scalar/scalar-img.png)
 
 ##### **Structurizr**
 
