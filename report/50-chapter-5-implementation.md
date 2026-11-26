@@ -1508,29 +1508,33 @@ La documentación se consulta en [Scalar local](http://localhost:5192/scalar/v1)
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-La entrega de AV2 comprende tres productos. Se comprobó el acceso público a la Landing Page y a la pantalla de ingreso de la Web Application. Para la API, se identificaron el contenedor preparado para Render y la configuración del frontend que apunta a ese servicio. La respuesta del backend y la conexión autenticada de extremo a extremo quedan por verificar.
+
+La entrega de AV2 comprende tres productos: la Landing Page, la Web Application desarrollada en Vue y los RESTful Web Services implementados con ASP.NET Core. El frontend y el backend se despliegan en Railway mediante Docker, junto con un servicio MySQL para la persistencia de datos. La Landing Page proporciona el enlace de acceso a la Web Application.
 
 ##### Landing Page en Cloudflare Pages
 
 1. Se reorganizó el sitio estático bajo el directorio `public/`, con sus páginas legales, estilos, scripts y recursos.
-2. La versión [`v3.2.0`](https://github.com/dymbia-opensource/sumaq-agro-website/tree/v3.2.0) se integró en `main` mediante el commit [`752c5f9`](https://github.com/dymbia-opensource/sumaq-agro-website/commit/752c5f9).
-3. Se comprobó el acceso al [sitio publicado](https://sumaqagro-website.vercel.app/) y el destino de **Sign In**, que conduce a Firebase Hosting. Queda pendiente la captura del historial de Cloudflare Pages con la rama y el commit del despliegue en `assets/img/chapter-5/sprint-3/deploy-cloudflare.jpg`.
-![img-cloudflare.png](assets/img/chapter-V/sprint-3/despliegue/img-cloudflare.png)
+2. El código de la Landing Page se mantiene en el repositorio [sumaq-agro-website](https://github.com/dymbia-aplicaciones-web/sumaq-agro-website), correspondiente al proyecto de Aplicaciones Web.
+3. Se comprobó el acceso al [sitio publicado](https://sumaqagro-website.vercel.app/) y el destino de **Sign In**, que conduce a Firebase Hosting. A continuación, se presenta la evidencia del despliegue de la Landing Page.
+
+![Despliegue de la Landing Page](assets/img/chapter-V/sprint-3/despliegue/img-cloudflare.png)
+
 ##### Web Application en Firebase Hosting
 
-1. El proyecto `sumaqagro-appweb` está vinculado mediante `.firebaserc`. La compilación con `npm run build` genera el contenido en `dist/sumaqAgro-appweb/browser`, directorio indicado en `firebase.json`.
-2. La publicación usa `firebase deploy --only hosting`. Firebase redirige las rutas internas a `index.html`, de modo que Angular resuelva enlaces como `/demo-access`.
-3. Se comprobó la [ruta publicada de acceso](https://sumaqagro-appweb.web.app/demo-access) y su redirección al formulario de inicio de sesión. El commit [`e70e5ff`](https://github.com/dymbia-opensource/sumaq-agro-web-app/commit/e70e5ff) configura el backend de Render en la rama `feature/update-frontend` el 15 de noviembre. Se requiere el historial de Firebase Hosting para identificar qué compilación está activa y comprobar si incluye ese cambio. La captura se guarda en `assets/img/chapter-5/sprint-3/deploy-firebase.jpg`.
-  ![img-firebase.png](assets/img/chapter-V/sprint-3/despliegue/img-firebase.png)
+1. El proyecto `sumaqagro-appweb` está vinculado mediante `.firebaserc`. La compilación con `npm run build` genera el contenido en `dist/`, directorio indicado en `firebase.json`.
+2. La publicación usa `firebase deploy --only hosting`. Firebase redirige las rutas internas a `index.html`, de modo que Vue Router resuelva la navegación de la aplicación.
+3. El código se mantiene en el repositorio [sumaq-agro-web-app](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app). La aplicación se publica en [Firebase Hosting](https://sumaqagro-appweb.web.app/). A continuación, se presenta la evidencia del despliegue.
 
+![Despliegue de la Web Application en Firebase Hosting](assets/img/chapter-V/sprint-3/despliegue/img-firebase.png)
 
-##### RESTful Web Services en Render
+##### RESTful Web Services en Railway
 
-1. El commit [`6526e03`](https://github.com/dymbia-opensource/sumaq-agro-platform/commit/6526e03), del 14 de noviembre, incorpora el `Dockerfile` de Render. La primera etapa ejecuta Maven para generar `platform-1.0.0.jar`. La segunda ejecuta el artefacto con `SERVER_PORT=10000`.
-2. Para usar la conexión MySQL de producción se debe activar el perfil con `SPRING_PROFILES_ACTIVE=prod`. Este perfil lee las variables de entorno de la base de datos, JWT, CORS y AgroMonitoring. `FRONTEND_ORIGIN` debe coincidir con el origen publicado de Firebase.
-3. La [documentación de la API](https://sumaq-agro-platform.onrender.com/swagger-ui/index.html) abrió en la pantalla de arranque de Render durante la comprobación. Para acreditar el despliegue, faltan la respuesta de Swagger y una captura del panel de Render con la rama, el commit y el estado del servicio. La captura se guarda en `assets/img/chapter-5/sprint-3/deploy-render.jpg`.
-![img-rende.png](assets/img/chapter-V/sprint-3/despliegue/img-rende.png)
----
+1. El repositorio [sumaq-agro-platform](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform) incorpora un `Dockerfile` para desplegar el backend en Railway. La primera etapa utiliza el SDK de .NET 10 y ejecuta `dotnet publish` en configuración Release. La segunda utiliza ASP.NET Core 10 y ejecuta `SumaqAgro.Platform.dll`, escuchando en `0.0.0.0` mediante la variable `PORT`, con `8080` como valor predeterminado.
+2. La configuración de producción utiliza `ASPNETCORE_ENVIRONMENT=Production`. Las variables de entorno permiten configurar la conexión MySQL mediante `ConnectionStrings__DefaultConnection`, la firma JWT mediante `Jwt__SigningKey` y los orígenes permitidos mediante `Cors__AllowedOrigins__0`. La opción `Database__ApplyMigrations=true` permite aplicar las migraciones al iniciar el servicio.
+3. El backend se conecta al servicio MySQL del proyecto de Railway. La documentación interactiva se consulta mediante [Scalar local](http://localhost:5192/scalar/v1), habilitado únicamente en Development. A continuación, se presenta la evidencia del despliegue en Railway, con el estado del servicio y su información de publicación.
+
+![Despliegue de los RESTful Web Services en Railway](assets/img/chapter-V/sprint-3/despliegue/img-railway-backend.png)
+
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
