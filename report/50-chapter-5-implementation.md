@@ -1806,6 +1806,23 @@ Finalmente, manifestó que utilizaría principalmente el módulo de registro de 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 5.4. Video About-the-Product
 El video "About the Product" presenta la propuesta de valor de SumaqAgro, el problema que resuelve y cómo funciona la plataforma para sus tres segmentos objetivo: pequeños y medianos agricultores independientes, directivos de cooperativas agrarias e ingenieros agrónomos y asesores técnicos. Está dirigido a los visitantes del Landing Page, que desean conocer el modelo de negocio y las características del producto, y a los usuarios de la aplicación, que desean realizar tareas de monitoreo, costos y certificación. El tono es cercano, claro y confiable, consistente con el del producto.
 
