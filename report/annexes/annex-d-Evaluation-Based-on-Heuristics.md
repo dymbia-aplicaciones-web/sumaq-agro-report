@@ -61,3 +61,49 @@ Esto puede provocar que el usuario ingrese una contraseña demasiado corta y des
 **Recomendación:**
 
 Agregar debajo del campo una indicación permanente: “La contraseña debe tener al menos 8 caracteres”. Complementar esta ayuda con una validación durante la escritura o al salir del campo, e informar junto a “Confirmar contraseña” cuando ambos valores no coincidan.
+
+
+
+
+### PROBLEMA #2: La unidad del rendimiento esperado no especifica el peso de cada saco
+
+**Severidad:** 2 — Problema menor.
+
+**Heurística violada:** Usabilidad — Correspondencia entre el sistema y el mundo real.
+
+**Problema:**
+
+En el primer paso del registro de una parcela, el campo “Rendimiento esperado (Opcional)” utiliza la unidad “sacos”, pero no indica el peso considerado para cada saco ni ofrece una equivalencia en kilogramos.
+
+Como el peso de un saco puede variar según el producto y las prácticas comerciales, el usuario puede interpretar la cantidad de forma diferente a la prevista por el sistema. Esta ambigüedad dificulta registrar y comparar las estimaciones de producción de manera consistente.
+
+**Imagen:**
+
+![Partials](../assets/img/heuristics/partials-hs.png)
+
+**Recomendación:**
+
+Especificar el peso de referencia de cada saco junto al campo. Si no existe un peso único, permitir ingresar el peso por saco o seleccionar una unidad estandarizada, como kilogramos o toneladas. Añadir un ejemplo que explique cómo registrar el rendimiento total esperado de la parcela.
+
+
+### PROBLEMA #3: Los indicadores NDVI y NDWI no incluyen una explicación para interpretar sus valores
+
+**Tarea evaluada:** Consultar el estado de salud de una parcela mediante el monitoreo del cultivo.
+
+**Severidad:** 2 — Problema menor.
+
+**Heurística violada:** Usabilidad — Correspondencia entre el sistema y el mundo real.
+
+**Problema:**
+
+La pantalla muestra los indicadores “NDVI” y “NDWI” con valores de 0.76 y 0.42, respectivamente, pero no presenta una explicación visible de su significado ni una escala de referencia para interpretarlos.
+
+Un agricultor sin conocimientos sobre estos índices puede visualizar los datos sin comprender qué indican sobre la vegetación o la humedad del cultivo. Esto limita la utilidad de la información para evaluar el estado de su parcela.
+
+**Imagen:**
+
+[Insertar la captura de “Crop Health”, señalando los controles NDVI/NDWI y sus valores en el panel “Recorded values”.]
+
+**Recomendación:**
+
+Incluir una descripción breve de cada indicador en lenguaje sencillo y una escala de interpretación contextualizada al cultivo. Complementar los valores con etiquetas descriptivas y ayudas consultables, explicando las limitaciones de los índices para evitar que se interpreten como un diagnóstico definitivo.
