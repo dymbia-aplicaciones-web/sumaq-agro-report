@@ -6,21 +6,22 @@
 
 ### TAREAS A EVALUAR
 
-El alcance de esta evaluación incluye la revisión de la usabilidad, el diseño inclusivo y la arquitectura de información de las siguientes tareas:
+El alcance de esta evaluación incluye la revisión de las siguientes tareas:
 
-1. Registrar una cuenta de usuario e iniciar sesión.
-2. Registrar una nueva parcela y definir su ubicación geográfica.
-3. Registrar un gasto asociado a una campaña agrícola.
-4. Consultar el estado de salud de los cultivos y sus alertas.
-5. Consultar los certificados de calidad de los lotes de cosecha.
+1. Registrar una nueva cuenta de usuario.
+2. Registrar una nueva parcela y sus datos de cultivo.
+3. Consultar el estado de salud de una parcela mediante los indicadores NDVI y NDWI.
+4. Consultar y administrar una suscripción activa.
+5. Registrar una cooperativa desde el segmento de director de cooperativa.
 
+### No están incluidas en esta etapa:
 
-No están incluidas en esta etapa:
-
-1. La validación de credenciales contra el backend.
-2. La entrega de correos de recuperación.
-3. El proceso completo de registro.
-4. La navegación posterior al inicio de sesión.
+1. Recuperar o restablecer la contraseña.
+2. Delimitar geográficamente una parcela en el mapa.
+3. Crear campañas agrícolas y registrar sus gastos.
+4. Emitir y verificar certificados de calidad de cosecha.
+5. Realizar pagos y descargar comprobantes.
+6. Administrar miembros de cooperativas y asignar agrónomos.
 
 
 ### ESCALA DE SEVERIDAD
@@ -32,13 +33,16 @@ No están incluidas en esta etapa:
 | 3 | Problema mayor. Dificulta considerablemente una tarea y debe corregirse con prioridad alta. |
 | 4 | Problema muy grave. Impide completar una tarea esencial y debe corregirse antes del lanzamiento. |
 
+
 ### TABLA RESUMEN
 
-| # | Problema | Severidad | Heurística/Principio vulnerado |
+| # | Problema | Escala de severidad | Heurística/Principio vulnerado |
 |---|---|---|---|
-| 1 | Se muestra un aviso técnico de licencia inválida en la pantalla de acceso. | 2 | Usabilidad: Diseño estético y minimalista. |
-| 2 | Los campos utilizan el texto interior como única identificación visual. | 2 | Usabilidad: Reconocimiento antes que recuerdo. |
-| 3 | Las opciones de idioma se presentan únicamente mediante abreviaturas. | 1 | Usabilidad: Correspondencia entre el sistema y el mundo real. |
+| 1 | No se informan los requisitos de la contraseña antes de crear la cuenta. | 2 | Usabilidad — Prevención de errores. |
+| 2 | La unidad del rendimiento esperado no especifica el peso de cada saco. | 2 | Usabilidad — Correspondencia entre el sistema y el mundo real. |
+| 3 | Los indicadores NDVI y NDWI no incluyen una explicación para interpretar sus valores. | 2 | Usabilidad — Correspondencia entre el sistema y el mundo real. |
+| 4 | No se explica el efecto de cancelar la renovación de la suscripción. | 2 | Usabilidad — Prevención de errores. |
+| 5 | El campo “Región” no indica el formato de información esperado. | 2 | Usabilidad — Prevención de errores. |
 
 ### DESCRIPCIÓN DE PROBLEMAS
 
@@ -135,5 +139,25 @@ Añadir junto al botón una explicación breve del efecto real de la cancelació
 
 
 
+### PROBLEMA #5: El campo “Región” no indica el formato de información esperado
 
+**Tarea evaluada:** Registrar una cooperativa desde el segmento de director de cooperativa.
+
+**Severidad:** 2 — Problema menor.
+
+**Heurística violada:** Usabilidad — Prevención de errores.
+
+**Problema:**
+
+El formulario “Registrar cooperativa” presenta el campo de texto “Región” sin ejemplos, instrucciones ni opciones de selección. No se aclara si se debe ingresar un departamento, una provincia o una zona agrícola.
+
+Esta ambigüedad puede provocar que los usuarios registren ubicaciones con distintos niveles de detalle o denominaciones, dificultando la uniformidad de los datos institucionales.
+
+**Imagen:**
+
+![Cooperative](../assets/img/heuristics/register-cooperative-hs.png)
+
+**Recomendación:**
+
+Precisar la etiqueta según la información requerida, por ejemplo, “Región / Departamento”. Si corresponde a una división territorial definida, utilizar un selector con opciones estandarizadas. Si se mantiene el ingreso libre, incluir un ejemplo visible como “Ej.: Junín”.
 
