@@ -1795,7 +1795,11 @@ Finalmente, manifestó que utilizaría principalmente el módulo de registro de 
 | URL del video (Microsoft Stream) |(https://lix.li/UtN9TM)                              |
 | Minutaje | 17:35 - 25:30                                     |
 
+### 5.3.3. Evaluaciones según heurísticas
 
+Se evaluó la experiencia de usuario de la Web Application de SumaqAgro mediante la revisión de seis tareas relacionadas con el registro de cuentas, la gestión de parcelas, la interpretación de indicadores de salud del cultivo, las suscripciones y el registro de cooperativas. La evaluación identificó seis problemas de usabilidad y diseño inclusivo, clasificados según su severidad para orientar la prioridad de las mejoras.
+
+El [Anexo D: Evaluación de User Experience según Heurísticas](annexes/annex-d-evaluation-based-on-heuristics.md) presenta el alcance, la escala de severidad, la tabla resumen y el detalle de cada hallazgo con sus evidencias y recomendaciones.
 
 ## 5.4. Video About-the-Product
 
@@ -1806,15 +1810,12 @@ El video "About the Product" presenta la propuesta de valor de SumaqAgro, el pro
 | Campo | Detalle |
 | :--- | :--- |
 | **Título del Video** | SumaqAgro: Accessible Precision Agriculture for Potato and Coffee Farmers |
-| **Nombre del archivo** | upc-pre-202620-1ASI0729-2620-7742-dymbia-about-the-product-sprint-3.mp4 |
+| **Nombre del archivo** | upc-pre-202620-1ASI073-2620-8130-dymbia-about-the-product-sprint-3.mp4 |
 | **Duración** | 1 minuto 45 segundos |
 | **Fecha de Grabación** | 15/11/2026 |
 | **URL YouTube** | [https://youtu.be/QbSAPVPGZsU](https://youtu.be/QbSAPVPGZsU) |
 | **URL Microsoft Stream** | [Video About-the-Product en Microsoft Stream](https://upcedupe-my.sharepoint.com/personal/u20241e417_upc_edu_pe/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fupcedupe-my.sharepoint.com%2Fpersonal%2Fu20241e417_upc_edu_pe%2Fdocuments%2Fvideo+project+5.mp4%3Fweb%3D1&correlation=d6324fa2-10ee-e000-3696-d4d5f11b65eb&Type=item&name=4d49010d-13d2-4a1e-99b9-1143a1033fdc&listItemId=144&listItemUniqueId=83413582-5dac-44f5-9849-855dd2146e07&allowautoredirecttosource=true) |
 
-**Screenshot del video:**
-
-[![Screenshot del Video About-the-Product de SumaqAgro](assets/img/chapter-5/about-product.png)](https://youtu.be/QbSAPVPGZsU)
 
 
 
