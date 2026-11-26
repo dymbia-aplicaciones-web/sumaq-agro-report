@@ -1445,13 +1445,13 @@ Suscripción al plan Semilla e historial de pagos.
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
-Los RESTful Web Services incorporan SpringDoc OpenAPI para exponer los contratos HTTP y consultarlos desde Swagger UI. La tabla recoge las operaciones principales del sprint, contrastadas con los controladores y recursos del backend. Los fragmentos JSON son ejemplos abreviados con datos ficticios. La columna de entrada identifica parámetros de ruta, filtros de consulta y campos principales del cuerpo. El esquema completo de cada recurso se consulta en OpenAPI.
+Los RESTful Web Services de SumaqAgro están desarrollados con ASP.NET Core y C# sobre .NET 10. El backend utiliza Microsoft.AspNetCore.OpenApi para generar los contratos HTTP y Scalar como interfaz interactiva para consultar y probar los endpoints. La tabla presenta las operaciones principales del sprint. Los fragmentos JSON son ejemplos abreviados con datos ficticios. La columna de entrada identifica parámetros de ruta, filtros de consulta y campos principales del cuerpo. El esquema completo de cada recurso se consulta en OpenAPI.
 
-![swagger-img.png](assets/img/chapter-V/sprint-3/swagger-img.png)
+![Scalar](assets/img/chapter-V/sprint-3/scalar-img.png)
 
-- **Repositorio de Web Services** [sumaq-agro-platform](https://github.com/dymbia-opensource/sumaq-agro-platform)
-- **Documentación del entorno configurado** [Swagger UI en Render](https://sumaq-agro-platform.onrender.com/swagger-ui/index.html) y [OpenAPI JSON en Render](https://sumaq-agro-platform.onrender.com/v3/api-docs).
-- **Documentación para ejecución local** [Swagger UI local](http://localhost:8080/swagger-ui/index.html) y [OpenAPI JSON local](http://localhost:8080/v3/api-docs).
+- **Repositorio de Web Services:** [sumaq-agro-platform](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform).
+- **Entorno de despliegue:** backend de SumaqAgro desplegado en Railway mediante Docker.
+- **Documentación para ejecución local:** [Scalar local](http://localhost:5192/scalar/v1) y [OpenAPI JSON local](http://localhost:5192/openapi/v1.json).
 
 ##### Operaciones por Bounded Context
 
