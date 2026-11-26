@@ -1447,7 +1447,7 @@ Suscripción al plan Semilla e historial de pagos.
 
 Los RESTful Web Services de SumaqAgro están desarrollados con ASP.NET Core y C# sobre .NET 10. El backend utiliza Microsoft.AspNetCore.OpenApi para generar los contratos HTTP y Scalar como interfaz interactiva para consultar y probar los endpoints. La tabla presenta las operaciones principales del sprint. Los fragmentos JSON son ejemplos abreviados con datos ficticios. La columna de entrada identifica parámetros de ruta, filtros de consulta y campos principales del cuerpo. El esquema completo de cada recurso se consulta en OpenAPI.
 
-![Scalar](assets/img/chapter-V/sprint-3/scalar-img.png)
+![Scalar](assets/img/chapter-V/sprint-3/scalar/scalar-img.png)
 
 - **Repositorio de Web Services:** [sumaq-agro-platform](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform).
 - **Entorno de despliegue:** backend de SumaqAgro desplegado en Railway mediante Docker.
@@ -1496,11 +1496,15 @@ Las rutas de la tabla son relativas a `/api/v1`. Las operaciones protegidas usan
 Los contratos se contrastaron con el código disponible para la revisión de AV2. Parte de las operaciones de Subscriptions y Certification se desarrolló en ramas del sprint y su integración en `develop` aparece después del corte del 13 de noviembre. La tabla documenta su implementación en el código y su disponibilidad pública queda por validar.
 
 
-##### Interacción con Swagger UI**
+##### Interacción con Scalar
 
-Para comprobar el contrato con datos de muestra, abrir **Tokens**, enviar el correo y la contraseña de una cuenta de prueba y comprobar que la respuesta sea `200` con un JWT. Después, ejecutar **Field Plots** con el `fieldPlotId` de una parcela de demostración y comprobar que la respuesta `200` incluya sus datos. Las capturas deben mostrar los parámetros, el código HTTP y el cuerpo de respuesta, con las credenciales y el token ocultos.
+Para comprobar el contrato con datos de muestra, ejecutar **Tokens** (`POST /api/v1/tokens`) en Scalar, enviar el correo y la contraseña de una cuenta de prueba y comprobar que la respuesta sea `200` con un JWT. Después, configurar la autorización Bearer y ejecutar **Field Plots** con el `fieldPlotId` de una parcela de demostración, comprobando que la respuesta `200` incluya sus datos. Las capturas deben mostrar los parámetros, el código HTTP y el cuerpo de respuesta, con las credenciales y el token ocultos.
 
-Durante la revisión, la URL pública de Swagger UI mostró la pantalla de arranque de Render. Quedan pendientes las capturas de interacción en `assets/img/chapter-5/sprint-3/swagger-token.jpg` y `assets/img/chapter-5/sprint-3/swagger-parcelas.jpg`.
+La documentación se consulta en [Scalar local](http://localhost:5192/scalar/v1). A continuación, se presentan las evidencias de autenticación y consulta de parcelas mediante Scalar.
+
+![Autenticación Scalar Token](assets/img/chapter-V/sprint-3/scalar/scalar-token.png)
+
+![Autenticación Scalar Token Prueba](assets/img/chapter-V/sprint-3/scalar/scalar-token-prueba.png)
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
