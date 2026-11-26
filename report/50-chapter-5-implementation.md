@@ -56,12 +56,12 @@ Para garantizar una colaboración fluida y estandarizada a lo largo del ciclo de
 
 ![GitHub](assets/img/chapter-V/img-github.png)
 
-##### **IntelliJ IDEA**
+##### **JetBrains Rider**
 
 * **Propósito en el proyecto:** Entorno de Desarrollo Integrado (IDE) principal para la programación del backend. Se utiliza para la construcción de los servicios Web RESTful utilizando C# y ASP.NET Core.
-* **Ruta de Descarga:** [https://www.jetbrains.com/idea/download](https://www.jetbrains.com/idea/download)
+* **Ruta de Descarga:** [https://www.jetbrains.com/rider/download](https://www.jetbrains.com/rider/download)
 
-![IntelliJ IDEA](assets/img/chapter-V/img-intellij-idea.png)
+![JetBrains Rider](assets/img/chapter-V/img-rider-idea.png)
 
 ##### **WebStorm**
 
@@ -97,7 +97,7 @@ Para garantizar una colaboración fluida y estandarizada a lo largo del ciclo de
 
 ##### **Railway**
 
-* **Propósito en el proyecto:** Infraestructura Cloud PaaS utilizada para el despliegue continuo y alojamiento del backend RESTful desarrollado en ASP.NET Core, así como el aprovisionamiento del servidor de base de datos relacional SQL Server en entorno de producción.
+* **Propósito en el proyecto:** Infraestructura Cloud PaaS utilizada para el despliegue continuo y alojamiento del backend RESTful desarrollado en ASP.NET Core, así como el aprovisionamiento del servidor de base de datos relacional MySQL en entorno de producción.
 * **Ruta de Referencia:** [https://railway.app](https://railway.app)
 
 ![Railway](assets/img/chapter-V/img-railway.png)
@@ -106,12 +106,12 @@ Para garantizar una colaboración fluida y estandarizada a lo largo del ciclo de
 
 #### 6. Software Documentation
 
-##### **Swagger UI**
+##### **Scalar / OpenAPI**
 
-* **Propósito en el proyecto:** Generación automática de la documentación interactiva de la API RESTful. Permite a los desarrolladores explorar los endpoints, probar llamadas HTTP directamente desde el navegador y consultar los esquemas de petición y respuesta JSON.
-* **Ruta de Referencia:** [https://swagger.io/tools/swagger-ui](https://swagger.io/tools/swagger-ui)
+* **Propósito en el proyecto:** Documentación de los contratos HTTP mediante OpenAPI y consulta interactiva a través de Scalar. Permite a los desarrolladores explorar los endpoints, probar llamadas HTTP directamente desde el navegador y consultar los esquemas de petición y respuesta JSON.
+* **Ruta de Referencia:** [https://scalar.com/](https://scalar.com/)
 
-![Swagger UI](assets/img/chapter-V/img-swagger.png)
+![Scalar](assets/img/chapter-V/sprint-3/scalar/scalar-img.png)
 
 ##### **Structurizr**
 
@@ -137,17 +137,17 @@ Todos los componentes de software y la documentación del proyecto están agrupa
 * **Organización Oficial en GitHub:** https://github.com/dymbia-aplicaciones-web
 
 
-* **Repositorio del Landing Page (Sitio Web Estático):** https://github.com/dymbia-aplicaciones-web/sumaqAgro-landing-page
+* **Repositorio del Landing Page (Sitio Web Estático):** https://github.com/dymbia-aplicaciones-web/sumaq-agro-website
 
 
-* **Repositorio de Web Services (RESTful API backend):**  *Próximamente*
+* **Repositorio de Web Services (RESTful API backend):**  https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform
 
 
-* **Repositorio de Frontend Web Application:**  *Próximamente*
+* **Repositorio de Frontend Web Application:**  https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app
 
 
 
-* **Repositorio del Informe del Proyecto (Project Report):**  https://github.com/dymbia-aplicaciones-web/sumaqAgro-report
+* **Repositorio del Informe del Proyecto (Project Report):**  https://github.com/dymbia-aplicaciones-web/sumaq-agro-report
 
 
 ---
@@ -204,7 +204,7 @@ El equipo aplica estrictamente la especificación **Conventional Commits** para 
 #### Tipos de Commits Permitidos (`type`):
 * `feat`: Nueva funcionalidad implementada para el usuario final.
 * `fix`: Corrección de un fallo o error en el código.
-* `docs`: Modificaciones exclusivas en documentación (archivos Markdown, comentarios, Swagger).
+* `docs`: Modificaciones exclusivas en documentación (archivos Markdown, comentarios, OpenAPI/Scalar).
 * `style`: Cambios de formato, identación o reglas de estilo CSS/HTML sin alterar la lógica.
 * `refactor`: Reestructuración de código que no corrige errores ni añade características.
 * `test`: Adición o corrección de pruebas unitarias o de integración.
@@ -291,12 +291,12 @@ Se adoptan las guías oficiales exigidas para el proyecto: **C# Coding Conventio
 
 #### Estructura de Namespaces
 La estructura de la solución no utiliza paquetes invertidos, sino **Namespaces** redactados en `PascalCase` e inglés, separados por puntos, siguiendo el patrón:  
-`SumaqAgro.<BoundedContext>.<Layer>`
+`SumaqAgro.Platform.<BoundedContext>.<Layer>`
 
 *Ejemplo de capas:*
-* `SumaqAgro.Monitoring.Domain.Models`
-* `SumaqAgro.Monitoring.Infrastructure.Persistence`
-* `SumaqAgro.Monitoring.Interfaces.REST`
+* `SumaqAgro.Platform.Farming.Domain.Model`
+* `SumaqAgro.Platform.Farming.Infrastructure.Persistence`
+* `SumaqAgro.Platform.Farming.Interfaces.Rest`
 
 #### Convenciones de Nombres en C#
 * **Clases y Records:** Se redactan en `PascalCase` e inglés utilizando sustantivos claros.  
@@ -314,7 +314,7 @@ La estructura de la solución no utiliza paquetes invertidos, sino **Namespaces*
 * **Persistencia de Datos:** Se utilizará exclusivamente **Entity Framework Core** para el mapeo relacional. No se permite escribir consultas SQL en texto plano dentro de los controladores.
 * **Uso de DTOs (Data Transfer Objects):** La capa REST no debe exponer directamente entidades de Entity Framework Core. Se exige el uso de `Records` o clases DTO simples para las peticiones (`RequestDTO`) y respuestas (`ResponseDTO`).
 * **Propiedades Autoinmplementadas:** En C# no se usan librerías externas (como Lombok en Java) para getters y setters. Se exige el uso de propiedades nativas: `public string Name { get; set; }`.
-* **Documentación:** Es obligatorio que todos los Endpoints estén documentados aplicando **OpenAPI Specification vía Swagger**.
+* **Documentación:** Es obligatorio que todos los Endpoints estén documentados aplicando **OpenAPI Specification con Scalar**.
 * **Diseño de Endpoints RESTful:**
   * URIs en minúsculas, plurales (o `kebab-case`), en idioma inglés y versionadas: `/api/v1/parcels`, `/api/v1/crop-certificates`.
   * Verbos HTTP adecuados: `GET` (lectura), `POST` (creación), `PUT` (actualización completa), `PATCH` (actualización parcial), `DELETE` (eliminación).
@@ -894,19 +894,15 @@ Para evidenciar el funcionamiento de la Web Application de SumaqAgro, se present
 * **Enlace de Reproducción (Microsoft Stream):** [Video "Video de Exposición AV1"](https://upcedupe-my.sharepoint.com/personal/u202422128_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202422128%5Fupc%5Fedu%5Fpe%2FDocuments%2FRecording%2D20261009%5F092557%2Ewebm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E418bacb5%2D22ff%2D4d75%2Daa54%2Db24e02149c8b)
 
 
-#### 5.2.1.6. Services Documentation Evidence for Sprint Review
+#### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
 
 En esta sección se presenta la documentación de los servicios utilizados por la Web Application de **SumaqAgro** durante el **Sprint 2**. Para esta iteración se empleó una **Fake REST API implementada con `json-server`**, que administra los datos de demostración almacenados en `server/db.json`.
 
-```bash
-npm run api
-```
-
-Este comando ejecuta:
+La API de demostración puede iniciarse directamente con:
 
 ```bash
-json-server --watch server/db.json --routes server/routes.json --port 3000
+npx json-server --watch server/db.json --routes server/routes.json --port 3000
 ```
 
 El archivo `server/routes.json` establece el prefijo de acceso a los recursos:
@@ -917,14 +913,14 @@ El archivo `server/routes.json` establece el prefijo de acceso a los recursos:
 }
 ```
 
-Las direcciones de conexión configuradas en el proyecto son:
+La conexión local de demostración y la configuración actual del proyecto se distinguen de la siguiente manera:
 
 | Entorno | URL base | Archivo de configuración |
 | :--- | :--- | :--- |
-| Desarrollo local | `http://localhost:3000/api/v1` | `src/environments/environment.development.ts` |
-| Producción | `https://sumaqagro-fake-api.onrender.com/api/v1` | `src/environments/environment.ts` |
+| API de demostración local | `http://localhost:3000/api/v1` | `server/db.json` y `server/routes.json` |
+| Backend real (configuración actual) | `/api/v1` | `.env.development` y `.env.production` |
 
-La aplicación Vue se ejecuta en una terminal independiente mediante `npm start`.
+La aplicación Vue se ejecuta en una terminal independiente mediante `npm run dev`.
 
 ##### Documentación de endpoints
 
@@ -994,9 +990,9 @@ Los valores son datos simulados para la demostración. En el archivo revisado, l
 
 ##### Integración con el frontend Vue
 
-El archivo `app.config.ts` habilita la comunicación HTTP mediante `provideHttpClient(withFetch())`. Las fachadas `ProfilesApi`, `FieldManagementApi`, `CropHealthApi` y `HarvestCertificationApi` agrupan las operaciones de acceso a datos de sus respectivos contextos.
+La comunicación HTTP de Vue se implementa mediante Axios. La clase compartida `BaseApi`, definida en `src/shared/infrastructure/base-api.js`, crea el cliente con `axios.create()` y obtiene la URL base desde `import.meta.env.VITE_SUMAQAGRO_PLATFORM_API_URL`. Las fachadas de infraestructura agrupan las operaciones de acceso a datos de sus respectivos contextos.
 
-La clase compartida `BaseApiEndpoint` implementa las operaciones generales de consulta, creación, actualización y eliminación. Los **assemblers** convierten los recursos JSON recibidos en entidades de dominio y transforman las entidades en recursos para enviarlos a la API.
+La clase compartida `BaseEndpoint` implementa las operaciones generales de consulta, creación, actualización y eliminación. Los **assemblers** convierten los recursos JSON recibidos en entidades de dominio y transforman las entidades en recursos para enviarlos a la API.
 
 Por ejemplo, el método `CropHealthApi.getObservationsByPlot(plotId)` delega la consulta al endpoint de observaciones satelitales. Este envía una petición GET con el parámetro `plotId` y transforma los registros recibidos en entidades `SatelliteObservation`.
 
@@ -1005,19 +1001,19 @@ La documentación presentada corresponde a la configuración y los contratos imp
 ---
 
 
-#### 5.2.1.7. Software Deployment Evidence for Sprint Review
+#### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
-Durante el **Sprint 2**, el equipo **Dymbia** realizó la configuración y publicación de la **Web Application de SumaqAgro** en **Firebase Hosting** y de la **Fake REST API** en **Render**. Estas actividades permitieron disponer de un entorno publicado para presentar las funcionalidades desarrolladas y consumir los datos de demostración.
+Durante el **Sprint 2**, el equipo **Dymbia** publicó la **Web Application de SumaqAgro**, desarrollada en **Vue**, en **Firebase Hosting**, y utilizó una **Fake REST API** con `json-server` publicada en **Render** para los datos de demostración.
 
-El proceso incluyó la configuración de los recursos en ambos proveedores, la vinculación del proyecto con GitHub, la definición de los comandos de compilación y ejecución, y la configuración de la conexión entre el frontend y la API.
+El proceso incluyó la configuración de Firebase Hosting, la organización del código en GitHub y la definición de los comandos de compilación, ejecución y conexión con los servicios.
 
-El alcance de despliegue de esta iteración comprende la **Web Application** y la **Fake REST API**. La Landing Page corresponde al Sprint 1, mientras que el backend definitivo en .NET se desarrollará en una iteración posterior.
+El alcance de publicación de esta sección comprende la **Web Application** y la **Fake REST API** del Sprint 2. El backend definitivo en **C# y ASP.NET Core**, con **MySQL** y despliegue en **Railway**, corresponde al Sprint 3.
 
 ##### Despliegue de la Web Application en Firebase Hosting
 
   Se configuró el proyecto **`sumaqagro-appweb`** en Firebase y se habilitó **Firebase Hosting** para publicar los archivos generados por Vue.
 
-La vinculación del proyecto local se encuentra definida en `.firebaserc`. Por su parte, `firebase.json` establece el directorio de publicación `dist/sumaqAgro-appweb/browser` y una redirección hacia `index.html`, necesaria para que Vue gestione sus rutas internas al ingresar directamente a una vista o recargar la página.
+La vinculación del proyecto local se encuentra definida en `.firebaserc`. Por su parte, `firebase.json` establece el directorio de publicación `dist/` y una redirección hacia `index.html`, necesaria para que Vue gestione sus rutas internas al ingresar directamente a una vista o recargar la página.
 
 El procedimiento de despliegue documentado en el repositorio utiliza **Firebase CLI**. La preparación del entorno requiere instalar la herramienta y autenticar una cuenta con acceso al proyecto:
 
@@ -1044,19 +1040,17 @@ La Web Application dispone de los siguientes dominios:
 
 La captura del panel de Firebase Hosting muestra el proyecto `sumaqagro-appweb`, sus dominios y el historial de versiones publicadas. Se observan publicaciones realizadas el **8 y 9 de octubre de 2026**, con la versión **`4e43fc`** identificada como la versión actual en la evidencia.
 
-![Firebase](assets/img/chapter-5/sprint-2/firebase-vue.jpeg)
+![Firebase](assets/img/chapter-V/sprint-2/firebase-vue.jpeg)
 
 ##### Despliegue de la Fake REST API en Render
 
-Se configuró un **Web Service** denominado **`sumaqAgro-fake-api`** en Render, utilizando el entorno de ejecución **Node** y una instancia gratuita.
-
-El servicio se vinculó con el repositorio **`dymbia-opensource/sumaqAgro-appweb`** y la rama **`develop`**. La configuración documentada en el proyecto es la siguiente:
+Para el Sprint 2 se utilizó una **Fake REST API** con `json-server`, publicada en **Render**, como soporte de los datos de demostración de la Web Application de Aplicaciones Web.
 
 | Parámetro | Configuración |
 | :--- | :--- |
 | Tipo de servicio | Web Service |
 | Nombre | `sumaqAgro-fake-api` |
-| Repositorio | `dymbia-opensource/sumaqAgro-appweb` |
+| Repositorio de la Web Application | `dymbia-aplicaciones-web/sumaq-agro-web-app` |
 | Rama | `develop` |
 | Entorno de ejecución | Node |
 | Comando de instalación | `npm install --include=dev` |
@@ -1064,39 +1058,36 @@ El servicio se vinculó con el repositorio **`dymbia-opensource/sumaqAgro-appweb
 | Tipo de instancia | Free |
 | Actualización | Auto-Deploy |
 
-El comando de inicio utiliza el puerto asignado por Render y permite atender peticiones externas. La Fake REST API administra los datos de `server/db.json` y utiliza `server/routes.json` para exponer los recursos bajo el prefijo `/api/v1`.
+La Fake REST API utiliza `server/db.json` para los datos de demostración y `server/routes.json` para exponer los recursos bajo el prefijo `/api/v1`. El comando de inicio utiliza el puerto asignado por Render.
 
-La URL base configurada para el servicio es:
+**URL base:** https://sumaqagro-fake-api.onrender.com/api/v1
 
-**https://sumaqagro-fake-api.onrender.com/api/v1/db**
-
-![fake-api](assets/img/chapter-5/sprint-2/img-fake-api.png)
+![fake-api](assets/img/chapter-V/sprint-2/img-fake-api.png)
 
 ###### Evidencia de publicación en Render
 
-La captura presenta el servicio en estado **Live**, vinculado a la rama `develop` y al commit **`227c66d`**. El historial muestra despliegues activados mediante **Auto-Deploy**, asociados a la integración de funcionalidades en el repositorio.
+La captura del panel de Render muestra el servicio en estado **Live**, la rama `develop` y el historial de despliegues automáticos de la Fake REST API utilizada durante esta etapa.
 
-Esta evidencia permite observar la automatización del despliegue de la Fake REST API a partir de las actualizaciones de la rama configurada.
+![Render](assets/img/chapter-V/sprint-2/render-vue.png)
 
-![Render](assets/img/chapter-5/sprint-2/render-vue.jpeg)
+La Fake REST API corresponde al Sprint 2. La versión final utiliza el backend real desarrollado en **C# con ASP.NET Core**, persistencia en **MySQL** y despliegue en **Railway**, documentado en el Sprint 3.
 
-##### Integración del frontend con la API publicada
+##### Integración del frontend con la API
 
-El archivo `src/environments/environment.ts` establece la dirección utilizada por Vue para consumir la Fake REST API en producción:
+Vue utiliza Axios y obtiene la URL base de la variable `VITE_SUMAQAGRO_PLATFORM_API_URL`, definida en `.env.development` y `.env.production`. En la configuración actual del proyecto, ambos archivos establecen:
 
-```typescript
-platformProviderApiBaseUrl: 
-  'https://sumaqagro-fake-api.onrender.com/api/v1'
-``` 
+```dotenv
+VITE_SUMAQAGRO_PLATFORM_API_URL="/api/v1"
+```
 
-Esta configuración conecta la Web Application alojada en **Firebase Hosting** con el servicio publicado en **Render**. Para el desarrollo local, `environment.development.ts` utiliza la dirección `http://localhost:3000/api/v1`.
+La clase `BaseApi` lee esta variable mediante `import.meta.env.VITE_SUMAQAGRO_PLATFORM_API_URL` y configura el cliente con `axios.create()`. Durante el desarrollo, `vite.config.js` redirige `/api` al backend en `http://127.0.0.1:5192`. En la ejecución mediante Docker, Nginx dirige las peticiones `/api` al backend indicado por `BACKEND_URL`.
 
-La publicación del frontend se realiza mediante Firebase CLI, mientras que la actualización de la Fake REST API se automatiza mediante la integración de Render con GitHub.
+Vite carga `.env.development` al ejecutar `npm run dev` y `.env.production` al compilar con `npm run build`. Firebase Hosting publica los archivos generados en `dist/`; la integración del contenedor del frontend con el backend real se documenta junto al despliegue en Railway del Sprint 3.
 
 ---
 
 
-#### 5.2.1.8. Team Collaboration Insights during Sprint
+#### 5.2.2.8. Team Collaboration Insights during Sprint
 
 
 En esta sección se describe la colaboración del equipo **Dymbia** durante la implementación de la **Web Application de SumaqAgro** correspondiente al **Sprint 2**. Se presentan las evidencias de participación mediante el historial de commits y los analíticos de contribución disponibles en GitHub.
@@ -1112,7 +1103,7 @@ En la imagen se evidencia las contribuciones registradas por cada integrante. Es
 
 ### 5.2.3. Sprint 3
 
-El Sprint 3 marca el inicio del desarrollo de los RESTful Web Services de SumaqAgro, construidos con C#, .NET, ASP.NET Core, Entity Framework Core y MySQL, y documentados mediante OpenAPI / Swagger UI. El backend se organiza por Bounded Contexts (IAM, Profiles, Subscriptions, Farming, Crop y Certification) y, dentro de cada uno, en las capas domain, application, infrastructure e interfaces, siguiendo los patrones tácticos de Domain-Driven Design: agregados, value objects, comandos, consultas, eventos de dominio, puertos de repositorio y fachadas de contexto (ACL). En paralelo, la Web Application en Vue 3 evolucionó hacia su segunda versión con los flujos de autenticación, suscripción, perfil y cooperativa, y la Landing Page se reestructuró en su tercera versión. El sprint abarca las semanas 9 a 12 del ciclo y culmina con la entrega AV2.
+El Sprint 3 marca el inicio del desarrollo de los RESTful Web Services de SumaqAgro, construidos con C#, .NET, ASP.NET Core, Entity Framework Core y MySQL, y documentados mediante OpenAPI con Scalar. El backend se organiza por Bounded Contexts (IAM, Profiles, Subscriptions, Farming, Crop y Certification) y, dentro de cada uno, en las capas domain, application, infrastructure e interfaces, siguiendo los patrones tácticos de Domain-Driven Design: agregados, value objects, comandos, consultas, eventos de dominio, puertos de repositorio y fachadas de contexto (ACL). En paralelo, la Web Application en Vue 3 evolucionó hacia su segunda versión con los flujos de autenticación, suscripción, perfil y cooperativa, y la Landing Page se reestructuró en su tercera versión. El sprint abarca las semanas 9 a 12 del ciclo y culmina con la entrega AV2.
 
 #### 5.2.3.1. Sprint Planning 3
 
@@ -1126,10 +1117,10 @@ En esta sección se especifican los aspectos principales de la reunión de plani
 | Location | Discord / GitHub / Jira Software |
 | Prepared By | Sanca Condori, Miguel |
 | Attendees (to planning meeting) | Vargas Enrique, Jose vargas / Sanca Condori, Miguel / Solorzano Sullca, Benjamin / Tejada Pumacayo, Yamil Jared / Duarte Ruffner, Drago Derick |
-| Sprint 2 Review Summary | Se publicó la primera versión de la Web Application en Angular (`v1.0.0`, y su *patch* `v1.0.1` con el CHANGELOG y la guía de contribución) en Firebase Hosting, conectada a una Fake REST API (`json-server`) desplegada en Render. Asimismo, se publicó la nueva versión de la Landing Page (`v2.0.0` y `v2.0.1`) con las secciones reorganizadas, contenido i18n en español e inglés y la sección del video About-the-Team. Se demostraron los flujos de Crop Health (visor Leaflet con NDVI/NDWI, alertas regionales, reportes de plagas, bandeja, inspecciones y recetas agronómicas) y las vistas iniciales de Field Management, Profiles y Harvest Certification. Quedaron pendientes la preparación de alertas demo por región (TSK-08), la validación integrada del circuito productor–ingeniero (TSK-22) y la consistencia de los datos relacionados (TSK-23). |
-| Sprint 2 Retrospective Summary | El equipo valoró la organización por Bounded Contexts y el uso de GitFlow con Conventional Commits. Como oportunidades de mejora se identificó que la Fake REST API no permite validar reglas de negocio ni seguridad, que los datos demo entre contextos eran inconsistentes y que la integración de ramas se concentró al final del sprint. Se acordó: (1) modelar primero el dominio de cada contexto en el backend antes de exponer endpoints, (2) separar el modelo de dominio de las entidades de persistencia JPA mediante puertos de repositorio, (3) integrar a `develop` cada funcionalidad terminada sin esperar al cierre y (4) asignar a cada nuevo integrante un Bounded Context completo para acelerar su incorporación. |
+| Sprint 2 Review Summary | Se publicó la primera versión de la Web Application en Vue (`v1.0.0`, y su *patch* `v1.0.1` con el CHANGELOG y la guía de contribución) en Firebase Hosting, conectada a una Fake REST API (`json-server`) desplegada en Render. Asimismo, se publicó la nueva versión de la Landing Page (`v2.0.0` y `v2.0.1`) con las secciones reorganizadas, contenido i18n en español e inglés y la sección del video About-the-Team. Se demostraron los flujos de Crop Health (visor Leaflet con NDVI/NDWI, alertas regionales, reportes de plagas, bandeja, inspecciones y recetas agronómicas) y las vistas iniciales de Field Management, Profiles y Harvest Certification. Quedaron pendientes la preparación de alertas demo por región (TSK-08), la validación integrada del circuito productor–ingeniero (TSK-22) y la consistencia de los datos relacionados (TSK-23). |
+| Sprint 2 Retrospective Summary | El equipo valoró la organización por Bounded Contexts y el uso de GitFlow con Conventional Commits. Como oportunidades de mejora se identificó que la Fake REST API no permite validar reglas de negocio ni seguridad, que los datos demo entre contextos eran inconsistentes y que la integración de ramas se concentró al final del sprint. Se acordó: (1) modelar primero el dominio de cada contexto en el backend antes de exponer endpoints, (2) mantener el modelo de dominio independiente de la configuración de persistencia mediante puertos de repositorio y mapeos Fluent API de Entity Framework Core, (3) integrar a `develop` cada funcionalidad terminada sin esperar al cierre y (4) asignar a cada nuevo integrante un Bounded Context completo para acelerar su incorporación. |
 | **Sprint Goal & User Stories** | |
-| Sprint 3 Goal | Our focus is on delivering the first deployed version of the SumaqAgro RESTful Web Services, built with Spring Boot, Spring Data JPA and MySQL and documented with OpenAPI/Swagger, and connecting it to a new version of the Angular Web Application. Users will sign up, sign in and sign out with JWT-based authentication, producers will register plots with validated GPS boundaries and open crop campaigns, farmers will report pests and consult regional agroclimatic alerts, users will update their profiles and register cooperatives, and collection centers will register harvest batches, all stored in a real database instead of the fake API. We believe it delivers a secure and persistent foundation for the platform. This will be confirmed when the Web Services v1.0.0 and the Web App v2.0.0 are publicly deployed, every endpoint is documented in Swagger UI, and these flows work end to end. |
+| Sprint 3 Goal | Our focus is on delivering the first deployed version of the SumaqAgro RESTful Web Services, built with ASP.NET Core, Entity Framework Core and MySQL and documented with OpenAPI/Scalar, and connecting it to a new version of the Vue Web Application. Users will sign up, sign in and sign out with JWT-based authentication, producers will register plots with validated GPS boundaries and open crop campaigns, farmers will report pests and consult regional agroclimatic alerts, users will update their profiles and register cooperatives, and collection centers will register harvest batches, all stored in a real database instead of the fake API. We believe it delivers a secure and persistent foundation for the platform. This will be confirmed when the Web Services v1.0.0 and the Web App v2.0.0 are publicly deployed, every endpoint is documented in Scalar, and these flows work end to end. |
 | Sprint 3 Velocity | 111 Story Points |
 | Sum of Story Points | 111 Story Points |
 
@@ -1140,7 +1131,7 @@ A continuación, se detallan las historias de usuario y técnicas comprometidas 
 | IAM | **US-10** | Registro de usuario en la plataforma (Sign Up) | 3 |
 | IAM | **US-11** | Inicio de sesión seguro (Sign In) | 3 |
 | IAM | **US-14** | Cierre de sesión seguro (Sign Out) | 2 |
-| IAM | **TS-02** | Servicio de autenticación JWT y Spring Security | 8 |
+| IAM | **TS-02** | Servicio de autenticación JWT y autenticación JWT Bearer de ASP.NET Core | 8 |
 | Subscriptions | **US-12** | Consulta de catálogo de planes durante Onboarding | 2 |
 | Subscriptions | **US-22** | Control de cuota de parcelas según el plan | 2 |
 | Profiles | **US-16** | Actualización de perfil y datos de contacto | 3 |
@@ -1163,18 +1154,18 @@ A continuación, se detallan las historias de usuario y técnicas comprometidas 
 | Certification | **US-54** | Registro de lote de cosecha ingresado a acopio | 3 |
 | Certification | **US-56** | Extracción y registro de muestra representativa | 3 |
 | Certification | **US-59** | Asignación de score de calidad global del lote | 5 |
-| Transversal | **TS-06** | Documentación de API RESTful con OpenAPI y Swagger UI | 5 |
+| Transversal | **TS-06** | Documentación de API RESTful con OpenAPI y Scalar | 5 |
 | Transversal | **US-05** | Demostración del producto mediante video | 2 |
 | **Total** | | | **111** |
 
-simismo, el equipo acordó las versiones que cada producto debe alcanzar al cierre del Sprint 3, aplicando **Semantic Versioning 2.0.0** y publicándolas mediante ramas `release/*` integradas en `main`:
+Asimismo, el equipo acordó las versiones que cada producto debe alcanzar al cierre del Sprint 3, aplicando **Semantic Versioning 2.0.0** y publicándolas mediante ramas `release/*` integradas en `main`:
 
 | Producto | Repositorio | Versión al cierre del Sprint 2 | Versión objetivo del Sprint 3 |
 | :--- | :--- | :---: | :---: |
-| Report | `dymbia-aplicacionbesweb/sumaqAgro-report` | 2.0.0 | 3.0.0 |
-| Landing Page (Website) | `dymbia-aplicacionbesweb/sumaqAgro-landing-page` | 2.0.1 | 3.0.0 |
-| Web Application | `dymbia-aplicacionbesweb/sumaqAgro-appweb` | 1.0.1 | 2.0.0 |
-| RESTful Web Services | `dymbia-aplicacionbesweb/sumaqAgro-backend` | — | 1.0.0 |
+| Report | `dymbia-aplicaciones-web/sumaq-agro-report` | 2.0.0 | 3.0.0 |
+| Landing Page (Website) | `dymbia-aplicaciones-web/sumaq-agro-website` | 2.0.1 | 3.0.0 |
+| Web Application | `dymbia-aplicaciones-web/sumaq-agro-web-app` | 1.0.1 | 2.0.0 |
+| RESTful Web Services | `dymbia-aplicaciones-web/sumaq-agro-platform` | — | 1.0.0 |
 
 #### 5.2.3.2. Aspect Leaders and Collaborators
 
@@ -1182,13 +1173,13 @@ En esta sección se presenta la matriz **Leadership-and-Collaboration Matrix (LA
 
 Los aspectos considerados en el Sprint 3 son los siguientes:
 
-* **Aspect 1 — IAM & Subscriptions:** registro e inicio de sesión con JWT, protección de rutas con Spring Security, catálogo de planes y suscripción (US-10, US-11, US-14, US-12, TS-02).
-* **Aspect 2 — Farming & Shared Kernel:** parcelas, linderos GPS, cuota de parcelas, campañas agrícolas y egresos, además del *shared kernel* (manejo de errores, patrón `Result`, auditoría JPA, configuración e internacionalización de mensajes) (US-22, US-29, US-32, US-33, US-34, US-37, US-38, US-39).
+* **Aspect 1 — IAM & Subscriptions:** registro e inicio de sesión con JWT, protección de rutas con autenticación JWT Bearer de ASP.NET Core, catálogo de planes y suscripción (US-10, US-11, US-14, US-12, TS-02).
+* **Aspect 2 — Farming & Shared Kernel:** parcelas, linderos GPS, cuota de parcelas, campañas agrícolas y egresos, además del *shared kernel* (manejo de errores, patrón `Result`, auditoría con Entity Framework Core, configuración e internacionalización de mensajes) (US-22, US-29, US-32, US-33, US-34, US-37, US-38, US-39).
 * **Aspect 3 — Crop & AgroMonitoring:** observaciones satelitales, integración con AgroMonitoring, alertas agroclimáticas, reportes de plagas, inspecciones y recetas técnicas (TS-01, US-42, US-43, US-45, US-48, US-52).
 * **Aspect 4 — Profiles & Cooperatives:** perfiles de usuario, cooperativas, padrón de socios, asignación de agrónomos y fachada del contexto para otros Bounded Contexts (US-16, US-17, US-18, US-21).
 * **Aspect 5 — Certification:** lotes de cosecha, pesaje, muestreo, calificación de calidad, certificados y trazabilidad pública (US-54, US-56, US-59).
 
-La documentación OpenAPI (TS-06) y el video demostrativo (US-05) son responsabilidad compartida: cada líder documenta en Swagger UI los endpoints de su aspecto.
+La documentación OpenAPI (TS-06) y el video demostrativo (US-05) son responsabilidad compartida: cada líder documenta en Scalar los endpoints de su aspecto.
 
 ##### Leadership-and-Collaboration Matrix (LACX) — Sprint 3
 
@@ -1262,29 +1253,29 @@ El objetivo principal del **Sprint 3** es construir y documentar la primera vers
 | **US-56** | Extracción y registro de muestra representativa | **TSK-48** | Registro de muestra | Implementar el comando de muestreo del lote y su validación. | 3 h | Jose Varga Enrique | To-Review |
 | **US-59** | Asignación de score de calidad global del lote | **TSK-49** | Calificación de calidad | Implementar la graduación de papa y la catación de café, el evento `BatchGradedEvent` y su manejador. | 4 h | Jose Varga Enrique | To-Review |
 | **US-59** | Asignación de score de calidad global del lote | **TSK-50** | Certificados y trazabilidad | Implementar `QualityCertificate`, la generación de PDF/QR y la consulta pública de trazabilidad. | 5 h | Jose Varga Enrique | To-Review |
-| **TS-06** | Documentación de API RESTful con OpenAPI y Swagger UI | **TSK-51** | Documentación OpenAPI | Configurar OpenAPI y Swagger UI en ASP.NET Core y documentar los endpoints de cada contexto. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
+| **TS-06** | Documentación de API RESTful con OpenAPI y Scalar | **TSK-51** | Documentación OpenAPI | Configurar OpenAPI con Scalar en ASP.NET Core y documentar los endpoints de cada contexto. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
 | **US-05** | Demostración del producto mediante video | **TSK-52** | Video demostrativo | Grabar y editar el video de demostración de los flujos implementados en el sprint. | 2 h | Sanca Condori, Miguel | To-do |
 
 Adicionalmente, se registraron tareas transversales que no dependen de una historia en particular, pero que son necesarias para satisfacer restricciones generales del backend:
 
 | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 | :---: | :--- | :--- | :---: | :--- | :---: |
-| **TSK-T1** | Shared kernel | Implementar el patrón `Result`, el manejo estructurado de errores, el *exception handler* global, los *assemblers* de `ProblemDetail`, la auditoría JPA y la estrategia de nombres en *snake case* con tablas en plural. | 6 h | Sanca Condori, Miguel | Done |
+| **TSK-T1** | Shared kernel | Implementar el patrón `Result`, el manejo estructurado de errores, el *exception handler* global, los *assemblers* de `ProblemDetail`, la auditoría con Entity Framework Core y la estrategia de nombres en *snake case* con tablas en plural. | 6 h | Sanca Condori, Miguel | Done |
 | **TSK-T2** | Configuración por entornos e i18n | Definir las propiedades por entorno y los mensajes de error en inglés y español. | 2 h | Sanca Condori, Miguel | Done |
-| **TSK-T3** | Separación dominio–persistencia | Separar los agregados de las entidades JPA mediante puertos de repositorio y publicador de eventos de dominio. | 4 h | Sanca Condori, Miguel | Done |
+| **TSK-T3** | Separación dominio–persistencia | Mantener los agregados independientes de la configuración de persistencia mediante puertos de repositorio, mapeos Fluent API de Entity Framework Core y publicación de eventos de dominio. | 4 h | Sanca Condori, Miguel | Done |
 
 ---
 
 #### 5.2.3.4. Development Evidence for Sprint Review
 
-En esta sección se presentan los avances de implementación del **Sprint 3**. El esfuerzo principal se concentró en el nuevo repositorio de **RESTful Web Services** (`sumaqAgro-backend`), que al cierre del sprint expone en `develop` los endpoints de los contextos **IAM**, **Profiles**, **Farming** y **Crop**, documentados con Swagger UI. Los contextos **Certification** y **Subscriptions** y la importación desde AgroMonitoring se encuentran en sus ramas `feature/*`, pendientes de revisión e integración. En la **Web Application** (`sumaqAgro-appweb`) se implementaron los flujos de autenticación, suscripción, cuenta de usuario y cooperativa, que aún consumen la Fake REST API y se conectarán a los Web Services en la siguiente iteración. En la **Landing Page** (`sumaqAgro-landing-page`) se publicaron los *releases* `v3.0.0`, `v3.1.0` y `v3.2.0`, que reestructuran el proyecto con *partials* reutilizables para el encabezado y el pie de página, extraen los íconos SVG a archivos dedicados e incorporan a los nuevos integrantes del equipo.
+En esta sección se presentan los avances de implementación del **Sprint 3**. El desarrollo de los **RESTful Web Services** se concentra en el repositorio `sumaq-agro-platform`, con **C#, ASP.NET Core, Entity Framework Core y MySQL**, organizado en los contextos **IAM**, **Profiles**, **Subscriptions**, **Farming**, **Crop** y **Certification**. Los contratos HTTP se documentan mediante **OpenAPI con Scalar**. En la **Web Application**, alojada en `sumaq-agro-web-app`, se implementaron los flujos de autenticación, suscripción, cuenta de usuario y cooperativa y su integración mediante Axios con el backend real. La Fake REST API corresponde al soporte de demostración del Sprint 2 y no al backend de esta iteración. En la **Landing Page** (`sumaq-agro-website`) se trabajó en la estructura con *partials* reutilizables para el encabezado y el pie de página, los íconos SVG y el contenido de los integrantes del equipo.
 
 El equipo trabajó bajo **GitFlow**: cada funcionalidad se desarrolló en una rama `feature/<bounded-context>-<funcionalidad>` creada desde `develop` y se integró nuevamente en `develop` mediante *merge*. Todos los mensajes siguen el estándar **Conventional Commits** en inglés, con el *scope* del Bounded Context o agregado modificado. Los mensajes se conservan literalmente como están registrados en Git.
 
-En el repositorio de RESTful Web Services se registraron **264 commits** durante el sprint; a continuación se presenta una selección de **58 commits** representativos de todos los integrantes, ordenados desde el más antiguo hasta el más reciente:
+A continuación se presenta una selección de commits del repositorio de RESTful Web Services, con aportes de los integrantes del equipo. Esta selección documenta avances de implementación; el conteo de contribuciones del periodo se presenta en la sección 5.2.3.8:
 
 Repository
-`dymbia-aplicacionweb/sumaqAgro-backend`
+`dymbia-aplicaciones-web/sumaq-agro-platform`
 
 | Sprint # | Sprint 3 | | | | | | |
 | :--- | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
@@ -1339,13 +1330,13 @@ Repository
 | **US-56** | Extracción y registro de muestra representativa | **TSK-48** | Registro de muestra | Implementar la entidad `HarvestSample`, el comando `SampleHarvestBatchCommand` y el servicio de certificación para gestionar operaciones sobre lotes. Commits: `70b0c16`, `456ee0e`, `22ba40b`, `3f6581d`. | 3 h | Jose Varga Enrique | To-Review |
 | **US-59** | Asignación de score de calidad global del lote | **TSK-49** | Calificación de calidad | Implementar los comandos de catación de café y clasificación de papa, los value objects de distribución de calibres y la corrección del comando de clasificación. Commits: `7350b5a`, `f0cd67d`, `0392cab`, `91271e2`. | 4 h | Jose Varga Enrique | To-Review |
 | **US-59** | Asignación de score de calidad global del lote | **TSK-50** | Certificados y trazabilidad | Implementar los recursos y comandos de certificados, los servicios de consulta y trazabilidad y el controlador público; corregir la consulta de certificados y la respuesta de trazabilidad. Commits: `68189ab`, `d967d3a`, `9ca880e`, `a5456c0`, `15fc221`, `1bd9758`, `1931121`, `6734283`, `96b0a0e`. Las capturas no muestran generación de PDF/QR. | 5 h | Jose Varga Enrique | To-Review |
-| **TS-06** | Documentación de API RESTful con OpenAPI y Swagger UI | **TSK-51** | Documentación y ejemplos HTTP | Incorporar soporte Bearer en OpenAPI, ejemplos HTTP de IAM, Crop, Certification y Subscriptions y documentación en inglés para los seis contextos del backend. Commits: `501e177`, `585ed25`, `3223863`, `6d0ec77`, `5bc616e`, `3a72244`, `654d438`, `569927b`, `b83ad9b`, `7d46103`, `b343022`, `09dc570`, `1c875aa`, `bba1b6f`. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
+| **TS-06** | Documentación de API RESTful con OpenAPI y Scalar | **TSK-51** | Documentación y ejemplos HTTP | Incorporar soporte Bearer en OpenAPI, ejemplos HTTP de IAM, Crop, Certification y Subscriptions y documentación en inglés para los seis contextos del backend. Commits: `501e177`, `585ed25`, `3223863`, `6d0ec77`, `5bc616e`, `3a72244`, `654d438`, `569927b`, `b83ad9b`, `7d46103`, `b343022`, `09dc570`, `1c875aa`, `bba1b6f`. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
 | **US-05** | Demostración del producto mediante video | **TSK-52** | Video demostrativo | Grabar y editar el video de demostración de los flujos implementados en el sprint. No se muestra un commit o evidencia del video en las capturas. | 2 h | Sanca Condori, Miguel | To-do |
 
 
-#### 5.2.3.5. Execution Evidence for Sprint Review**
+#### 5.2.3.5. Execution Evidence for Sprint Review
 
-Durante el Sprint 3 se actualizó la Landing Page y se desarrollaron en la Web Application los flujos de ingreso, registro por rol, suscripciones y gestión de cooperativas. En paralelo, el equipo implementó los servicios Spring Boot para sustituir la API simulada del Sprint 2. Las capturas de esta sección muestran las vistas públicas que se pudieron comprobar en Cloudflare Pages y Firebase Hosting.
+Durante el Sprint 3 se actualizó la Landing Page y se desarrollaron en la Web Application los flujos de ingreso, registro por rol, suscripciones y gestión de cooperativas. En paralelo, el equipo implementó los servicios ASP.NET Core para sustituir la API simulada del Sprint 2. Las capturas de esta sección muestran las vistas públicas que se pudieron comprobar en Cloudflare Pages y Firebase Hosting.
 
 ##### Landing Page
 
@@ -1445,13 +1436,13 @@ Suscripción al plan Semilla e historial de pagos.
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
-Los RESTful Web Services incorporan SpringDoc OpenAPI para exponer los contratos HTTP y consultarlos desde Swagger UI. La tabla recoge las operaciones principales del sprint, contrastadas con los controladores y recursos del backend. Los fragmentos JSON son ejemplos abreviados con datos ficticios. La columna de entrada identifica parámetros de ruta, filtros de consulta y campos principales del cuerpo. El esquema completo de cada recurso se consulta en OpenAPI.
+Los RESTful Web Services de SumaqAgro están desarrollados con ASP.NET Core y C# sobre .NET 10. El backend utiliza Microsoft.AspNetCore.OpenApi para generar los contratos HTTP y Scalar como interfaz interactiva para consultar y probar los endpoints. La tabla presenta las operaciones principales del sprint. Los fragmentos JSON son ejemplos abreviados con datos ficticios. La columna de entrada identifica parámetros de ruta, filtros de consulta y campos principales del cuerpo. El esquema completo de cada recurso se consulta en OpenAPI.
 
-![swagger-img.png](assets/img/chapter-V/sprint-3/swagger-img.png)
+![Scalar](assets/img/chapter-V/sprint-3/scalar/scalar-img.png)
 
-- **Repositorio de Web Services** [sumaq-agro-platform](https://github.com/dymbia-opensource/sumaq-agro-platform)
-- **Documentación del entorno configurado** [Swagger UI en Render](https://sumaq-agro-platform.onrender.com/swagger-ui/index.html) y [OpenAPI JSON en Render](https://sumaq-agro-platform.onrender.com/v3/api-docs).
-- **Documentación para ejecución local** [Swagger UI local](http://localhost:8080/swagger-ui/index.html) y [OpenAPI JSON local](http://localhost:8080/v3/api-docs).
+- **Repositorio de Web Services:** [sumaq-agro-platform](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform).
+- **Entorno de despliegue:** backend de SumaqAgro desplegado en Railway mediante Docker.
+- **Documentación para ejecución local:** [Scalar local](http://localhost:5192/scalar/v1) y [OpenAPI JSON local](http://localhost:5192/openapi/v1.json).
 
 ##### Operaciones por Bounded Context
 
@@ -1496,37 +1487,45 @@ Las rutas de la tabla son relativas a `/api/v1`. Las operaciones protegidas usan
 Los contratos se contrastaron con el código disponible para la revisión de AV2. Parte de las operaciones de Subscriptions y Certification se desarrolló en ramas del sprint y su integración en `develop` aparece después del corte del 13 de noviembre. La tabla documenta su implementación en el código y su disponibilidad pública queda por validar.
 
 
-##### Interacción con Swagger UI**
+##### Interacción con Scalar
 
-Para comprobar el contrato con datos de muestra, abrir **Tokens**, enviar el correo y la contraseña de una cuenta de prueba y comprobar que la respuesta sea `200` con un JWT. Después, ejecutar **Field Plots** con el `fieldPlotId` de una parcela de demostración y comprobar que la respuesta `200` incluya sus datos. Las capturas deben mostrar los parámetros, el código HTTP y el cuerpo de respuesta, con las credenciales y el token ocultos.
+Para comprobar el contrato con datos de muestra, ejecutar **Tokens** (`POST /api/v1/tokens`) en Scalar, enviar el correo y la contraseña de una cuenta de prueba y comprobar que la respuesta sea `200` con un JWT. Después, configurar la autorización Bearer y ejecutar **Field Plots** con el `fieldPlotId` de una parcela de demostración, comprobando que la respuesta `200` incluya sus datos. Las capturas deben mostrar los parámetros, el código HTTP y el cuerpo de respuesta, con las credenciales y el token ocultos.
 
-Durante la revisión, la URL pública de Swagger UI mostró la pantalla de arranque de Render. Quedan pendientes las capturas de interacción en `assets/img/chapter-5/sprint-3/swagger-token.jpg` y `assets/img/chapter-5/sprint-3/swagger-parcelas.jpg`.
+La documentación se consulta en [Scalar local](http://localhost:5192/scalar/v1). A continuación, se presentan las evidencias de autenticación y consulta de parcelas mediante Scalar.
+
+![Autenticación Scalar Token](assets/img/chapter-V/sprint-3/scalar/scalar-token.png)
+
+![Autenticación Scalar Token Prueba](assets/img/chapter-V/sprint-3/scalar/scalar-token-prueba.png)
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-La entrega de AV2 comprende tres productos. Se comprobó el acceso público a la Landing Page y a la pantalla de ingreso de la Web Application. Para la API, se identificaron el contenedor preparado para Render y la configuración del frontend que apunta a ese servicio. La respuesta del backend y la conexión autenticada de extremo a extremo quedan por verificar.
+
+La entrega de AV2 comprende tres productos: la Landing Page, la Web Application desarrollada en Vue y los RESTful Web Services implementados con ASP.NET Core. El frontend y el backend se despliegan en Railway mediante Docker, junto con un servicio MySQL para la persistencia de datos. La Landing Page proporciona el enlace de acceso a la Web Application.
 
 ##### Landing Page en Cloudflare Pages
 
 1. Se reorganizó el sitio estático bajo el directorio `public/`, con sus páginas legales, estilos, scripts y recursos.
-2. La versión [`v3.2.0`](https://github.com/dymbia-opensource/sumaq-agro-website/tree/v3.2.0) se integró en `main` mediante el commit [`752c5f9`](https://github.com/dymbia-opensource/sumaq-agro-website/commit/752c5f9).
-3. Se comprobó el acceso al [sitio publicado](https://sumaqagro-website.vercel.app/) y el destino de **Sign In**, que conduce a Firebase Hosting. Queda pendiente la captura del historial de Cloudflare Pages con la rama y el commit del despliegue en `assets/img/chapter-5/sprint-3/deploy-cloudflare.jpg`.
-![img-cloudflare.png](assets/img/chapter-V/sprint-3/despliegue/img-cloudflare.png)
+2. El código de la Landing Page se mantiene en el repositorio [sumaq-agro-website](https://github.com/dymbia-aplicaciones-web/sumaq-agro-website), correspondiente al proyecto de Aplicaciones Web.
+3. Se comprobó el acceso al [sitio publicado](https://sumaqagro-website.vercel.app/) y el destino de **Sign In**, que conduce a Firebase Hosting. A continuación, se presenta la evidencia del despliegue de la Landing Page.
+
+![Despliegue de la Landing Page](assets/img/chapter-V/sprint-3/despliegue/img-cloudflare.png)
+
 ##### Web Application en Firebase Hosting
 
-1. El proyecto `sumaqagro-appweb` está vinculado mediante `.firebaserc`. La compilación con `npm run build` genera el contenido en `dist/sumaqAgro-appweb/browser`, directorio indicado en `firebase.json`.
-2. La publicación usa `firebase deploy --only hosting`. Firebase redirige las rutas internas a `index.html`, de modo que Angular resuelva enlaces como `/demo-access`.
-3. Se comprobó la [ruta publicada de acceso](https://sumaqagro-appweb.web.app/demo-access) y su redirección al formulario de inicio de sesión. El commit [`e70e5ff`](https://github.com/dymbia-opensource/sumaq-agro-web-app/commit/e70e5ff) configura el backend de Render en la rama `feature/update-frontend` el 15 de noviembre. Se requiere el historial de Firebase Hosting para identificar qué compilación está activa y comprobar si incluye ese cambio. La captura se guarda en `assets/img/chapter-5/sprint-3/deploy-firebase.jpg`.
-  ![img-firebase.png](assets/img/chapter-V/sprint-3/despliegue/img-firebase.png)
+1. El proyecto `sumaqagro-appweb` está vinculado mediante `.firebaserc`. La compilación con `npm run build` genera el contenido en `dist/`, directorio indicado en `firebase.json`.
+2. La publicación usa `firebase deploy --only hosting`. Firebase redirige las rutas internas a `index.html`, de modo que Vue Router resuelva la navegación de la aplicación.
+3. El código se mantiene en el repositorio [sumaq-agro-web-app](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app). La aplicación se publica en [Firebase Hosting](https://sumaqagro-appweb.web.app/). A continuación, se presenta la evidencia del despliegue.
 
+![Despliegue de la Web Application en Firebase Hosting](assets/img/chapter-V/sprint-3/despliegue/img-firebase.png)
 
-##### RESTful Web Services en Render
+##### RESTful Web Services en Railway
 
-1. El commit [`6526e03`](https://github.com/dymbia-opensource/sumaq-agro-platform/commit/6526e03), del 14 de noviembre, incorpora el `Dockerfile` de Render. La primera etapa ejecuta Maven para generar `platform-1.0.0.jar`. La segunda ejecuta el artefacto con `SERVER_PORT=10000`.
-2. Para usar la conexión MySQL de producción se debe activar el perfil con `SPRING_PROFILES_ACTIVE=prod`. Este perfil lee las variables de entorno de la base de datos, JWT, CORS y AgroMonitoring. `FRONTEND_ORIGIN` debe coincidir con el origen publicado de Firebase.
-3. La [documentación de la API](https://sumaq-agro-platform.onrender.com/swagger-ui/index.html) abrió en la pantalla de arranque de Render durante la comprobación. Para acreditar el despliegue, faltan la respuesta de Swagger y una captura del panel de Render con la rama, el commit y el estado del servicio. La captura se guarda en `assets/img/chapter-5/sprint-3/deploy-render.jpg`.
-![img-rende.png](assets/img/chapter-V/sprint-3/despliegue/img-rende.png)
----
+1. El repositorio [sumaq-agro-platform](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform) incorpora un `Dockerfile` para desplegar el backend en Railway. La primera etapa utiliza el SDK de .NET 10 y ejecuta `dotnet publish` en configuración Release. La segunda utiliza ASP.NET Core 10 y ejecuta `SumaqAgro.Platform.dll`, escuchando en `0.0.0.0` mediante la variable `PORT`, con `8080` como valor predeterminado.
+2. La configuración de producción utiliza `ASPNETCORE_ENVIRONMENT=Production`. Las variables de entorno permiten configurar la conexión MySQL mediante `ConnectionStrings__DefaultConnection`, la firma JWT mediante `Jwt__SigningKey` y los orígenes permitidos mediante `Cors__AllowedOrigins__0`. La opción `Database__ApplyMigrations=true` permite aplicar las migraciones al iniciar el servicio.
+3. El backend se conecta al servicio MySQL del proyecto de Railway. La documentación interactiva se consulta mediante [Scalar local](http://localhost:5192/scalar/v1), habilitado únicamente en Development. A continuación, se presenta la evidencia del despliegue en Railway, con el estado del servicio y su información de publicación.
+
+![Despliegue de los RESTful Web Services en Railway](assets/img/chapter-V/sprint-3/despliegue/img-railway-backend.png)
+
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
@@ -1537,7 +1536,7 @@ El equipo organizó la implementación de los servicios por Bounded Context, seg
 | Benjamin Solorzano | 17 | 98 | 41 |
 | Miguel Sanca | 0 | 24 | 80 |
 | Yamil Tejada | 0 | 11 | 83 |
-| Jose Vargas | 0 | 5 | 23 | |
+| Jose Vargas | 0 | 5 | 23 |
 | Drago Duarte| 0 | 27 | 55 |
 | **Total** | **17** | **165** | **282** |
 
@@ -1546,14 +1545,14 @@ El cuadro cuenta los commits alcanzables desde la rama remota `develop` cuya fec
 ##### Landing Page
 
 
-El historial registra la reorganización de las vistas y recursos compartidos y la actualización de los perfiles del equipo. La autoría de los 17 commits del periodo en `develop` figura a nombre de Benjamin Solorzano. [Historial de commits](https://github.com/dymbia-opensource/sumaq-agro-website/commits/develop/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-website/graphs/contributors?from=15%2F8%2F2026)
+El historial registra la reorganización de las vistas y recursos compartidos y la actualización de los perfiles del equipo. La autoría de los 17 commits del periodo en `develop` figura a nombre de Benjamin Solorzano. [Historial de commits](https://github.com/dymbia-aplicaciones-web/sumaq-agro-website/commits/develop/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-website/graphs/contributors?from=15%2F8%2F2026)
 ##### Web Application
 
-Los cinco integrantes registraron commits en la rama de integración durante el sprint. El historial permite seguir el trabajo de los formularios de acceso, el catálogo de suscripciones y las vistas de cooperativa, así como la integración posterior con Spring Boot. [Historial de commits](https://github.com/dymbia-opensource/sumaq-agro-web-app/commits/develop/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app/graphs/contributors?from=15%2F8%2F2026)
+Los cinco integrantes registraron commits en la rama de integración durante el sprint. El historial permite seguir el trabajo de los formularios de acceso, el catálogo de suscripciones y las vistas de cooperativa, así como la integración con el backend desarrollado en ASP.NET Core. [Historial de commits](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app/commits/develop/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app/graphs/contributors?from=15%2F8%2F2026)
 
 ##### RESTful Web Services
 
-Benjamin Solorzano trabajó en IAM y suscripciones. Miguel Sanca se encargó de Farming y el *Shared Kernel*. Yamil Tejada implementó servicios de Crop e integración satelital. Jose Vargas trabajó en Profiles y cooperativas, Drago Duarte en Certification. La evidencia de desarrollo de 5.2.3.4 identifica los commits por contexto. [Historial de commits](https://github.com/dymbia-opensource/sumaq-agro-platform/commits/develop/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform/graphs/contributors?from=15%2F8%2F2026)
+Benjamin Solorzano trabajó en IAM y suscripciones. Miguel Sanca se encargó de Farming y el *Shared Kernel*. Yamil Tejada implementó servicios de Crop e integración satelital. Jose Vargas trabajó en Profiles y cooperativas, Drago Duarte en Certification. La evidencia de desarrollo de 5.2.3.4 identifica los commits por contexto. [Historial de commits](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform/commits/develop/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform/graphs/contributors?from=15%2F8%2F2026)
 
 ## 5.3. Validation Interviews.
 
