@@ -899,14 +899,10 @@ Para evidenciar el funcionamiento de la Web Application de SumaqAgro, se present
 
 En esta sección se presenta la documentación de los servicios utilizados por la Web Application de **SumaqAgro** durante el **Sprint 2**. Para esta iteración se empleó una **Fake REST API implementada con `json-server`**, que administra los datos de demostración almacenados en `server/db.json`.
 
-```bash
-npm run api
-```
-
-Este comando ejecuta:
+La API de demostración puede iniciarse directamente con:
 
 ```bash
-json-server --watch server/db.json --routes server/routes.json --port 3000
+npx json-server --watch server/db.json --routes server/routes.json --port 3000
 ```
 
 El archivo `server/routes.json` establece el prefijo de acceso a los recursos:
@@ -917,14 +913,14 @@ El archivo `server/routes.json` establece el prefijo de acceso a los recursos:
 }
 ```
 
-Las direcciones de conexión configuradas en el proyecto son:
+La conexión local de demostración y la configuración actual del proyecto se distinguen de la siguiente manera:
 
 | Entorno | URL base | Archivo de configuración |
 | :--- | :--- | :--- |
-| Desarrollo local | `http://localhost:3000/api/v1` | `src/environments/environment.development.ts` |
-| Producción | `https://sumaqagro-fake-api.onrender.com/api/v1` | `src/environments/environment.ts` |
+| API de demostración local | `http://localhost:3000/api/v1` | `server/db.json` y `server/routes.json` |
+| Backend real (configuración actual) | `/api/v1` | `.env.development` y `.env.production` |
 
-La aplicación Vue se ejecuta en una terminal independiente mediante `npm start`.
+La aplicación Vue se ejecuta en una terminal independiente mediante `npm run dev`.
 
 ##### Documentación de endpoints
 
@@ -994,9 +990,9 @@ Los valores son datos simulados para la demostración. En el archivo revisado, l
 
 ##### Integración con el frontend Vue
 
-El archivo `app.config.ts` habilita la comunicación HTTP mediante `provideHttpClient(withFetch())`. Las fachadas `ProfilesApi`, `FieldManagementApi`, `CropHealthApi` y `HarvestCertificationApi` agrupan las operaciones de acceso a datos de sus respectivos contextos.
+La comunicación HTTP de Vue se implementa mediante Axios. La clase compartida `BaseApi`, definida en `src/shared/infrastructure/base-api.js`, crea el cliente con `axios.create()` y obtiene la URL base desde `import.meta.env.VITE_SUMAQAGRO_PLATFORM_API_URL`. Las fachadas de infraestructura agrupan las operaciones de acceso a datos de sus respectivos contextos.
 
-La clase compartida `BaseApiEndpoint` implementa las operaciones generales de consulta, creación, actualización y eliminación. Los **assemblers** convierten los recursos JSON recibidos en entidades de dominio y transforman las entidades en recursos para enviarlos a la API.
+La clase compartida `BaseEndpoint` implementa las operaciones generales de consulta, creación, actualización y eliminación. Los **assemblers** convierten los recursos JSON recibidos en entidades de dominio y transforman las entidades en recursos para enviarlos a la API.
 
 Por ejemplo, el método `CropHealthApi.getObservationsByPlot(plotId)` delega la consulta al endpoint de observaciones satelitales. Este envía una petición GET con el parámetro `plotId` y transforma los registros recibidos en entidades `SatelliteObservation`.
 
@@ -1007,17 +1003,17 @@ La documentación presentada corresponde a la configuración y los contratos imp
 
 #### 5.2.1.7. Software Deployment Evidence for Sprint Review
 
-Durante el **Sprint 2**, el equipo **Dymbia** realizó la configuración y publicación de la **Web Application de SumaqAgro** en **Firebase Hosting** y de la **Fake REST API** en **Render**. Estas actividades permitieron disponer de un entorno publicado para presentar las funcionalidades desarrolladas y consumir los datos de demostración.
+Durante el **Sprint 2**, el equipo **Dymbia** publicó la **Web Application de SumaqAgro**, desarrollada en **Vue**, en **Firebase Hosting**, y utilizó una **Fake REST API** con `json-server` publicada en **Render** para los datos de demostración.
 
-El proceso incluyó la configuración de los recursos en ambos proveedores, la vinculación del proyecto con GitHub, la definición de los comandos de compilación y ejecución, y la configuración de la conexión entre el frontend y la API.
+El proceso incluyó la configuración de Firebase Hosting, la organización del código en GitHub y la definición de los comandos de compilación, ejecución y conexión con los servicios.
 
-El alcance de despliegue de esta iteración comprende la **Web Application** y la **Fake REST API**. La Landing Page corresponde al Sprint 1, mientras que el backend definitivo en .NET se desarrollará en una iteración posterior.
+El alcance de publicación de esta sección comprende la **Web Application** y la **Fake REST API** del Sprint 2. El backend definitivo en **C# y ASP.NET Core**, con **MySQL** y despliegue en **Railway**, corresponde al Sprint 3.
 
 ##### Despliegue de la Web Application en Firebase Hosting
 
   Se configuró el proyecto **`sumaqagro-appweb`** en Firebase y se habilitó **Firebase Hosting** para publicar los archivos generados por Vue.
 
-La vinculación del proyecto local se encuentra definida en `.firebaserc`. Por su parte, `firebase.json` establece el directorio de publicación `dist/sumaqAgro-appweb/browser` y una redirección hacia `index.html`, necesaria para que Vue gestione sus rutas internas al ingresar directamente a una vista o recargar la página.
+La vinculación del proyecto local se encuentra definida en `.firebaserc`. Por su parte, `firebase.json` establece el directorio de publicación `dist/` y una redirección hacia `index.html`, necesaria para que Vue gestione sus rutas internas al ingresar directamente a una vista o recargar la página.
 
 El procedimiento de despliegue documentado en el repositorio utiliza **Firebase CLI**. La preparación del entorno requiere instalar la herramienta y autenticar una cuenta con acceso al proyecto:
 
@@ -1044,19 +1040,17 @@ La Web Application dispone de los siguientes dominios:
 
 La captura del panel de Firebase Hosting muestra el proyecto `sumaqagro-appweb`, sus dominios y el historial de versiones publicadas. Se observan publicaciones realizadas el **8 y 9 de octubre de 2026**, con la versión **`4e43fc`** identificada como la versión actual en la evidencia.
 
-![Firebase](assets/img/chapter-5/sprint-2/firebase-vue.jpeg)
+![Firebase](assets/img/chapter-V/sprint-2/firebase-vue.jpeg)
 
 ##### Despliegue de la Fake REST API en Render
 
-Se configuró un **Web Service** denominado **`sumaqAgro-fake-api`** en Render, utilizando el entorno de ejecución **Node** y una instancia gratuita.
-
-El servicio se vinculó con el repositorio **`dymbia-opensource/sumaqAgro-appweb`** y la rama **`develop`**. La configuración documentada en el proyecto es la siguiente:
+Para el Sprint 2 se utilizó una **Fake REST API** con `json-server`, publicada en **Render**, como soporte de los datos de demostración de la Web Application de Aplicaciones Web.
 
 | Parámetro | Configuración |
 | :--- | :--- |
 | Tipo de servicio | Web Service |
 | Nombre | `sumaqAgro-fake-api` |
-| Repositorio | `dymbia-opensource/sumaqAgro-appweb` |
+| Repositorio de la Web Application | `dymbia-aplicaciones-web/sumaq-agro-web-app` |
 | Rama | `develop` |
 | Entorno de ejecución | Node |
 | Comando de instalación | `npm install --include=dev` |
@@ -1064,34 +1058,31 @@ El servicio se vinculó con el repositorio **`dymbia-opensource/sumaqAgro-appweb
 | Tipo de instancia | Free |
 | Actualización | Auto-Deploy |
 
-El comando de inicio utiliza el puerto asignado por Render y permite atender peticiones externas. La Fake REST API administra los datos de `server/db.json` y utiliza `server/routes.json` para exponer los recursos bajo el prefijo `/api/v1`.
+La Fake REST API utiliza `server/db.json` para los datos de demostración y `server/routes.json` para exponer los recursos bajo el prefijo `/api/v1`. El comando de inicio utiliza el puerto asignado por Render.
 
-La URL base configurada para el servicio es:
+**URL base:** https://sumaqagro-fake-api.onrender.com/api/v1
 
-**https://sumaqagro-fake-api.onrender.com/api/v1/db**
-
-![fake-api](assets/img/chapter-5/sprint-2/img-fake-api.png)
+![fake-api](assets/img/chapter-V/sprint-2/img-fake-api.png)
 
 ###### Evidencia de publicación en Render
 
-La captura presenta el servicio en estado **Live**, vinculado a la rama `develop` y al commit **`227c66d`**. El historial muestra despliegues activados mediante **Auto-Deploy**, asociados a la integración de funcionalidades en el repositorio.
+La captura del panel de Render muestra el servicio en estado **Live**, la rama `develop` y el historial de despliegues automáticos de la Fake REST API utilizada durante esta etapa.
 
-Esta evidencia permite observar la automatización del despliegue de la Fake REST API a partir de las actualizaciones de la rama configurada.
+![Render](assets/img/chapter-V/sprint-2/render-vue.jpeg)
 
-![Render](assets/img/chapter-5/sprint-2/render-vue.jpeg)
+La Fake REST API corresponde al Sprint 2. La versión final utiliza el backend real desarrollado en **C# con ASP.NET Core**, persistencia en **MySQL** y despliegue en **Railway**, documentado en el Sprint 3.
 
-##### Integración del frontend con la API publicada
+##### Integración del frontend con la API
 
-El archivo `src/environments/environment.ts` establece la dirección utilizada por Vue para consumir la Fake REST API en producción:
+Vue utiliza Axios y obtiene la URL base de la variable `VITE_SUMAQAGRO_PLATFORM_API_URL`, definida en `.env.development` y `.env.production`. En la configuración actual del proyecto, ambos archivos establecen:
 
-```typescript
-platformProviderApiBaseUrl: 
-  'https://sumaqagro-fake-api.onrender.com/api/v1'
-``` 
+```dotenv
+VITE_SUMAQAGRO_PLATFORM_API_URL="/api/v1"
+```
 
-Esta configuración conecta la Web Application alojada en **Firebase Hosting** con el servicio publicado en **Render**. Para el desarrollo local, `environment.development.ts` utiliza la dirección `http://localhost:3000/api/v1`.
+La clase `BaseApi` lee esta variable mediante `import.meta.env.VITE_SUMAQAGRO_PLATFORM_API_URL` y configura el cliente con `axios.create()`. Durante el desarrollo, `vite.config.js` redirige `/api` al backend en `http://127.0.0.1:5192`. En la ejecución mediante Docker, Nginx dirige las peticiones `/api` al backend indicado por `BACKEND_URL`.
 
-La publicación del frontend se realiza mediante Firebase CLI, mientras que la actualización de la Fake REST API se automatiza mediante la integración de Render con GitHub.
+Vite carga `.env.development` al ejecutar `npm run dev` y `.env.production` al compilar con `npm run build`. Firebase Hosting publica los archivos generados en `dist/`; la integración del contenedor del frontend con el backend real se documenta junto al despliegue en Railway del Sprint 3.
 
 ---
 
