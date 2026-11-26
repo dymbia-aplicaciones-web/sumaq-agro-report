@@ -13,7 +13,7 @@ El alcance de esta evaluación incluye la revisión de la usabilidad, el diseño
 3. Registrar un gasto asociado a una campaña agrícola.
 4. Consultar el estado de salud de los cultivos y sus alertas.
 5. Consultar los certificados de calidad de los lotes de cosecha.
-6. Seleccionar un plan de suscripción y completar el pago simulado.
+
 
 No están incluidas en esta etapa:
 
@@ -102,11 +102,37 @@ Un agricultor sin conocimientos sobre estos índices puede visualizar los datos 
 
 **Imagen:**
 
-![Crop](../assets/img/heuristics/crop-health-hs.png)
+![Crop](../assets/img/heuristics/crop-hs.png)
 
 **Recomendación:**
 
 Incluir una descripción breve de cada indicador en lenguaje sencillo y una escala de interpretación contextualizada al cultivo. Complementar los valores con etiquetas descriptivas y ayudas consultables, explicando las limitaciones de los índices para evitar que se interpreten como un diagnóstico definitivo.
+
+
+
+
+### PROBLEMA #4: No se explica el efecto de cancelar la renovación de la suscripción
+
+**Tarea evaluada:** Consultar y administrar la suscripción activa.
+
+**Severidad:** 2 — Problema menor.
+
+**Heurística violada:** Usabilidad — Prevención de errores.
+
+**Problema:**
+
+La pantalla “Suscripción y pagos” presenta el botón “Cancelar renovación”, pero no incluye una explicación visible de sus consecuencias antes de seleccionarlo.
+
+Aunque se muestra la fecha de fin del plan, no se aclara si la cancelación conserva el acceso hasta esa fecha o si afecta inmediatamente los beneficios. Esta falta de información puede generar dudas y dificultar que el usuario tome una decisión informada. La captura no permite verificar si existe una confirmación posterior.
+
+**Imagen:**
+
+![Subscription](../assets/img/heuristics/subscription-hs.png)
+
+**Recomendación:**
+
+Añadir junto al botón una explicación breve del efecto real de la cancelación, indicando hasta cuándo se conservará el acceso y qué ocurrirá después. Antes de ejecutar la acción, presentar una confirmación que resuma estas consecuencias y permita volver sin modificar la suscripción.
+
 
 
 
