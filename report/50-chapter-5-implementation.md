@@ -56,12 +56,12 @@ Para garantizar una colaboración fluida y estandarizada a lo largo del ciclo de
 
 ![GitHub](assets/img/chapter-V/img-github.png)
 
-##### **IntelliJ IDEA**
+##### **JetBrains Rider**
 
 * **Propósito en el proyecto:** Entorno de Desarrollo Integrado (IDE) principal para la programación del backend. Se utiliza para la construcción de los servicios Web RESTful utilizando C# y ASP.NET Core.
-* **Ruta de Descarga:** [https://www.jetbrains.com/idea/download](https://www.jetbrains.com/idea/download)
+* **Ruta de Descarga:** [https://www.jetbrains.com/rider/download](https://www.jetbrains.com/rider/download)
 
-![IntelliJ IDEA](assets/img/chapter-V/img-intellij-idea.png)
+![JetBrains Rider](assets/img/chapter-V/img-rider-idea.png)
 
 ##### **WebStorm**
 
@@ -97,7 +97,7 @@ Para garantizar una colaboración fluida y estandarizada a lo largo del ciclo de
 
 ##### **Railway**
 
-* **Propósito en el proyecto:** Infraestructura Cloud PaaS utilizada para el despliegue continuo y alojamiento del backend RESTful desarrollado en ASP.NET Core, así como el aprovisionamiento del servidor de base de datos relacional SQL Server en entorno de producción.
+* **Propósito en el proyecto:** Infraestructura Cloud PaaS utilizada para el despliegue continuo y alojamiento del backend RESTful desarrollado en ASP.NET Core, así como el aprovisionamiento del servidor de base de datos relacional MySQL en entorno de producción.
 * **Ruta de Referencia:** [https://railway.app](https://railway.app)
 
 ![Railway](assets/img/chapter-V/img-railway.png)
@@ -106,12 +106,12 @@ Para garantizar una colaboración fluida y estandarizada a lo largo del ciclo de
 
 #### 6. Software Documentation
 
-##### **Swagger UI**
+##### **Scalar / OpenAPI**
 
-* **Propósito en el proyecto:** Generación automática de la documentación interactiva de la API RESTful. Permite a los desarrolladores explorar los endpoints, probar llamadas HTTP directamente desde el navegador y consultar los esquemas de petición y respuesta JSON.
-* **Ruta de Referencia:** [https://swagger.io/tools/swagger-ui](https://swagger.io/tools/swagger-ui)
+* **Propósito en el proyecto:** Documentación de los contratos HTTP mediante OpenAPI y consulta interactiva a través de Scalar. Permite a los desarrolladores explorar los endpoints, probar llamadas HTTP directamente desde el navegador y consultar los esquemas de petición y respuesta JSON.
+* **Ruta de Referencia:** [https://scalar.com/](https://scalar.com/)
 
-![Swagger UI](assets/img/chapter-V/img-swagger.png)
+![Scalar](assets/img/chapter-V/sprint-3/scalar/scalar-img.png)
 
 ##### **Structurizr**
 
@@ -137,17 +137,17 @@ Todos los componentes de software y la documentación del proyecto están agrupa
 * **Organización Oficial en GitHub:** https://github.com/dymbia-aplicaciones-web
 
 
-* **Repositorio del Landing Page (Sitio Web Estático):** https://github.com/dymbia-aplicaciones-web/sumaqAgro-landing-page
+* **Repositorio del Landing Page (Sitio Web Estático):** https://github.com/dymbia-aplicaciones-web/sumaq-agro-website
 
 
-* **Repositorio de Web Services (RESTful API backend):**  *Próximamente*
+* **Repositorio de Web Services (RESTful API backend):**  https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform
 
 
-* **Repositorio de Frontend Web Application:**  *Próximamente*
+* **Repositorio de Frontend Web Application:**  https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app
 
 
 
-* **Repositorio del Informe del Proyecto (Project Report):**  https://github.com/dymbia-aplicaciones-web/sumaqAgro-report
+* **Repositorio del Informe del Proyecto (Project Report):**  https://github.com/dymbia-aplicaciones-web/sumaq-agro-report
 
 
 ---
@@ -204,7 +204,7 @@ El equipo aplica estrictamente la especificación **Conventional Commits** para 
 #### Tipos de Commits Permitidos (`type`):
 * `feat`: Nueva funcionalidad implementada para el usuario final.
 * `fix`: Corrección de un fallo o error en el código.
-* `docs`: Modificaciones exclusivas en documentación (archivos Markdown, comentarios, Swagger).
+* `docs`: Modificaciones exclusivas en documentación (archivos Markdown, comentarios, OpenAPI/Scalar).
 * `style`: Cambios de formato, identación o reglas de estilo CSS/HTML sin alterar la lógica.
 * `refactor`: Reestructuración de código que no corrige errores ni añade características.
 * `test`: Adición o corrección de pruebas unitarias o de integración.
@@ -291,12 +291,12 @@ Se adoptan las guías oficiales exigidas para el proyecto: **C# Coding Conventio
 
 #### Estructura de Namespaces
 La estructura de la solución no utiliza paquetes invertidos, sino **Namespaces** redactados en `PascalCase` e inglés, separados por puntos, siguiendo el patrón:  
-`SumaqAgro.<BoundedContext>.<Layer>`
+`SumaqAgro.Platform.<BoundedContext>.<Layer>`
 
 *Ejemplo de capas:*
-* `SumaqAgro.Monitoring.Domain.Models`
-* `SumaqAgro.Monitoring.Infrastructure.Persistence`
-* `SumaqAgro.Monitoring.Interfaces.REST`
+* `SumaqAgro.Platform.Farming.Domain.Model`
+* `SumaqAgro.Platform.Farming.Infrastructure.Persistence`
+* `SumaqAgro.Platform.Farming.Interfaces.Rest`
 
 #### Convenciones de Nombres en C#
 * **Clases y Records:** Se redactan en `PascalCase` e inglés utilizando sustantivos claros.  
@@ -314,7 +314,7 @@ La estructura de la solución no utiliza paquetes invertidos, sino **Namespaces*
 * **Persistencia de Datos:** Se utilizará exclusivamente **Entity Framework Core** para el mapeo relacional. No se permite escribir consultas SQL en texto plano dentro de los controladores.
 * **Uso de DTOs (Data Transfer Objects):** La capa REST no debe exponer directamente entidades de Entity Framework Core. Se exige el uso de `Records` o clases DTO simples para las peticiones (`RequestDTO`) y respuestas (`ResponseDTO`).
 * **Propiedades Autoinmplementadas:** En C# no se usan librerías externas (como Lombok en Java) para getters y setters. Se exige el uso de propiedades nativas: `public string Name { get; set; }`.
-* **Documentación:** Es obligatorio que todos los Endpoints estén documentados aplicando **OpenAPI Specification vía Swagger**.
+* **Documentación:** Es obligatorio que todos los Endpoints estén documentados aplicando **OpenAPI Specification con Scalar**.
 * **Diseño de Endpoints RESTful:**
   * URIs en minúsculas, plurales (o `kebab-case`), en idioma inglés y versionadas: `/api/v1/parcels`, `/api/v1/crop-certificates`.
   * Verbos HTTP adecuados: `GET` (lectura), `POST` (creación), `PUT` (actualización completa), `PATCH` (actualización parcial), `DELETE` (eliminación).
@@ -894,19 +894,15 @@ Para evidenciar el funcionamiento de la Web Application de SumaqAgro, se present
 * **Enlace de Reproducción (Microsoft Stream):** [Video "Video de Exposición AV1"](https://upcedupe-my.sharepoint.com/personal/u202422128_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202422128%5Fupc%5Fedu%5Fpe%2FDocuments%2FRecording%2D20261009%5F092557%2Ewebm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E418bacb5%2D22ff%2D4d75%2Daa54%2Db24e02149c8b)
 
 
-#### 5.2.1.6. Services Documentation Evidence for Sprint Review
+#### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
 
 En esta sección se presenta la documentación de los servicios utilizados por la Web Application de **SumaqAgro** durante el **Sprint 2**. Para esta iteración se empleó una **Fake REST API implementada con `json-server`**, que administra los datos de demostración almacenados en `server/db.json`.
 
-```bash
-npm run api
-```
-
-Este comando ejecuta:
+La API de demostración puede iniciarse directamente con:
 
 ```bash
-json-server --watch server/db.json --routes server/routes.json --port 3000
+npx json-server --watch server/db.json --routes server/routes.json --port 3000
 ```
 
 El archivo `server/routes.json` establece el prefijo de acceso a los recursos:
@@ -917,14 +913,14 @@ El archivo `server/routes.json` establece el prefijo de acceso a los recursos:
 }
 ```
 
-Las direcciones de conexión configuradas en el proyecto son:
+La conexión local de demostración y la configuración actual del proyecto se distinguen de la siguiente manera:
 
 | Entorno | URL base | Archivo de configuración |
 | :--- | :--- | :--- |
-| Desarrollo local | `http://localhost:3000/api/v1` | `src/environments/environment.development.ts` |
-| Producción | `https://sumaqagro-fake-api.onrender.com/api/v1` | `src/environments/environment.ts` |
+| API de demostración local | `http://localhost:3000/api/v1` | `server/db.json` y `server/routes.json` |
+| Backend real (configuración actual) | `/api/v1` | `.env.development` y `.env.production` |
 
-La aplicación Vue se ejecuta en una terminal independiente mediante `npm start`.
+La aplicación Vue se ejecuta en una terminal independiente mediante `npm run dev`.
 
 ##### Documentación de endpoints
 
@@ -994,9 +990,9 @@ Los valores son datos simulados para la demostración. En el archivo revisado, l
 
 ##### Integración con el frontend Vue
 
-El archivo `app.config.ts` habilita la comunicación HTTP mediante `provideHttpClient(withFetch())`. Las fachadas `ProfilesApi`, `FieldManagementApi`, `CropHealthApi` y `HarvestCertificationApi` agrupan las operaciones de acceso a datos de sus respectivos contextos.
+La comunicación HTTP de Vue se implementa mediante Axios. La clase compartida `BaseApi`, definida en `src/shared/infrastructure/base-api.js`, crea el cliente con `axios.create()` y obtiene la URL base desde `import.meta.env.VITE_SUMAQAGRO_PLATFORM_API_URL`. Las fachadas de infraestructura agrupan las operaciones de acceso a datos de sus respectivos contextos.
 
-La clase compartida `BaseApiEndpoint` implementa las operaciones generales de consulta, creación, actualización y eliminación. Los **assemblers** convierten los recursos JSON recibidos en entidades de dominio y transforman las entidades en recursos para enviarlos a la API.
+La clase compartida `BaseEndpoint` implementa las operaciones generales de consulta, creación, actualización y eliminación. Los **assemblers** convierten los recursos JSON recibidos en entidades de dominio y transforman las entidades en recursos para enviarlos a la API.
 
 Por ejemplo, el método `CropHealthApi.getObservationsByPlot(plotId)` delega la consulta al endpoint de observaciones satelitales. Este envía una petición GET con el parámetro `plotId` y transforma los registros recibidos en entidades `SatelliteObservation`.
 
@@ -1005,19 +1001,19 @@ La documentación presentada corresponde a la configuración y los contratos imp
 ---
 
 
-#### 5.2.1.7. Software Deployment Evidence for Sprint Review
+#### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
-Durante el **Sprint 2**, el equipo **Dymbia** realizó la configuración y publicación de la **Web Application de SumaqAgro** en **Firebase Hosting** y de la **Fake REST API** en **Render**. Estas actividades permitieron disponer de un entorno publicado para presentar las funcionalidades desarrolladas y consumir los datos de demostración.
+Durante el **Sprint 2**, el equipo **Dymbia** publicó la **Web Application de SumaqAgro**, desarrollada en **Vue**, en **Firebase Hosting**, y utilizó una **Fake REST API** con `json-server` publicada en **Render** para los datos de demostración.
 
-El proceso incluyó la configuración de los recursos en ambos proveedores, la vinculación del proyecto con GitHub, la definición de los comandos de compilación y ejecución, y la configuración de la conexión entre el frontend y la API.
+El proceso incluyó la configuración de Firebase Hosting, la organización del código en GitHub y la definición de los comandos de compilación, ejecución y conexión con los servicios.
 
-El alcance de despliegue de esta iteración comprende la **Web Application** y la **Fake REST API**. La Landing Page corresponde al Sprint 1, mientras que el backend definitivo en .NET se desarrollará en una iteración posterior.
+El alcance de publicación de esta sección comprende la **Web Application** y la **Fake REST API** del Sprint 2. El backend definitivo en **C# y ASP.NET Core**, con **MySQL** y despliegue en **Railway**, corresponde al Sprint 3.
 
 ##### Despliegue de la Web Application en Firebase Hosting
 
   Se configuró el proyecto **`sumaqagro-appweb`** en Firebase y se habilitó **Firebase Hosting** para publicar los archivos generados por Vue.
 
-La vinculación del proyecto local se encuentra definida en `.firebaserc`. Por su parte, `firebase.json` establece el directorio de publicación `dist/sumaqAgro-appweb/browser` y una redirección hacia `index.html`, necesaria para que Vue gestione sus rutas internas al ingresar directamente a una vista o recargar la página.
+La vinculación del proyecto local se encuentra definida en `.firebaserc`. Por su parte, `firebase.json` establece el directorio de publicación `dist/` y una redirección hacia `index.html`, necesaria para que Vue gestione sus rutas internas al ingresar directamente a una vista o recargar la página.
 
 El procedimiento de despliegue documentado en el repositorio utiliza **Firebase CLI**. La preparación del entorno requiere instalar la herramienta y autenticar una cuenta con acceso al proyecto:
 
@@ -1044,19 +1040,17 @@ La Web Application dispone de los siguientes dominios:
 
 La captura del panel de Firebase Hosting muestra el proyecto `sumaqagro-appweb`, sus dominios y el historial de versiones publicadas. Se observan publicaciones realizadas el **8 y 9 de octubre de 2026**, con la versión **`4e43fc`** identificada como la versión actual en la evidencia.
 
-![Firebase](assets/img/chapter-5/sprint-2/firebase-vue.jpeg)
+![Firebase](assets/img/chapter-V/sprint-2/firebase-vue.jpeg)
 
 ##### Despliegue de la Fake REST API en Render
 
-Se configuró un **Web Service** denominado **`sumaqAgro-fake-api`** en Render, utilizando el entorno de ejecución **Node** y una instancia gratuita.
-
-El servicio se vinculó con el repositorio **`dymbia-aplicaciones-web/sumaq-agro-web-app`** y la rama **`develop`**. La configuración documentada en el proyecto es la siguiente:
+Para el Sprint 2 se utilizó una **Fake REST API** con `json-server`, publicada en **Render**, como soporte de los datos de demostración de la Web Application de Aplicaciones Web.
 
 | Parámetro | Configuración |
 | :--- | :--- |
 | Tipo de servicio | Web Service |
 | Nombre | `sumaqAgro-fake-api` |
-| Repositorio | `dymbia-aplicaciones-web/sumaq-agro-web-app` |
+| Repositorio de la Web Application | `dymbia-aplicaciones-web/sumaq-agro-web-app` |
 | Rama | `develop` |
 | Entorno de ejecución | Node |
 | Comando de instalación | `npm install --include=dev` |
@@ -1064,39 +1058,36 @@ El servicio se vinculó con el repositorio **`dymbia-aplicaciones-web/sumaq-agro
 | Tipo de instancia | Free |
 | Actualización | Auto-Deploy |
 
-El comando de inicio utiliza el puerto asignado por Render y permite atender peticiones externas. La Fake REST API administra los datos de `server/db.json` y utiliza `server/routes.json` para exponer los recursos bajo el prefijo `/api/v1`.
+La Fake REST API utiliza `server/db.json` para los datos de demostración y `server/routes.json` para exponer los recursos bajo el prefijo `/api/v1`. El comando de inicio utiliza el puerto asignado por Render.
 
-La URL base configurada para el servicio es:
+**URL base:** https://sumaqagro-fake-api.onrender.com/api/v1
 
-**https://sumaqagro-fake-api.onrender.com/api/v1/db**
-
-![fake-api](assets/img/chapter-5/sprint-2/img-fake-api.png)
+![fake-api](assets/img/chapter-V/sprint-2/img-fake-api.png)
 
 ###### Evidencia de publicación en Render
 
-La captura presenta el servicio en estado **Live**, vinculado a la rama `develop` y al commit **`227c66d`**. El historial muestra despliegues activados mediante **Auto-Deploy**, asociados a la integración de funcionalidades en el repositorio.
+La captura del panel de Render muestra el servicio en estado **Live**, la rama `develop` y el historial de despliegues automáticos de la Fake REST API utilizada durante esta etapa.
 
-Esta evidencia permite observar la automatización del despliegue de la Fake REST API a partir de las actualizaciones de la rama configurada.
+![Render](assets/img/chapter-V/sprint-2/render-vue.png)
 
-![Render](assets/img/chapter-5/sprint-2/render-vue.jpeg)
+La Fake REST API corresponde al Sprint 2. La versión final utiliza el backend real desarrollado en **C# con ASP.NET Core**, persistencia en **MySQL** y despliegue en **Railway**, documentado en el Sprint 3.
 
-##### Integración del frontend con la API publicada
+##### Integración del frontend con la API
 
-El archivo `src/environments/environment.ts` establece la dirección utilizada por Vue para consumir la Fake REST API en producción:
+Vue utiliza Axios y obtiene la URL base de la variable `VITE_SUMAQAGRO_PLATFORM_API_URL`, definida en `.env.development` y `.env.production`. En la configuración actual del proyecto, ambos archivos establecen:
 
-```typescript
-platformProviderApiBaseUrl: 
-  'https://sumaqagro-fake-api.onrender.com/api/v1'
-``` 
+```dotenv
+VITE_SUMAQAGRO_PLATFORM_API_URL="/api/v1"
+```
 
-Esta configuración conecta la Web Application alojada en **Firebase Hosting** con el servicio publicado en **Render**. Para el desarrollo local, `environment.development.ts` utiliza la dirección `http://localhost:3000/api/v1`.
+La clase `BaseApi` lee esta variable mediante `import.meta.env.VITE_SUMAQAGRO_PLATFORM_API_URL` y configura el cliente con `axios.create()`. Durante el desarrollo, `vite.config.js` redirige `/api` al backend en `http://127.0.0.1:5192`. En la ejecución mediante Docker, Nginx dirige las peticiones `/api` al backend indicado por `BACKEND_URL`.
 
-La publicación del frontend se realiza mediante Firebase CLI, mientras que la actualización de la Fake REST API se automatiza mediante la integración de Render con GitHub.
+Vite carga `.env.development` al ejecutar `npm run dev` y `.env.production` al compilar con `npm run build`. Firebase Hosting publica los archivos generados en `dist/`; la integración del contenedor del frontend con el backend real se documenta junto al despliegue en Railway del Sprint 3.
 
 ---
 
 
-#### 5.2.1.8. Team Collaboration Insights during Sprint
+#### 5.2.2.8. Team Collaboration Insights during Sprint
 
 
 En esta sección se describe la colaboración del equipo **Dymbia** durante la implementación de la **Web Application de SumaqAgro** correspondiente al **Sprint 2**. Se presentan las evidencias de participación mediante el historial de commits y los analíticos de contribución disponibles en GitHub.
@@ -1112,7 +1103,7 @@ En la imagen se evidencia las contribuciones registradas por cada integrante. Es
 
 ### 5.2.3. Sprint 3
 
-El Sprint 3 marca el inicio del desarrollo de los RESTful Web Services de SumaqAgro, construidos con C#, .NET, ASP.NET Core, Entity Framework Core y MySQL, y documentados mediante OpenAPI / Swagger UI. El backend se organiza por Bounded Contexts (IAM, Profiles, Subscriptions, Farming, Crop y Certification) y, dentro de cada uno, en las capas domain, application, infrastructure e interfaces, siguiendo los patrones tácticos de Domain-Driven Design: agregados, value objects, comandos, consultas, eventos de dominio, puertos de repositorio y fachadas de contexto (ACL). En paralelo, la Web Application en Vue 3 evolucionó hacia su segunda versión con los flujos de autenticación, suscripción, perfil y cooperativa, y la Landing Page se reestructuró en su tercera versión. El sprint abarca las semanas 9 a 12 del ciclo y culmina con la entrega AV2.
+El Sprint 3 marca el inicio del desarrollo de los RESTful Web Services de SumaqAgro, construidos con C#, .NET, ASP.NET Core, Entity Framework Core y MySQL, y documentados mediante OpenAPI con Scalar. El backend se organiza por Bounded Contexts (IAM, Profiles, Subscriptions, Farming, Crop y Certification) y, dentro de cada uno, en las capas domain, application, infrastructure e interfaces, siguiendo los patrones tácticos de Domain-Driven Design: agregados, value objects, comandos, consultas, eventos de dominio, puertos de repositorio y fachadas de contexto (ACL). En paralelo, la Web Application en Vue 3 evolucionó hacia su segunda versión con los flujos de autenticación, suscripción, perfil y cooperativa, y la Landing Page se reestructuró en su tercera versión. El sprint abarca las semanas 9 a 12 del ciclo y culmina con la entrega AV2.
 
 #### 5.2.3.1. Sprint Planning 3
 
@@ -1127,9 +1118,9 @@ En esta sección se especifican los aspectos principales de la reunión de plani
 | Prepared By | Sanca Condori, Miguel |
 | Attendees (to planning meeting) | Vargas Enrique, Jose vargas / Sanca Condori, Miguel / Solorzano Sullca, Benjamin / Tejada Pumacayo, Yamil Jared / Duarte Ruffner, Drago Derick |
 | Sprint 2 Review Summary | Se publicó la primera versión de la Web Application en Vue (`v1.0.0`, y su *patch* `v1.0.1` con el CHANGELOG y la guía de contribución) en Firebase Hosting, conectada a una Fake REST API (`json-server`) desplegada en Render. Asimismo, se publicó la nueva versión de la Landing Page (`v2.0.0` y `v2.0.1`) con las secciones reorganizadas, contenido i18n en español e inglés y la sección del video About-the-Team. Se demostraron los flujos de Crop Health (visor Leaflet con NDVI/NDWI, alertas regionales, reportes de plagas, bandeja, inspecciones y recetas agronómicas) y las vistas iniciales de Field Management, Profiles y Harvest Certification. Quedaron pendientes la preparación de alertas demo por región (TSK-08), la validación integrada del circuito productor–ingeniero (TSK-22) y la consistencia de los datos relacionados (TSK-23). |
-| Sprint 2 Retrospective Summary | El equipo valoró la organización por Bounded Contexts y el uso de GitFlow con Conventional Commits. Como oportunidades de mejora se identificó que la Fake REST API no permite validar reglas de negocio ni seguridad, que los datos demo entre contextos eran inconsistentes y que la integración de ramas se concentró al final del sprint. Se acordó: (1) modelar primero el dominio de cada contexto en el backend antes de exponer endpoints, (2) separar el modelo de dominio de las entidades de persistencia JPA mediante puertos de repositorio, (3) integrar a `develop` cada funcionalidad terminada sin esperar al cierre y (4) asignar a cada nuevo integrante un Bounded Context completo para acelerar su incorporación. |
+| Sprint 2 Retrospective Summary | El equipo valoró la organización por Bounded Contexts y el uso de GitFlow con Conventional Commits. Como oportunidades de mejora se identificó que la Fake REST API no permite validar reglas de negocio ni seguridad, que los datos demo entre contextos eran inconsistentes y que la integración de ramas se concentró al final del sprint. Se acordó: (1) modelar primero el dominio de cada contexto en el backend antes de exponer endpoints, (2) mantener el modelo de dominio independiente de la configuración de persistencia mediante puertos de repositorio y mapeos Fluent API de Entity Framework Core, (3) integrar a `develop` cada funcionalidad terminada sin esperar al cierre y (4) asignar a cada nuevo integrante un Bounded Context completo para acelerar su incorporación. |
 | **Sprint Goal & User Stories** | |
-| Sprint 3 Goal | Our focus is on delivering the first deployed version of the SumaqAgro RESTful Web Services, built with Spring Boot, Spring Data JPA and MySQL and documented with OpenAPI/Swagger, and connecting it to a new version of the Vue Web Application. Users will sign up, sign in and sign out with JWT-based authentication, producers will register plots with validated GPS boundaries and open crop campaigns, farmers will report pests and consult regional agroclimatic alerts, users will update their profiles and register cooperatives, and collection centers will register harvest batches, all stored in a real database instead of the fake API. We believe it delivers a secure and persistent foundation for the platform. This will be confirmed when the Web Services v1.0.0 and the Web App v2.0.0 are publicly deployed, every endpoint is documented in Swagger UI, and these flows work end to end. |
+| Sprint 3 Goal | Our focus is on delivering the first deployed version of the SumaqAgro RESTful Web Services, built with ASP.NET Core, Entity Framework Core and MySQL and documented with OpenAPI/Scalar, and connecting it to a new version of the Vue Web Application. Users will sign up, sign in and sign out with JWT-based authentication, producers will register plots with validated GPS boundaries and open crop campaigns, farmers will report pests and consult regional agroclimatic alerts, users will update their profiles and register cooperatives, and collection centers will register harvest batches, all stored in a real database instead of the fake API. We believe it delivers a secure and persistent foundation for the platform. This will be confirmed when the Web Services v1.0.0 and the Web App v2.0.0 are publicly deployed, every endpoint is documented in Scalar, and these flows work end to end. |
 | Sprint 3 Velocity | 111 Story Points |
 | Sum of Story Points | 111 Story Points |
 
@@ -1140,7 +1131,7 @@ A continuación, se detallan las historias de usuario y técnicas comprometidas 
 | IAM | **US-10** | Registro de usuario en la plataforma (Sign Up) | 3 |
 | IAM | **US-11** | Inicio de sesión seguro (Sign In) | 3 |
 | IAM | **US-14** | Cierre de sesión seguro (Sign Out) | 2 |
-| IAM | **TS-02** | Servicio de autenticación JWT y Spring Security | 8 |
+| IAM | **TS-02** | Servicio de autenticación JWT y autenticación JWT Bearer de ASP.NET Core | 8 |
 | Subscriptions | **US-12** | Consulta de catálogo de planes durante Onboarding | 2 |
 | Subscriptions | **US-22** | Control de cuota de parcelas según el plan | 2 |
 | Profiles | **US-16** | Actualización de perfil y datos de contacto | 3 |
@@ -1163,7 +1154,7 @@ A continuación, se detallan las historias de usuario y técnicas comprometidas 
 | Certification | **US-54** | Registro de lote de cosecha ingresado a acopio | 3 |
 | Certification | **US-56** | Extracción y registro de muestra representativa | 3 |
 | Certification | **US-59** | Asignación de score de calidad global del lote | 5 |
-| Transversal | **TS-06** | Documentación de API RESTful con OpenAPI y Swagger UI | 5 |
+| Transversal | **TS-06** | Documentación de API RESTful con OpenAPI y Scalar | 5 |
 | Transversal | **US-05** | Demostración del producto mediante video | 2 |
 | **Total** | | | **111** |
 
@@ -1182,13 +1173,13 @@ En esta sección se presenta la matriz **Leadership-and-Collaboration Matrix (LA
 
 Los aspectos considerados en el Sprint 3 son los siguientes:
 
-* **Aspect 1 — IAM & Subscriptions:** registro e inicio de sesión con JWT, protección de rutas con Spring Security, catálogo de planes y suscripción (US-10, US-11, US-14, US-12, TS-02).
-* **Aspect 2 — Farming & Shared Kernel:** parcelas, linderos GPS, cuota de parcelas, campañas agrícolas y egresos, además del *shared kernel* (manejo de errores, patrón `Result`, auditoría JPA, configuración e internacionalización de mensajes) (US-22, US-29, US-32, US-33, US-34, US-37, US-38, US-39).
+* **Aspect 1 — IAM & Subscriptions:** registro e inicio de sesión con JWT, protección de rutas con autenticación JWT Bearer de ASP.NET Core, catálogo de planes y suscripción (US-10, US-11, US-14, US-12, TS-02).
+* **Aspect 2 — Farming & Shared Kernel:** parcelas, linderos GPS, cuota de parcelas, campañas agrícolas y egresos, además del *shared kernel* (manejo de errores, patrón `Result`, auditoría con Entity Framework Core, configuración e internacionalización de mensajes) (US-22, US-29, US-32, US-33, US-34, US-37, US-38, US-39).
 * **Aspect 3 — Crop & AgroMonitoring:** observaciones satelitales, integración con AgroMonitoring, alertas agroclimáticas, reportes de plagas, inspecciones y recetas técnicas (TS-01, US-42, US-43, US-45, US-48, US-52).
 * **Aspect 4 — Profiles & Cooperatives:** perfiles de usuario, cooperativas, padrón de socios, asignación de agrónomos y fachada del contexto para otros Bounded Contexts (US-16, US-17, US-18, US-21).
 * **Aspect 5 — Certification:** lotes de cosecha, pesaje, muestreo, calificación de calidad, certificados y trazabilidad pública (US-54, US-56, US-59).
 
-La documentación OpenAPI (TS-06) y el video demostrativo (US-05) son responsabilidad compartida: cada líder documenta en Swagger UI los endpoints de su aspecto.
+La documentación OpenAPI (TS-06) y el video demostrativo (US-05) son responsabilidad compartida: cada líder documenta en Scalar los endpoints de su aspecto.
 
 ##### Leadership-and-Collaboration Matrix (LACX) — Sprint 3
 
@@ -1262,175 +1253,90 @@ El objetivo principal del **Sprint 3** es construir y documentar la primera vers
 | **US-56** | Extracción y registro de muestra representativa | **TSK-48** | Registro de muestra | Implementar el comando de muestreo del lote y su validación. | 3 h | Jose Varga Enrique | To-Review |
 | **US-59** | Asignación de score de calidad global del lote | **TSK-49** | Calificación de calidad | Implementar la graduación de papa y la catación de café, el evento `BatchGradedEvent` y su manejador. | 4 h | Jose Varga Enrique | To-Review |
 | **US-59** | Asignación de score de calidad global del lote | **TSK-50** | Certificados y trazabilidad | Implementar `QualityCertificate`, la generación de PDF/QR y la consulta pública de trazabilidad. | 5 h | Jose Varga Enrique | To-Review |
-| **TS-06** | Documentación de API RESTful con OpenAPI y Swagger UI | **TSK-51** | Documentación OpenAPI | Configurar OpenAPI y Swagger UI en ASP.NET Core y documentar los endpoints de cada contexto. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
+| **TS-06** | Documentación de API RESTful con OpenAPI y Scalar | **TSK-51** | Documentación OpenAPI | Configurar OpenAPI con Scalar en ASP.NET Core y documentar los endpoints de cada contexto. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
 | **US-05** | Demostración del producto mediante video | **TSK-52** | Video demostrativo | Grabar y editar el video de demostración de los flujos implementados en el sprint. | 2 h | Sanca Condori, Miguel | To-do |
 
 Adicionalmente, se registraron tareas transversales que no dependen de una historia en particular, pero que son necesarias para satisfacer restricciones generales del backend:
 
 | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 | :---: | :--- | :--- | :---: | :--- | :---: |
-| **TSK-T1** | Shared kernel | Implementar el patrón `Result`, el manejo estructurado de errores, el *exception handler* global, los *assemblers* de `ProblemDetail`, la auditoría JPA y la estrategia de nombres en *snake case* con tablas en plural. | 6 h | Sanca Condori, Miguel | Done |
+| **TSK-T1** | Shared kernel | Implementar el patrón `Result`, el manejo estructurado de errores, el *exception handler* global, los *assemblers* de `ProblemDetail`, la auditoría con Entity Framework Core y la estrategia de nombres en *snake case* con tablas en plural. | 6 h | Sanca Condori, Miguel | Done |
 | **TSK-T2** | Configuración por entornos e i18n | Definir las propiedades por entorno y los mensajes de error en inglés y español. | 2 h | Sanca Condori, Miguel | Done |
-| **TSK-T3** | Separación dominio–persistencia | Separar los agregados de las entidades JPA mediante puertos de repositorio y publicador de eventos de dominio. | 4 h | Sanca Condori, Miguel | Done |
+| **TSK-T3** | Separación dominio–persistencia | Mantener los agregados independientes de la configuración de persistencia mediante puertos de repositorio, mapeos Fluent API de Entity Framework Core y publicación de eventos de dominio. | 4 h | Sanca Condori, Miguel | Done |
 
 ---
 
 #### 5.2.3.4. Development Evidence for Sprint Review
 
-En esta sección se presentan los avances de implementación del **Sprint 3**. El esfuerzo principal se concentró en el nuevo repositorio de **RESTful Web Services** (`sumaqAgro-backend`), que al cierre del sprint expone en `develop` los endpoints de los contextos **IAM**, **Profiles**, **Farming** y **Crop**, documentados con Swagger UI. Los contextos **Certification** y **Subscriptions** y la importación desde AgroMonitoring se encuentran en sus ramas `feature/*`, pendientes de revisión e integración. En la **Web Application** (`sumaq-agro-web-app`) se implementaron los flujos de autenticación, suscripción, cuenta de usuario y cooperativa, que aún consumen la Fake REST API y se conectarán a los Web Services en la siguiente iteración. En la **Landing Page** (`sumaqAgro-landing-page`) se publicaron los *releases* `v3.0.0`, `v3.1.0` y `v3.2.0`, que reestructuran el proyecto con *partials* reutilizables para el encabezado y el pie de página, extraen los íconos SVG a archivos dedicados.
+En esta sección se presentan los avances de implementación del **Sprint 3**. El desarrollo de los **RESTful Web Services** se concentra en el repositorio `sumaq-agro-platform`, con **C#, ASP.NET Core, Entity Framework Core y MySQL**, organizado en los contextos **IAM**, **Profiles**, **Subscriptions**, **Farming**, **Crop** y **Certification**. Los contratos HTTP se documentan mediante **OpenAPI con Scalar**. En la **Web Application**, alojada en `sumaq-agro-web-app`, se implementaron los flujos de autenticación, suscripción, cuenta de usuario y cooperativa y su integración mediante Axios con el backend real. La Fake REST API corresponde al soporte de demostración del Sprint 2 y no al backend de esta iteración. En la **Landing Page** (`sumaq-agro-website`) se trabajó en la estructura con *partials* reutilizables para el encabezado y el pie de página, los íconos SVG y el contenido de los integrantes del equipo.
 
 El equipo trabajó bajo **GitFlow**: cada funcionalidad se desarrolló en una rama `feature/<bounded-context>-<funcionalidad>` creada desde `develop` y se integró nuevamente en `develop` mediante *merge*. Todos los mensajes siguen el estándar **Conventional Commits** en inglés, con el *scope* del Bounded Context o agregado modificado. Los mensajes se conservan literalmente como están registrados en Git.
 
-El historial exportado del backend contiene **226 commits**. De ellos, **136 commits** tienen fecha de confirmación dentro del período del Sprint 3 registrado en la sección 5.2.3.1 (**19 de octubre al 13 de noviembre de 2026**, inclusive); los **90 commits** posteriores quedan fuera de esta tabla. Se incluyen todos los commits del período, también los de integración (*merge*), ordenados por fecha de confirmación de menor a mayor.
+A continuación se presenta una selección de commits del repositorio de RESTful Web Services, con aportes de los integrantes del equipo. Esta selección documenta avances de implementación; el conteo de contribuciones del periodo se presenta en la sección 5.2.3.8:
 
-La columna **Branch** identifica las ramas remotas actuales que contienen cada commit (`origin/develop` y `origin/main`), no la rama donde se creó originalmente. La exportación no conserva las ramas `feature/*` de origen para cada commit. **CommitID** muestra el hash completo, los mensajes se conservan como aparecen en Git y **—** indica que el mensaje no tiene cuerpo. **Commit on (Date)** corresponde a la fecha del *committer*, con su zona horaria original (`-05:00`).
+Repository
+`dymbia-aplicaciones-web/sumaq-agro-platform`
 
-| Repository | Branch | CommitID | Commit message | Commit message body | Commit on (Date) |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `216d19c2610dd8525aa4c917a5df1a56aa8ff886` | chore: initialize SumaqAgro backend project | — | 2026-11-11 23:23:48-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `a93385f924f452da99caa85792ce078db86f712a` | chore: add CHANGELOG.md to document project updates and structure | — | 2026-11-11 23:29:45-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `e2a84904a5b9ff9ab092efb610274db6542414a5` | chore: add LICENSE.md and configuration files for project setup | — | 2026-11-11 23:31:46-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `49628a7499f0b00ad99810c2dcda01b3e9537f1b` | docs: add CONTRIBUTING.md to outline development guidelines and workflow | — | 2026-11-12 00:28:22-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `3746a1b990d45408a53579025eceaf2fd6f46938` | Merge branch 'feature/add-docs' into develop | — | 2026-11-12 18:30:02-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `3e126df5b1b6a4b185b69c008796a2c4e8501e04` | chore(platform): add gitignore | — | 2026-11-13 12:36:36-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `bb6e3182758f34e2d7d340f575b8fa81688cbb1c` | chore(platform): add initial SumaqAgro backend structure | — | 2026-11-13 12:40:20-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `89cd52f1866028c7299c187d046556e1fa180d39` | docs(platform): add bounded context documentation placeholders | — | 2026-11-13 12:41:50-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `66e952e4984230bde130fffbf7649fe4904c1bdc` | Merge branch 'feature/platform' into develop | — | 2026-11-13 12:43:38-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `8e1ed2f7c48ba9534d6e3fcdb7a96df70480e7ba` | chore(shared): scaffold shared folder structure | — | 2026-11-13 12:51:23-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `0216944ad9de745e5ba31ad5372e16d2c83e5654` | feat(shared): add application contracts and models | — | 2026-11-13 12:55:40-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `55e0f88b2cec8a0cf414f42392356aa627a288b1` | feat(shared): add persistence contracts | — | 2026-11-13 12:57:01-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `aede6168be10f7a3c0669b6756ec3d13651d4e7c` | feat(shared): add core domain models | — | 2026-11-13 12:58:58-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `cfdcc4b94139fcc724c439688ebb70c58c1b831f` | feat(shared): add domain events and value object contracts | — | 2026-11-13 12:59:08-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `7d9ce4bbb73bfa5cb59265d8b9a53c7a18802e81` | feat(shared): add ASP.NET Core routing conventions | — | 2026-11-13 13:04:52-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `501e17771e9c1fc5a4ba86a5d1323d7e2cd5a91f` | feat(shared): add OpenAPI bearer support | — | 2026-11-13 13:05:06-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `95b5dc82eb8536514513b16d4a5f809694b5b84a` | feat(shared): add mediator behaviors | — | 2026-11-13 13:05:15-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `8dc00b1a1704d920198ddb9f3b0eecf26fa212d2` | feat(shared): configure Entity Framework persistence | — | 2026-11-13 13:05:25-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `f908f3200e9c3c653393f1779f9292cb2fd9b159` | feat(shared): add persistence interceptors | — | 2026-11-13 13:05:33-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `e59878e7afaa385746df60f4e5c6c6b569c1c37b` | feat(shared): implement persistence repositories | — | 2026-11-13 13:05:42-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `8ead3e64c12fc897bec056dd242215f37a1cc0a0` | feat(shared): add global exception handling | — | 2026-11-13 13:05:55-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `2cd85cf3a20cb79a2c0311bcac4764fe4f8270eb` | feat(shared): add middleware extensions | — | 2026-11-13 13:06:03-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `d30252e8420b1fefcdb3c5735fc4f8e3791d8274` | feat(shared): add localized error resources | — | 2026-11-13 13:15:20-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `1dd5c7ed8224597dd248d99cbae4562baf911646` | feat(shared): add common REST responses | — | 2026-11-13 13:15:27-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `070af61b27bb787ba5a0579de23f58ba0f15c217` | Merge branch 'feature/shared' into develop | — | 2026-11-13 13:21:24-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `0a5115bcb32ebbe4724eb902ac06424339bae2cd` | feat(iam): add command service contracts | — | 2026-11-13 14:07:22-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `62dbb04a85127659af7789cab72a64bded4fbab9` | feat(iam): implement registration and sign-in services | — | 2026-11-13 14:07:25-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `e288be46ba69e6958ff410c809e129def3cfde5f` | feat(iam-application): add event handlers | — | 2026-11-13 14:09:56-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `7c42649be93a4679091985660d708d925e6c99ea` | feat(iam-application): add outbound service contracts | — | 2026-11-13 14:11:21-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `063a8598e7feac826eca981921c559303321c7cc` | feat(iam): add user aggregate | — | 2026-11-13 14:19:45-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `a9580a18cb0d9dc6b4e19bcdaeb2b4dbb76c3105` | feat(iam): add domain commands | — | 2026-11-13 14:24:04-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `8c6bf759cb295d18128954af3b81587f73b5ef71` | feat(iam): add domain errors | — | 2026-11-13 14:25:21-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `2306d9a14a13df15b0ba016b452836c294d68503` | feat(iam): add domain events | — | 2026-11-13 14:31:41-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `7332f09af0103ca5f32ca0ccece34e7df1443b6e` | feat(iam): add email address value object | — | 2026-11-13 14:34:48-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `03a51c8bf10744b8c481b5cc1b1b6981a7dd93f7` | feat(iam): add repository contract | — | 2026-11-13 14:35:48-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `371a62774070abe530a0093987052c4d6327572a` | feat(iam): add password hashing service | — | 2026-11-13 14:39:21-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `a0dba7fe20e71dd86dcce29b21b9bbf8dafeccf2` | feat(iam): add user persistence configuration | — | 2026-11-13 14:48:06-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `19ea2cf7240dbb7dfc8d6ab488393bb6f2199f93` | feat(iam): implement user repository | — | 2026-11-13 14:48:53-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `9dfaa04361868a4c0f4a6b01248818ba3b516573` | feat(iam): add JWT token service | — | 2026-11-13 14:52:48-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `61f50da7f2d7f6018861412a2dd6fccd46c51574` | feat(iam): add authentication REST resources | — | 2026-11-13 14:57:43-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `8c68a3dac8c7e52c8c8d8edbcc3cf1da6eeeb1a1` | feat(iam): add authentication controllers | — | 2026-11-13 14:58:51-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `d94cc8ceda47c7e214c74b319d02d3c309252752` | feat(iam): add REST resource assembler | — | 2026-11-13 15:00:12-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `1a1309ddc92ea4ee62874f52350054a29d9251dc` | feat(iam): configure identity services and authentication | — | 2026-11-13 15:06:34-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `5a68247d96bad4146abd074831e8217a11f2bf64` | Merge branch 'feature/Identity-and-Access-Management' into develop | — | 2026-11-13 15:07:49-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `bcd650c80a913206dc6857307c18c8ab26da62f5` | feat(profiles): add application context facade | — | 2026-11-13 15:14:01-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `a356898b9fb4f1aabafa2e48030d22795d7852a9` | feat(profiles): add command service contracts | — | 2026-11-13 15:15:08-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `5360ea3fe43f7e94870b6c38ce6924f5ecb18d08` | feat(profiles): add query service contracts | — | 2026-11-13 15:19:12-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `323beb05fab1bca56617490d7b584fd3279d7750` | feat(profiles): add command service implementations | — | 2026-11-13 15:21:46-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `3d0ea970d66e8b1891eb6f617208d9e885cad45c` | feat(profiles): add query service implementations | — | 2026-11-13 15:23:31-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `dedf6759ac66c3c4563868f2cd73a083178c4fc8` | feat(profiles): add persistence configuration | — | 2026-11-13 15:26:49-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `c10c3be17f2167a03a2686697894739662cc4f53` | feat(profiles): implement profiles repository | — | 2026-11-13 15:30:04-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `221f9ba83642510af5b1ac4630f04c0de7425b6d` | feat(profiles): add context facade contract | — | 2026-11-13 15:30:55-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `2db3bd617729ea4b8548e67335ccba4b61405966` | feat(profiles): add REST resources | — | 2026-11-13 15:30:58-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `544841152fdeba96e96725252b307a123f37ac28` | feat(profiles): add REST resource assembler | — | 2026-11-13 15:42:03-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `4fc4ff2bed1f848d8f75340d5651bddeab8f7616` | feat(profiles): add REST controllers | — | 2026-11-13 15:42:05-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `39da0c8d30cab8970b1f32f7ad8361665b0de481` | feat(profiles): add domain aggregates | — | 2026-11-13 15:44:59-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `b04211c2b90684d63508de21fc84aa11623b05e5` | feat(profiles): add domain entities | — | 2026-11-13 15:46:59-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `d3ecf8b61bd3fb55de2c39cfdc1d122cb8419298` | feat(profiles): add domain commands | — | 2026-11-13 15:51:40-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `f81901de13d08c36ad209208919b2b60b8f13b42` | feat(profiles): add domain queries | — | 2026-11-13 15:53:28-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `8becd367d1c1f3f1d6fdf75c370675319e1d8606` | feat(profiles): add domain errors | — | 2026-11-13 15:54:10-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `b0e4692e3d977d9d7556c4c1c50f58b263f190d2` | feat(profiles): add domain value objects | — | 2026-11-13 15:55:41-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `6b50a79cb4e5d4e38645e78ec87ad1f477f65907` | feat(profiles): add repository contract | — | 2026-11-13 15:57:01-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `9ea590e985807bb02845c52e5c9e7e12e5f62c75` | feat(profiles): configure application and persistence services | — | 2026-11-13 16:03:18-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `55e8a9ccbb55d740631d4c77ec54596bb22ad5a8` | feat(profiles): create initial profiles on user registration | — | 2026-11-13 16:03:29-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `027803867e5b6653faffe6538185cf175e240d1e` | Merge branch 'feature/Profiles-and-Cooperatives' into develop | — | 2026-11-13 16:03:42-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `70b0c168ffe1a9df73ffc5718cf053066536510f` | feat(harvest): add HarvestSample entity with validation | — | 2026-11-13 21:53:11-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `15932d8ac9b5f7e3a558c15cb77d9bf9834b6588` | feat(certification): add CertificationErrors class for error handling | — | 2026-11-13 21:58:18-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `caeffe840df12d06091b556e7e20b68c991a5c93` | feat(queries): add query classes for quality certificate and harvest batch retrieval | — | 2026-11-13 22:00:58-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `565a4686b452a86ff72eecdf4adeb53a02f5a4a3` | docs: add crop management and monitoring documentation | — | 2026-11-13 22:13:09-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `f0cd67d7b18941a0957c2480b867e8929b517ca9` | feat(certification): add CertificateHash and PotatoCaliberDistribution value objects | — | 2026-11-13 22:14:30-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `a0e5825c1d4bab0ec5d8d74cf4a9aeb4bd3ffdc3` | feat(crop): implement command and monitoring services for crop management | — | 2026-11-13 22:15:52-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `f72e892bb233f2f2a9be9695aa30f98ab866bddf` | feat(certification): add HarvestBatch and QualityCertificate aggregates with validation methods | — | 2026-11-13 22:16:50-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `7350b5a5a4d2fd69150df02dc0bf2a0c693210e3` | feat(certification): add CupCoffeeCommand and GradePotatoCalibersCommand records | — | 2026-11-13 22:19:14-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `9ca880e7ae10b4cbf83cee28ad3d29670d05bff4` | feat(certification): add IssueQualityCertificateCommand and RegisterHarvestBatchCommand records | — | 2026-11-13 22:20:15-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `456ee0e2542e02d302411031104cddb1b26f9009` | feat(certification): add RevokeQualityCertificateCommand, SampleHarvestBatchCommand, and WeighHarvestBatchCommand records | — | 2026-11-13 22:21:13-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `279bc355681959be273711d1730552e93ba1cda7` | feat(crop): add domain models for agroclimatic alerts, climate forecasts, field inspections, pest reports, regional bulletins, satellite observations, and technical prescriptions | — | 2026-11-13 22:21:16-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `c4fada14c467cb8107ab16b1cb144223add2a357` | feat(crop): add command records for managing agroclimatic operations | — | 2026-11-13 22:21:24-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `fa474d2b2780eea4c4a06be81c091662542b8fda` | feat(crop): add command records for managing agroclimatic operations | — | 2026-11-13 22:21:28-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `a3144e6af718bf51d8bfa3d28020df8fda14f220` | feat(certification): add ICertificationRepository interface with methods for managing HarvestBatch and QualityCertificate | — | 2026-11-13 22:22:59-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `4681de08f27e337638164c3594d8d4f98ad4e6f1` | feat(crop): add query records for inspections, prescriptions, alerts, bulletins, forecasts, and reports | — | 2026-11-13 22:25:46-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `dfcf9b5242a967267775e7990a09b86208b77ebd` | feat(crop): add ICropRepository interface for managing crop-related data | — | 2026-11-13 22:25:54-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `185b1f6fe551db2921042e7d28565aa74ca2af91` | feat(crop): add ICropRepository interface for managing crop-related data | — | 2026-11-13 22:25:59-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `bcbda45f1abb3f24cc4c4516c7ba9b0d21bb1460` | feat(certification): add HarvestBatch and QualityCertificate entity configurations for EF Core | — | 2026-11-13 22:26:00-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `fa0d0d6f24b4b1189e698346dc9a7e8ffb56044d` | feat(certification): implement CertificationRepository for managing HarvestBatch and QualityCertificate entities | — | 2026-11-13 22:26:44-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `2f33b726426845fea53505b0b95de71485b665bd` | feat(farming): add CropCampaign, FieldPlot, CropSeason, and PlotBoundary aggregates and value objects | — | 2026-11-13 22:28:23-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `8884cf4f477966753fd2694694f346dd131f18ba` | feat(farming): add IFarmingCommandService interface for field plot and crop campaign commands | — | 2026-11-13 22:28:39-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `433d0578e2a58ef23b8d95f4ab5bf5103d5c5345` | feat(farming): add command records for crop campaign and field plot management | — | 2026-11-13 22:28:51-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `66615e5dea3c2aec0dce32a870567bb46be5495f` | feat(farming): implement FarmingCommandService for field plot and crop campaign management | — | 2026-11-13 22:29:12-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `da8d7f0de414cc9e6135d4c1bcd1c5eef5c89f5d` | feat(farming): add IPolygonMonitoring interface for plot boundary management | — | 2026-11-13 22:29:20-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `bf6d8d26377fb7969aca750cf89d4c8ccb188eb6` | refactor(queries): rename query and value object files for consistency | — | 2026-11-13 22:29:22-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `f92aeef8d97974470bdce351b2676828a789d5af` | feat(farming): implement FarmingQueryService for querying field plots and crop campaigns | — | 2026-11-13 22:29:28-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `607002fb13626c5b872401d195bf6b4ca5132174` | feat(farming): add IFarmingQueryService interface for querying field plots and crop campaigns | — | 2026-11-13 22:29:34-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `fce08bf78f48d85c482f1fada29614340b3f76bc` | feat(crop): add entity configurations for pest reports, inspections, prescriptions, bulletins, observations, forecasts, and alerts | — | 2026-11-13 22:29:46-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `6c501291cdde9343557cbf477d13599198f55027` | feat(farming): add FarmingErrors class for error handling in field plots and crop campaigns | — | 2026-11-13 22:29:50-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `a9b1dda65e881b8f509b78ccb39e81e9de7147d8` | feat(crop): implement CropRepository for managing pest reports, inspections, prescriptions, observations, forecasts, alerts, and bulletins | — | 2026-11-13 22:29:53-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `af4c92e677d1cbab18cc97b5ffa12d3e8c5890ce` | feat(farming): add query records for retrieving crop campaigns and field plots by various identifiers | — | 2026-11-13 22:29:57-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `1b3c9c231a021c195068fa6eff58386d69f852b2` | feat(farming): add IFarmingRepository interface for managing field plots and crop campaigns | — | 2026-11-13 22:30:05-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `54566086bf2493843cc6f9d3fde93ed9f38df6d8` | feat(farming): add configurations for FieldPlot and CropCampaign entities | — | 2026-11-13 22:30:14-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `48ef1fd9e3d61504e9b93e240e6aca7edf452fbd` | feat(farming): implement FarmingRepository for managing field plots and crop campaigns | — | 2026-11-13 22:30:21-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `44fdd66d8e70b0aaca190ee830c994b7902c228a` | feat(farming): add resource models for field plots and crop campaigns | — | 2026-11-13 22:30:29-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `bd83b15f86015c24acf5005d0178d314fb3feec1` | feat(farming): add assemblers for CropCampaign and FieldPlot resources | — | 2026-11-13 22:30:36-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `93f4cb1b1df581bf4c27495ce824afabd7d63586` | feat(farming): implement PolygonMonitoring service for managing polygon data | — | 2026-11-13 22:30:44-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `c39ae9dd8ababe3d17ce90fea7b86491a48871a3` | Merge branch 'feature/farming' into develop | — | 2026-11-13 22:31:16-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `f9b98b1196377caeef9b3ab64f48dea622c49a01` | feat(certification): add CertificationResourceAssembler for command and resource transformations | — | 2026-11-13 22:32:41-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `578036a674862b74dc3707ba96b41426c88489bc` | feat(certification): add CupCoffee and ExtractSample records for coffee certification | — | 2026-11-13 22:34:40-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `0392cab2c6df1e9919e7f1eaa982ec5d1289ba8b` | feat(certification): add GradePotato and HarvestBatchResource records for certification processing | — | 2026-11-13 22:35:41-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `d967d3a14fb876dd73778395da3cbc48abe7f306` | feat(certification): add IssueCertificate record for certificate issuance | — | 2026-11-13 22:36:14-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `e9de4158f631f7317022d5e57effe22289cc7947` | feat(crop): add resource records for agroclimatic alerts, climate forecasts, pest reports, field inspections, and technical prescriptions | — | 2026-11-13 22:36:21-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `64988ab2171be478c3352f3de9642a0eb99ab8b1` | feat(crop): add controllers for agroclimatic alerts, climate forecasts, field inspections, pest reports, regional bulletins, satellite observations, and technical prescriptions | — | 2026-11-13 22:36:27-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `68189ab12861f0ae3ebfe33bacad627c06248079` | feat(certification): add QualityCertificateResource record for quality certificate representation | — | 2026-11-13 22:36:49-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `f8dd32a3078e8613d0255cdcdd5a379b02a3bd6d` | Merge branch 'develop' into feature/bounded-context-corp | — | 2026-11-13 22:37:28-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `30f9eb3092421c1ac35f538beeeb9c8363ae5a9e` | feat(certification): add RegisterBatch record for batch registration | — | 2026-11-13 22:37:47-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `7a717742d5bd54b436dad3c6aa148bf57050de06` | Merge branch 'feature/bounded-context-corp' into develop | — | 2026-11-13 22:38:09-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `dae27b3b896d2c6189f698b63e42924933faacd3` | feat(subscriptions): add BillingCycle enum for subscription billing periods | — | 2026-11-13 22:38:27-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `de7ad1136e015d6fec31f80cd5d09473fe4207bc` | feat(subscriptions): add Payment and Plan entities for subscription management | — | 2026-11-13 22:38:48-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `ae74c1516334ad33b430b938c4d57693abdfd427` | feat(certification): add TraceabilityResource and WeighBatch records for certification data | — | 2026-11-13 22:38:50-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `683f6a693d6e1960a533b3c755d71af067d521aa` | feat(subscriptions): add commands and queries for subscription management | — | 2026-11-13 22:39:28-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `c891c02e3c3582f946517a002bb932b3b481503f` | refactor(subscriptions): rename command and query files for clarity | — | 2026-11-13 22:41:51-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `dc0bc2099648f522cbad6d995f7eeebb6c128b12` | feat(subscriptions): add SubscriptionErrors class for error handling in subscriptions | — | 2026-11-13 22:42:14-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `22ba40b18835c50afe9389e91b5e5bf289af8b57` | feat(certification): add ICertificationService interface for harvest batch operations | — | 2026-11-13 22:42:20-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `3b06c9d3663237a2d6efbd8919f72f1020199d72` | feat(subscriptions): add Subscription class for managing subscription details | — | 2026-11-13 22:42:42-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `e1a3dd5f4a888a8d334fdd32c0f9cc65a7d5cac0` | feat(subscriptions): add ISubscriptionsRepository interface for subscription data access | — | 2026-11-13 22:43:05-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `3f6581d64869b0d6196fd2ab35edd61b66645660` | feat(certification): implement CertificationService for managing harvest batches and quality certificates | — | 2026-11-13 22:43:14-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `1bd9758cece144976dd5ca204f9f61f274f6754c` | feat(certification): add CertificationQueryService and TraceabilityQueryService for querying batches and certificates | — | 2026-11-13 22:44:30-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `b7112681e879f0e2a42386cdb9c754d1267073c2` | feat(subscriptions): add entity configurations and repository for subscription management | — | 2026-11-13 22:45:07-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `a5456c0e51a6ae6a460d19da585d540fcbb1949b` | feat(certification): add ICertificationQueryService interface for querying harvest batches and quality certificates | — | 2026-11-13 22:45:16-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `139c2ed47ad7123f8e5ed99e6d2c45530fdd16dd` | feat(subscriptions): add ICheckoutService interface for payment processing | — | 2026-11-13 22:45:55-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `15fc221ed18c8256672193d7b1d3257d086bfd34` | feat(certification): add ITraceabilityQueryService interface for verifying certificate traceability | — | 2026-11-13 22:45:58-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `03c9ba1b606a672391486e3773a710db61a719c7` | feat(subscriptions): add ISubscriptionsQueryService interface for querying subscriptions | — | 2026-11-13 22:46:11-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `fb2fa647d0bc8103e34116ca965bfa9ad8044b7d` | feat(subscriptions): implement CheckoutService for payment processing | — | 2026-11-13 22:46:28-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `83e5de277686631ff9943a60489a74292c91ca1f` | feat(subscriptions): add resource models for checkout, payment, plan, and subscription | — | 2026-11-13 22:47:39-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `14801b338983dd45227bbe9c4c5a13ce42f8b39d` | feat(subscriptions): add SubscriptionResourceAssembler for resource transformation | — | 2026-11-13 22:47:57-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `1714db12194f2f9a08bf6add6875d813c97f5ac4` | feat(subscriptions): add PlansController and update SubscriptionsController for plan listing and checkout | — | 2026-11-13 22:48:51-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `f780a0df89a2abcb8938a5d356dfe00524d004bf` | refactor(resources): rename resource files for improved organization | — | 2026-11-13 22:49:02-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `c87e000206d156370964e04ca7265db17a6f272f` | Merge branch 'develop' into feature/suscriptions | — | 2026-11-13 22:49:39-05:00 |
-| `dymbia-aplicaciones-web/sumaq-agro-platform` | `develop` / `main` | `abfeeb85391117b20ebabc2340a7ce1cafc214dc` | Merge branch 'feature/suscriptions' into develop | — | 2026-11-13 22:49:57-05:00 |
+| Sprint # | Sprint 3 | | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
+| **Story Id** | **Story Title** | **Task Id** | **Task Title** | **Task Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| **TS-02** | Servicio de autenticación JWT en .NET | **TSK-01** | Configuración base del backend | Inicializar el backend y su estructura en C# y .NET, configurar los modelos compartidos, la persistencia con Entity Framework Core y las migraciones MySQL. Commits: `216d19c`, `bb6e318`, `8dc00b1`, `c85489e`. | 3 h | Solorzano Sullca, Benjamin | Done |
+| **TS-02** | Servicio de autenticación JWT en .NET | **TSK-02** | Modelo de usuario y persistencia | Implementar el agregado de usuario, el contrato del repositorio, su implementación y la configuración de persistencia. Commits: `063a859`, `03a51c8`, `19ea2cf`, `a0dba7f`. | 5 h | Solorzano Sullca, Benjamin | Done |
+| **TS-02** | Servicio de autenticación JWT en .NET | **TSK-03** | Protección de rutas con JWT | Implementar el servicio de tokens JWT, configurar los servicios de identidad y autenticación e incorporar soporte Bearer en OpenAPI. Commits: `9dfaa04`, `1a1309d`, `501e177`. | 5 h | Solorzano Sullca, Benjamin | Done |
+| **US-10** | Registro de usuario en la plataforma (Sign Up) | **TSK-04** | Servicio y endpoint de registro | Implementar los servicios de registro e inicio de sesión, el servicio de hash de contraseñas, los controladores de autenticación y la creación del perfil inicial al registrar un usuario. Commits: `62dbb04`, `371a627`, `8c68a3d`, `55e8a9c`. | 4 h | Solorzano Sullca, Benjamin | Done |
+| **US-10** | Registro de usuario en la plataforma (Sign Up) | **TSK-05** | Vista de registro en la Web App | Construir en Vue el formulario de registro con nombres del perfil, confirmación de contraseña y traducciones. No se muestra un commit de esta vista en las capturas del backend. | 4 h | Solorzano Sullca, Benjamin | Done |
+| **US-11** | Inicio de sesión seguro (Sign In) | **TSK-06** | Endpoint de inicio de sesión | Implementar los contratos de servicios, los recursos REST de autenticación, sus assemblers y los controladores para registro e inicio de sesión. Commits: `0a5115b`, `61f50da`, `d94cc8c`, `8c68a3d`. | 3 h | Solorzano Sullca, Benjamin | Done |
+| **US-11** | Inicio de sesión seguro (Sign In) | **TSK-07** | Sesión y guards en la Web App | Implementar en Vue el store de autenticación, el interceptor HTTP, los guards de navegación por sesión y rol y la vista de inicio de sesión. No se muestra un commit de esta funcionalidad web en las capturas. | 5 h | Solorzano Sullca, Benjamin | Done |
+| **US-14** | Cierre de sesión seguro (Sign Out) | **TSK-08** | Cierre de sesión | Separar el cierre de sesión del estado del layout, invalidar sesiones expiradas o rechazadas y limpiar el almacenamiento local. No se muestra un commit específico de cierre de sesión en las capturas. | 2 h | Solorzano Sullca, Benjamin | Done |
+| **US-12** | Consulta de catálogo de planes durante Onboarding | **TSK-09** | Modelo de suscripciones | Definir `Subscription`, las entidades `Payment` y `Plan`, el enum `BillingCycle`, los comandos, las consultas y los errores del contexto de suscripciones. Commits: `3b06c9d`, `de7ad11`, `dae27b3`, `683f6a6`, `dc0bc20`. | 6 h | Drago Derick Duarte Ruffner | Done |
+| **US-12** | Consulta de catálogo de planes durante Onboarding | **TSK-10** | Vistas de catálogo y checkout | Construir en Vue el catálogo de planes, el flujo de selección y pago y el historial de facturación. Las capturas muestran la implementación del checkout del backend, pero no las vistas web. | 5 h | Jose Varga Enrique | Done |
+| **US-12** | Consulta de catálogo de planes durante Onboarding | **TSK-11** | Catálogo de planes y checkout en el backend | Implementar los contratos de repositorio, las configuraciones de entidades, el servicio de checkout, los recursos REST, el assembler y los controladores de planes y suscripciones. Commits: `e1a3dd5`, `b711268`, `139c2ed`, `fb2fa64`, `83e5de2`, `14801b3`, `1714db1`. | 5 h | Solorzano Sullca, Benjamin | To-Review |
+| **US-22** | Control de cuota de parcelas según el plan | **TSK-12** | Validación de cuota en el backend | Rechazar el registro de parcelas cuando el propietario alcanza la cuota de su plan. No se muestra un commit específico de validación de cuotas en las capturas. | 2 h | Sanca Condori, Miguel | Done |
+| **US-22** | Control de cuota de parcelas según el plan | **TSK-13** | Cuota activa en la Web App | Usar la cuota de la suscripción activa al registrar parcelas y restringir el acceso sin suscripción vigente. No se muestra un commit de esta funcionalidad web en las capturas. | 3 h | Solorzano Sullca, Benjamin | Done |
+| **US-16** | Actualización de perfil y datos de contacto | **TSK-14** | Agregado y persistencia de perfiles | Definir los agregados, entidades y value objects de Profiles e implementar el repositorio y la configuración de persistencia con Entity Framework Core. Commits: `39da0c8`, `b04211c`, `b0e4692`, `6b50a79`, `c10c3be`, `dedf675`. | 5 h | Drago Derick Duarte Ruffner | Done |
+| **US-16** | Actualización de perfil y datos de contacto | **TSK-15** | Endpoints de perfil | Implementar los controladores REST, los recursos y el assembler del contexto Profiles, junto con los servicios de comandos y consultas. Commits: `4fc4ff2`, `2db3bd6`, `5448411`, `323beb0`, `3d0ea97`. | 3 h | Drago Derick Duarte Ruffner | Done |
+| **US-16** | Actualización de perfil y datos de contacto | **TSK-16** | Edición de cuenta en la Web App | Permitir la edición en línea de los datos personales y de contacto del productor en Vue, con pruebas unitarias. No se muestra un commit de esta vista en las capturas. | 3 h | Solorzano Sullca, Benjamin | Done |
+| **US-17** | Registro e institucionalización de Cooperativa | **TSK-17** | Modelo de cooperativas | Implementar los agregados, entidades, comandos, consultas y errores del contexto Profiles para la gestión de perfiles y cooperativas. Commits: `39da0c8`, `b04211c`, `d3ecf8b`, `f81901d`, `8becd36`. | 4 h | Drago Derick Duarte Ruffner | Done |
+| **US-17** | Registro e institucionalización de Cooperativa | **TSK-18** | Endpoints del contexto Profiles | Incorporar los controladores, recursos REST y transformaciones del contexto Profiles, cuya documentación incluye la gestión de cooperativas. Commits: `4fc4ff2`, `2db3bd6`, `5448411`, `29c5d2f`. | 3 h | Drago Derick Duarte Ruffner | Done |
+| **US-17** | Registro e institucionalización de Cooperativa | **TSK-19** | Flujo de registro de cooperativa | Construir en Vue el flujo de registro de la cooperativa con validaciones. No se muestra un commit de este flujo web en las capturas. | 3 h | Solorzano Sullca, Benjamin | Done |
+| **US-18** | Adición de socios al padrón de la cooperativa | **TSK-20** | Servicios de gestión de cooperativas | Implementar los contratos y servicios de comandos y consultas de Profiles, junto con sus controladores REST. Las capturas no detallan rutas específicas de socios e invitaciones. Commits: `a356898`, `5360ea3`, `323beb0`, `3d0ea97`, `4fc4ff2`. | 4 h | Drago Derick Duarte Ruffner | Done |
+| **US-18** | Adición de socios al padrón de la cooperativa | **TSK-21** | Registro de socios en la Web App | Registrar socios, editar sus datos y vincular cuentas demo de productores desde Vue. No se muestra un commit de esta funcionalidad web en las capturas. | 4 h | Solorzano Sullca, Benjamin | Done |
+| **US-21** | Directorio consolidado de miembros y predios | **TSK-22** | Fachada del contexto Profiles | Implementar el contrato de la fachada del contexto y su implementación en la capa de aplicación para la integración con otros contextos. Las capturas no muestran un commit específico de asignación de agrónomos. Commits: `221f9ba`, `bcd650c`. | 5 h | Drago Derick Duarte Ruffner | Done |
+| **US-21** | Directorio consolidado de miembros y predios | **TSK-23** | Expedientes de socios | Mostrar expedientes navegables de socios con parcelas vinculadas, certificados e historial de acopio. No se muestra un commit de esta vista en las capturas. | 4 h | Solorzano Sullca, Benjamin | Done |
+| **US-21** | Directorio consolidado de miembros y predios | **TSK-24** | Consulta del directorio en el backend | Exponer la consulta del directorio consolidado de socios y parcelas de una cooperativa. No se muestra un commit específico del directorio consolidado en las capturas. | 3 h | Drago Derick Duarte Ruffner | To-do |
+| **US-29** | Delimitación de polígono mediante coordenadas GPS | **TSK-25** | Agregado FieldPlot | Implementar los agregados y value objects de Farming, incluidos `FieldPlot`, `CropCampaign`, `CropSeason` y `PlotBoundary`, sus contratos de repositorio y las configuraciones de entidades. Commits: `2f33b72`, `1b3c9c2`, `5456608`, `48ef1fd`. | 5 h | Sanca Condori, Miguel | Done |
+| **US-29** | Delimitación de polígono mediante coordenadas GPS | **TSK-26** | Gestión de linderos y polígonos | Implementar `PlotBoundary`, el contrato `IPolygonMonitoring`, el servicio `PolygonMonitoring` y los comandos para gestionar parcelas y campañas. Commits: `2f33b72`, `da8d7f0`, `93f4cb1`, `433d057`, `66615e5`. | 5 h | Sanca Condori, Miguel | Done |
+| **US-29** | Delimitación de polígono mediante coordenadas GPS | **TSK-27** | Línea base de suelo | Registrar textura y línea base de suelo de la parcela. No se muestra un commit específico de línea base de suelo en las capturas. | 3 h | Sanca Condori, Miguel | Done |
+| **US-32** | Apertura de nueva campaña agrícola | **TSK-28** | Agregado CropCampaign | Implementar `CropCampaign`, sus configuraciones de persistencia, el repositorio de Farming y los servicios de comandos para gestionar campañas agrícolas. Commits: `2f33b72`, `5456608`, `48ef1fd`, `8884cf4`, `66615e5`. | 4 h | Sanca Condori, Miguel | Done |
+| **US-32** | Apertura de nueva campaña agrícola | **TSK-29** | Recursos y consultas de campañas | Incorporar los recursos y assemblers de parcelas y campañas, las consultas por identificadores y el servicio de consultas de Farming. Commits: `44fdd66`, `bd83b15`, `af4c92e`, `607002f`, `f92aeef`. | 4 h | Sanca Condori, Miguel | Done |
+| **US-33** | Seleccionar tipo de cultivo (Papa / Café) | **TSK-30** | Tipo de cultivo | Definir el tipo de cultivo y permitir su selección en la campaña agrícola. No se muestra un commit específico de `CropType` en las capturas. | 2 h | Sanca Condori, Miguel | Done |
+| **US-34** | Especificación de variedad de semilla utilizada | **TSK-31** | Variedad de semilla | Definir la variedad de semilla y permitir especificarla en la campaña en curso. No se muestra un commit específico de `SeedVariety` en las capturas. | 2 h | Sanca Condori, Miguel | Done |
+| **US-37** | Registro de egresos en insumos y fertilizantes | **TSK-32** | Libro de campaña en el backend | Modelar `CampaignLedger` y `ExpenseEntry` con su persistencia. No se muestra un commit de estas entidades en las capturas. | 5 h | Sanca Condori, Miguel | To-do |
+| **US-38** | Registro de egresos en jornales y mano de obra | **TSK-33** | Endpoint de egresos por categoría | Exponer el registro de egresos por categoría: insumos, mano de obra y transporte. No se muestra un commit de esta funcionalidad en las capturas. | 4 h | Sanca Condori, Miguel | To-do |
+| **US-39** | Registro de egresos en transporte y flete rural | **TSK-34** | Costos de campaña en la Web App | Calcular costos de campaña y precio de equilibrio desde las entidades y el store de Vue. No se muestra un commit de esta funcionalidad web en las capturas. | 3 h | Sanca Condori, Miguel | Done |
+| **TS-01** | Integración con API externa de AgroMonitoring | **TSK-35** | Gestión de polígonos para monitoreo | Implementar el contrato y el servicio de monitoreo de polígonos del contexto Farming. Las capturas no detallan el proveedor externo utilizado. Commits: `da8d7f0`, `93f4cb1`. | 5 h | Sanca Condori, Miguel | Done |
+| **TS-01** | Integración con API externa de AgroMonitoring | **TSK-36** | Servicios de monitoreo de cultivos | Implementar los servicios de comandos y monitoreo del contexto Crop y sus controladores, incluidos los relacionados con observaciones satelitales. Las capturas no detallan un importador específico de AgroMonitoring. Commits: `a0e5825`, `64988ab`. | 5 h | Tejada Pumacayo, Yamil Jared | To-Review |
+| **US-42** | Programación de consulta de telemetría satelital | **TSK-37** | Consulta programada | Programar la consulta periódica de nuevas imágenes para las parcelas vinculadas. No se muestra un commit específico de programación periódica en las capturas. | 3 h | Tejada Pumacayo, Yamil Jared | To-do |
+| **US-43** | Ingesta de imágenes satelitales y descarte por nubes | **TSK-38** | Modelo y persistencia de observaciones satelitales | Implementar los modelos de dominio, las configuraciones de entidades, el repositorio y los controladores de Crop, incluidos los de observaciones satelitales. Commits: `279bc35`, `fce08bf`, `a9b1dda`, `64988ab`. | 5 h | Tejada Pumacayo, Yamil Jared | Done |
+| **US-43** | Ingesta de imágenes satelitales y descarte por nubes | **TSK-39** | Descarte por nubosidad | Evitar importaciones duplicadas y descartar imágenes con nubosidad alta. No se muestra un commit específico de estas validaciones en las capturas. | 3 h | Tejada Pumacayo, Yamil Jared | To-Review |
+| **US-45** | Consulta de alertas agroclimáticas registradas por región | **TSK-40** | Alertas y pronósticos | Implementar los modelos de alertas agroclimáticas y pronósticos, sus configuraciones de persistencia, consultas, recursos y controladores REST. Commits: `279bc35`, `fce08bf`, `4681de0`, `e9de415`, `64988ab`. | 5 h | Tejada Pumacayo, Yamil Jared | Done |
+| **US-45** | Consulta de alertas agroclimáticas registradas por región | **TSK-41** | Boletines regionales | Incorporar boletines regionales en los modelos de dominio, la persistencia, las consultas y los controladores del contexto Crop. Commits: `279bc35`, `fce08bf`, `4681de0`, `64988ab`. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
+| **US-48** | Registro de reportes textuales de plagas o enfermedades | **TSK-42** | Modelo de reportes de plagas | Implementar los modelos de reportes de plagas, sus comandos, el contrato del repositorio y la persistencia del contexto Crop. Commits: `279bc35`, `fa474d2`, `c4fada1`, `185b1f6`, `dfcf9b5`, `a9b1dda`. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
+| **US-48** | Registro de reportes textuales de plagas o enfermedades | **TSK-43** | Endpoints de reportes | Incorporar los controladores y recursos de reportes de plagas, el assembler REST y la organización de los controladores en la carpeta REST. Commits: `64988ab`, `e9de415`, `02dfb7d`, `3fa983c`. | 3 h | Tejada Pumacayo, Yamil Jared | Done |
+| **US-52** | Confirmación de aplicación de tratamiento fitosanitario | **TSK-44** | Inspecciones de campo | Implementar los modelos de inspecciones, sus configuraciones de persistencia, consultas, recursos y controladores REST. Commits: `279bc35`, `fce08bf`, `4681de0`, `e9de415`, `64988ab`. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
+| **US-52** | Confirmación de aplicación de tratamiento fitosanitario | **TSK-45** | Recetas técnicas y servicios de aplicación | Implementar los modelos y recursos de recetas técnicas, sus controladores y los servicios de comandos del contexto Crop. Las capturas no detallan la ruta de confirmación de aplicación. Commits: `279bc35`, `e9de415`, `64988ab`, `a0e5825`. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
+| **US-54** | Registro de lote de cosecha ingresado a acopio | **TSK-46** | Agregado HarvestBatch | Implementar los agregados `HarvestBatch` y `QualityCertificate`, sus validaciones, las configuraciones de Entity Framework Core y el repositorio de certificación. Commits: `f72e892`, `bcbda45`, `a3144e6`, `fa0d0d6`. | 5 h | Jose Varga Enrique | To-Review |
+| **US-54** | Registro de lote de cosecha ingresado a acopio | **TSK-47** | Endpoints de lotes | Incorporar los recursos de registro y pesaje, el assembler de certificación y los controladores de lotes de cosecha y certificados de calidad. Commits: `30f9eb3`, `ae74c15`, `0392cab`, `f9b98b1`, `2979608`. | 3 h | Jose Varga Enrique | To-Review |
+| **US-56** | Extracción y registro de muestra representativa | **TSK-48** | Registro de muestra | Implementar la entidad `HarvestSample`, el comando `SampleHarvestBatchCommand` y el servicio de certificación para gestionar operaciones sobre lotes. Commits: `70b0c16`, `456ee0e`, `22ba40b`, `3f6581d`. | 3 h | Jose Varga Enrique | To-Review |
+| **US-59** | Asignación de score de calidad global del lote | **TSK-49** | Calificación de calidad | Implementar los comandos de catación de café y clasificación de papa, los value objects de distribución de calibres y la corrección del comando de clasificación. Commits: `7350b5a`, `f0cd67d`, `0392cab`, `91271e2`. | 4 h | Jose Varga Enrique | To-Review |
+| **US-59** | Asignación de score de calidad global del lote | **TSK-50** | Certificados y trazabilidad | Implementar los recursos y comandos de certificados, los servicios de consulta y trazabilidad y el controlador público; corregir la consulta de certificados y la respuesta de trazabilidad. Commits: `68189ab`, `d967d3a`, `9ca880e`, `a5456c0`, `15fc221`, `1bd9758`, `1931121`, `6734283`, `96b0a0e`. Las capturas no muestran generación de PDF/QR. | 5 h | Jose Varga Enrique | To-Review |
+| **TS-06** | Documentación de API RESTful con OpenAPI y Scalar | **TSK-51** | Documentación y ejemplos HTTP | Incorporar soporte Bearer en OpenAPI, ejemplos HTTP de IAM, Crop, Certification y Subscriptions y documentación en inglés para los seis contextos del backend. Commits: `501e177`, `585ed25`, `3223863`, `6d0ec77`, `5bc616e`, `3a72244`, `654d438`, `569927b`, `b83ad9b`, `7d46103`, `b343022`, `09dc570`, `1c875aa`, `bba1b6f`. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
+| **US-05** | Demostración del producto mediante video | **TSK-52** | Video demostrativo | Grabar y editar el video de demostración de los flujos implementados en el sprint. No se muestra un commit o evidencia del video en las capturas. | 2 h | Sanca Condori, Miguel | To-do |
 
 
+#### 5.2.3.5. Execution Evidence for Sprint Review
 
-
-
-#### 5.2.3.5. Execution Evidence for Sprint Review**
-
-Durante el Sprint 3 se actualizó la Landing Page y se desarrollaron en la Web Application los flujos de ingreso, registro por rol, suscripciones y gestión de cooperativas. En paralelo, el equipo implementó los servicios Spring Boot para sustituir la API simulada del Sprint 2. Las capturas de esta sección muestran las vistas públicas que se pudieron comprobar en Cloudflare Pages y Firebase Hosting.
+Durante el Sprint 3 se actualizó la Landing Page y se desarrollaron en la Web Application los flujos de ingreso, registro por rol, suscripciones y gestión de cooperativas. En paralelo, el equipo implementó los servicios ASP.NET Core para sustituir la API simulada del Sprint 2. Las capturas de esta sección muestran las vistas públicas que se pudieron comprobar en Cloudflare Pages y Firebase Hosting.
 
 ##### Landing Page
 
@@ -1530,13 +1436,13 @@ Suscripción al plan Semilla e historial de pagos.
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
-Los RESTful Web Services incorporan SpringDoc OpenAPI para exponer los contratos HTTP y consultarlos desde Swagger UI. La tabla recoge las operaciones principales del sprint, contrastadas con los controladores y recursos del backend. Los fragmentos JSON son ejemplos abreviados con datos ficticios. La columna de entrada identifica parámetros de ruta, filtros de consulta y campos principales del cuerpo. El esquema completo de cada recurso se consulta en OpenAPI.
+Los RESTful Web Services de SumaqAgro están desarrollados con ASP.NET Core y C# sobre .NET 10. El backend utiliza Microsoft.AspNetCore.OpenApi para generar los contratos HTTP y Scalar como interfaz interactiva para consultar y probar los endpoints. La tabla presenta las operaciones principales del sprint. Los fragmentos JSON son ejemplos abreviados con datos ficticios. La columna de entrada identifica parámetros de ruta, filtros de consulta y campos principales del cuerpo. El esquema completo de cada recurso se consulta en OpenAPI.
 
-![swagger-img.png](assets/img/chapter-V/sprint-3/swagger-img.png)
+![Scalar](assets/img/chapter-V/sprint-3/scalar/scalar-img.png)
 
-- **Repositorio de Web Services** [sumaq-agro-platform](https://github.com/dymbia-opensource/sumaq-agro-platform)
-- **Documentación del entorno configurado** [Swagger UI en Render](https://sumaq-agro-platform.onrender.com/swagger-ui/index.html) y [OpenAPI JSON en Render](https://sumaq-agro-platform.onrender.com/v3/api-docs).
-- **Documentación para ejecución local** [Swagger UI local](http://localhost:8080/swagger-ui/index.html) y [OpenAPI JSON local](http://localhost:8080/v3/api-docs).
+- **Repositorio de Web Services:** [sumaq-agro-platform](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform).
+- **Entorno de despliegue:** backend de SumaqAgro desplegado en Railway mediante Docker.
+- **Documentación para ejecución local:** [Scalar local](http://localhost:5192/scalar/v1) y [OpenAPI JSON local](http://localhost:5192/openapi/v1.json).
 
 ##### Operaciones por Bounded Context
 
@@ -1581,37 +1487,45 @@ Las rutas de la tabla son relativas a `/api/v1`. Las operaciones protegidas usan
 Los contratos se contrastaron con el código disponible para la revisión de AV2. Parte de las operaciones de Subscriptions y Certification se desarrolló en ramas del sprint y su integración en `develop` aparece después del corte del 13 de noviembre. La tabla documenta su implementación en el código y su disponibilidad pública queda por validar.
 
 
-##### Interacción con Swagger UI**
+##### Interacción con Scalar
 
-Para comprobar el contrato con datos de muestra, abrir **Tokens**, enviar el correo y la contraseña de una cuenta de prueba y comprobar que la respuesta sea `200` con un JWT. Después, ejecutar **Field Plots** con el `fieldPlotId` de una parcela de demostración y comprobar que la respuesta `200` incluya sus datos. Las capturas deben mostrar los parámetros, el código HTTP y el cuerpo de respuesta, con las credenciales y el token ocultos.
+Para comprobar el contrato con datos de muestra, ejecutar **Tokens** (`POST /api/v1/tokens`) en Scalar, enviar el correo y la contraseña de una cuenta de prueba y comprobar que la respuesta sea `200` con un JWT. Después, configurar la autorización Bearer y ejecutar **Field Plots** con el `fieldPlotId` de una parcela de demostración, comprobando que la respuesta `200` incluya sus datos. Las capturas deben mostrar los parámetros, el código HTTP y el cuerpo de respuesta, con las credenciales y el token ocultos.
 
-Durante la revisión, la URL pública de Swagger UI mostró la pantalla de arranque de Render. Quedan pendientes las capturas de interacción en `assets/img/chapter-5/sprint-3/swagger-token.jpg` y `assets/img/chapter-5/sprint-3/swagger-parcelas.jpg`.
+La documentación se consulta en [Scalar local](http://localhost:5192/scalar/v1). A continuación, se presentan las evidencias de autenticación y consulta de parcelas mediante Scalar.
+
+![Autenticación Scalar Token](assets/img/chapter-V/sprint-3/scalar/scalar-token.png)
+
+![Autenticación Scalar Token Prueba](assets/img/chapter-V/sprint-3/scalar/scalar-token-prueba.png)
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-La entrega de AV2 comprende tres productos. Se comprobó el acceso público a la Landing Page y a la pantalla de ingreso de la Web Application. Para la API, se identificaron el contenedor preparado para Render y la configuración del frontend que apunta a ese servicio. La respuesta del backend y la conexión autenticada de extremo a extremo quedan por verificar.
+
+La entrega de AV2 comprende tres productos: la Landing Page, la Web Application desarrollada en Vue y los RESTful Web Services implementados con ASP.NET Core. El frontend y el backend se despliegan en Railway mediante Docker, junto con un servicio MySQL para la persistencia de datos. La Landing Page proporciona el enlace de acceso a la Web Application.
 
 ##### Landing Page en Cloudflare Pages
 
 1. Se reorganizó el sitio estático bajo el directorio `public/`, con sus páginas legales, estilos, scripts y recursos.
-2. La versión [`v3.2.0`](https://github.com/dymbia-opensource/sumaq-agro-website/tree/v3.2.0) se integró en `main` mediante el commit [`752c5f9`](https://github.com/dymbia-opensource/sumaq-agro-website/commit/752c5f9).
-3. Se comprobó el acceso al [sitio publicado](https://sumaqagro-website.vercel.app/) y el destino de **Sign In**, que conduce a Firebase Hosting. Queda pendiente la captura del historial de Cloudflare Pages con la rama y el commit del despliegue en `assets/img/chapter-5/sprint-3/deploy-cloudflare.jpg`.
-![img-cloudflare.png](assets/img/chapter-V/sprint-3/despliegue/img-cloudflare.png)
+2. El código de la Landing Page se mantiene en el repositorio [sumaq-agro-website](https://github.com/dymbia-aplicaciones-web/sumaq-agro-website), correspondiente al proyecto de Aplicaciones Web.
+3. Se comprobó el acceso al [sitio publicado](https://sumaqagro-website.vercel.app/) y el destino de **Sign In**, que conduce a Firebase Hosting. A continuación, se presenta la evidencia del despliegue de la Landing Page.
+
+![Despliegue de la Landing Page](assets/img/chapter-V/sprint-3/despliegue/img-cloudflare.png)
+
 ##### Web Application en Firebase Hosting
 
-1. El proyecto `sumaqagro-appweb` está vinculado mediante `.firebaserc`. La compilación con `npm run build` genera el contenido en `dist/sumaqAgro-appweb/browser`, directorio indicado en `firebase.json`.
-2. La publicación usa `firebase deploy --only hosting`. Firebase redirige las rutas internas a `index.html`, de modo que Vue resuelva enlaces como `/demo-access`.
-3. Se comprobó la [ruta publicada de acceso](https://sumaqagro-appweb.web.app/demo-access) y su redirección al formulario de inicio de sesión. El commit [`e70e5ff`](https://github.com/dymbia-opensource/sumaq-agro-web-app/commit/e70e5ff) configura el backend de Render en la rama `feature/update-frontend` el 15 de noviembre. Se requiere el historial de Firebase Hosting para identificar qué compilación está activa y comprobar si incluye ese cambio. La captura se guarda en `assets/img/chapter-5/sprint-3/deploy-firebase.jpg`.
-  ![img-firebase.png](assets/img/chapter-V/sprint-3/despliegue/img-firebase.png)
+1. El proyecto `sumaqagro-appweb` está vinculado mediante `.firebaserc`. La compilación con `npm run build` genera el contenido en `dist/`, directorio indicado en `firebase.json`.
+2. La publicación usa `firebase deploy --only hosting`. Firebase redirige las rutas internas a `index.html`, de modo que Vue Router resuelva la navegación de la aplicación.
+3. El código se mantiene en el repositorio [sumaq-agro-web-app](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app). La aplicación se publica en [Firebase Hosting](https://sumaqagro-appweb.web.app/). A continuación, se presenta la evidencia del despliegue.
 
+![Despliegue de la Web Application en Firebase Hosting](assets/img/chapter-V/sprint-3/despliegue/img-firebase.png)
 
-##### RESTful Web Services en Render
+##### RESTful Web Services en Railway
 
-1. El commit [`6526e03`](https://github.com/dymbia-opensource/sumaq-agro-platform/commit/6526e03), del 14 de noviembre, incorpora el `Dockerfile` de Render. La primera etapa ejecuta Maven para generar `platform-1.0.0.jar`. La segunda ejecuta el artefacto con `SERVER_PORT=10000`.
-2. Para usar la conexión MySQL de producción se debe activar el perfil con `SPRING_PROFILES_ACTIVE=prod`. Este perfil lee las variables de entorno de la base de datos, JWT, CORS y AgroMonitoring. `FRONTEND_ORIGIN` debe coincidir con el origen publicado de Firebase.
-3. La [documentación de la API](https://sumaq-agro-platform.onrender.com/swagger-ui/index.html) abrió en la pantalla de arranque de Render durante la comprobación. Para acreditar el despliegue, faltan la respuesta de Swagger y una captura del panel de Render con la rama, el commit y el estado del servicio. La captura se guarda en `assets/img/chapter-5/sprint-3/deploy-render.jpg`.
-![img-rende.png](assets/img/chapter-V/sprint-3/despliegue/img-rende.png)
----
+1. El repositorio [sumaq-agro-platform](https://github.com/dymbia-aplicaciones-web/sumaq-agro-platform) incorpora un `Dockerfile` para desplegar el backend en Railway. La primera etapa utiliza el SDK de .NET 10 y ejecuta `dotnet publish` en configuración Release. La segunda utiliza ASP.NET Core 10 y ejecuta `SumaqAgro.Platform.dll`, escuchando en `0.0.0.0` mediante la variable `PORT`, con `8080` como valor predeterminado.
+2. La configuración de producción utiliza `ASPNETCORE_ENVIRONMENT=Production`. Las variables de entorno permiten configurar la conexión MySQL mediante `ConnectionStrings__DefaultConnection`, la firma JWT mediante `Jwt__SigningKey` y los orígenes permitidos mediante `Cors__AllowedOrigins__0`. La opción `Database__ApplyMigrations=true` permite aplicar las migraciones al iniciar el servicio.
+3. El backend se conecta al servicio MySQL del proyecto de Railway. La documentación interactiva se consulta mediante [Scalar local](http://localhost:5192/scalar/v1), habilitado únicamente en Development. A continuación, se presenta la evidencia del despliegue en Railway, con el estado del servicio y su información de publicación.
+
+![Despliegue de los RESTful Web Services en Railway](assets/img/chapter-V/sprint-3/despliegue/img-railway-backend.png)
+
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
@@ -1622,7 +1536,7 @@ El equipo organizó la implementación de los servicios por Bounded Context, seg
 | Benjamin Solorzano | 17 | 98 | 41 |
 | Miguel Sanca | 0 | 24 | 80 |
 | Yamil Tejada | 0 | 11 | 83 |
-| Jose Vargas | 0 | 5 | 23 | |
+| Jose Vargas | 0 | 5 | 23 |
 | Drago Duarte| 0 | 27 | 55 |
 | **Total** | **17** | **165** | **282** |
 
@@ -1630,36 +1544,11 @@ El cuadro cuenta los commits alcanzables desde la rama remota `develop` cuya fec
 
 ##### Landing Page
 
-El historial registra la reorganización de las vistas y recursos compartidos y la actualización de los perfiles del equipo. La autoría de los 17 commits del periodo en `develop` figura a nombre de Benjamin Solorzano. [Historial de commits](https://github.com/dymbia-aplicaciones-web/sumaq-agro-website/commits/main/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-website/graphs/contributors?from=2026-08-22T05%3A00%3A00.000Z)
 
+El historial registra la reorganización de las vistas y recursos compartidos y la actualización de los perfiles del equipo. La autoría de los 17 commits del periodo en `develop` figura a nombre de Benjamin Solorzano. [Historial de commits](https://github.com/dymbia-aplicaciones-web/sumaq-agro-website/commits/develop/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-website/graphs/contributors?from=15%2F8%2F2026)
 ##### Web Application
 
-Los cinco integrantes registraron commits en la rama de integración durante el sprint. El historial permite seguir el trabajo de los formularios de acceso, el catálogo de suscripciones y las vistas de cooperativa, así como la integración posterior con el backend. [Historial de commits](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app/commits/develop/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app/graphs/contributors?from=15%2F8%2F2026)
-
-
-
-### 5.2.4. Sprint 4
-
-#### 5.2.4.1. Sprint Planning 4
-
-#### 5.2.4.2. Aspect Leaders and Collaborators
-
-#### 5.2.4.3. Sprint Backlog 4
-
-#### 5.2.4.4. Development Evidence for Sprint Review
-
-#### 5.2.4.5. Execution Evidence for Sprint Review
-
-#### 5.2.4.6. Services Documentation Evidence for Sprint Review
-
-#### 5.2.4.7. Software Deployment Evidence for Sprint Review
-
-#### 5.2.4.8. Team Collaboration Insights during Sprint
-
-
-
-
-
+Los cinco integrantes registraron commits en la rama de integración durante el sprint. El historial permite seguir el trabajo de los formularios de acceso, el catálogo de suscripciones y las vistas de cooperativa, así como la integración con el backend desarrollado en ASP.NET Core. [Historial de commits](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app/commits/develop/) · [Insights de colaboradores](https://github.com/dymbia-aplicaciones-web/sumaq-agro-web-app/graphs/contributors?from=15%2F8%2F2026)
 
 ##### RESTful Web Services
 
@@ -1674,7 +1563,7 @@ expectativas del producto, enfocado en identificar los beneficios esperados; eva
 
 ### Preguntas para el Segmento: Agricultores independientes
 
-**Perfil y contexto**
+¿**Perfil y contexto**
 
 1. ¿Cuántos años lleva trabajando en la agricultura y qué cultivos produce actualmente?
 2. ¿Cómo registra actualmente los gastos de fertilizantes, semillas, jornales y otros insumos?
@@ -1699,53 +1588,33 @@ expectativas del producto, enfocado en identificar los beneficios esperados; eva
 
 ### Preguntas para el Segmento: Directivos de cooperativas agrícolas
 
-**Perfil y contexto**
+1. ¿Cuáles fueron tus primeras impresiones al ver la aplicación?
 
-1. ¿Cuál es su cargo y cuántos productores o socios tiene actualmente bajo su responsabilidad?
-2. ¿Cómo gestionan actualmente los registros de producción, calidad y procedencia de los productos agrícolas?
-3. ¿Cuáles son las principales dificultades que enfrenta durante los procesos de control de calidad y certificación?
+2. ¿Te resultó claro qué información puedes encontrar en el panel de control?
 
-**Expectativas del producto**
+3. ¿Crees que el Padrón facilitaría la administración de los socios?
 
-4. ¿Qué beneficios esperaría obtener de una plataforma que centralice la información agrícola de los productores asociados?
-5. ¿Qué tan importante sería disponer de registros digitales para verificar la trazabilidad y procedencia de cada lote?
-6. ¿Qué información considera indispensable para evaluar la calidad de los productos antes de su comercialización?
+4. ¿La información de Salud de Parcelas y Alertas te serviría para supervisar la cooperativa?
 
-**Evaluación del prototipo**
+5. ¿Te pareció claro el proceso para atender un reporte de plagas?
 
-7. Después de observar el módulo de gestión y certificación, ¿qué tan fácil le resultó consultar la información de los productores y sus parcelas?
-8. ¿Considera que los certificados digitales permitirían mejorar la organización y disponibilidad de la documentación durante las auditorías? ¿Por qué?
-9. ¿Qué tan útil considera disponer de información centralizada sobre la calidad y trazabilidad de los lotes?
+6. ¿Qué parte de la aplicación te resultó confusa?
 
-**Cierre**
-
-10. ¿Consideraría implementar SumaqAgro en su cooperativa? ¿Qué factores influirían en esa decisión?
-11. ¿Qué mejoras considera necesarias para que la plataforma responda a las necesidades administrativas y comerciales de su organización?
+7. ¿Qué mejorarías para que la aplicación sea más útil en tu trabajo diario?
 
 ### Preguntas para el Segmento: Ingenieros agrónomos y asesores técnicos
 
-**Perfil y contexto**
+¿Cuáles fueron tus primeras impresiones al ver SumaqAgro como asesor agrónomo?
 
-1. ¿Cuántos años de experiencia tiene como ingeniero agrónomo o asesor técnico?
-2. ¿Cuántos agricultores y parcelas supervisa aproximadamente durante un mes?
-3. ¿Qué herramientas utiliza actualmente para registrar sus visitas técnicas, diagnósticos y recomendaciones?
+¿Consideras que las funciones de la página pueden ayudarte a monitorear las parcelas que tienes asignadas?
 
-**Expectativas del producto**
+Al revisar un reporte de plagas, ¿la información te parece suficiente para decidir qué caso atender primero?
 
-4. ¿Qué beneficios esperaría obtener de una herramienta que permita monitorear parcelas mediante información satelital?
-5. ¿Qué información considera necesaria para identificar oportunamente posibles afectaciones en los cultivos?
-6. ¿Qué tan importante sería contar con registros digitales de las visitas técnicas y recomendaciones realizadas a cada productor?
+¿Te pareció fácil seguir el proceso desde la inspección hasta la receta técnica?
 
-**Evaluación del prototipo**
+¿Qué parte de la aplicación te resultó confusa o necesitaría una explicación adicional?
 
-7. Después de observar el módulo de monitoreo, ¿qué tan útil considera la información satelital para complementar sus evaluaciones de campo?
-8. ¿Qué tan sencillo le resultó localizar parcelas y consultar su información geográfica?
-9. ¿Considera que los registros e informes digitales facilitan el seguimiento de sus recomendaciones técnicas? ¿Por qué?
-
-**Cierre**
-
-10. ¿Incorporaría SumaqAgro como herramienta de apoyo en sus actividades de asesoría agrícola? ¿Por qué?
-11. ¿Qué mejoras recomendaría para facilitar el trabajo de los asesores técnicos?
+¿Qué mejorarías para que SumaqAgro te ayude más en tu trabajo diario?
 
 ### 5.3.2. Registro de Entrevistas
 
@@ -1799,43 +1668,4 @@ Finalmente, manifestó que utilizaría principalmente el módulo de registro de 
 | Duración | 05:15                                             |
 | URL del video (Microsoft Stream) |(https://lix.li/UtN9TM)                              |
 | Minutaje | 17:35 - 25:30                                     |
-
-
-
-### 5.3.3. Evaluaciones según heurísticas
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 5.4. Video About-the-Product
-El video "About the Product" presenta la propuesta de valor de SumaqAgro, el problema que resuelve y cómo funciona la plataforma para sus tres segmentos objetivo: pequeños y medianos agricultores independientes, directivos de cooperativas agrarias e ingenieros agrónomos y asesores técnicos. Está dirigido a los visitantes del Landing Page, que desean conocer el modelo de negocio y las características del producto, y a los usuarios de la aplicación, que desean realizar tareas de monitoreo, costos y certificación. El tono es cercano, claro y confiable, consistente con el del producto.
-
-#### Información General del Video
-
-| Campo | Detalle |
-| :--- | :--- |
-| **Título del Video** | SumaqAgro: Accessible Precision Agriculture for Potato and Coffee Farmers |
-| **Nombre del archivo** |  |
-| **Duración** |  |
-| **Fecha de Grabación** |  |
-| **URL YouTube** |  |
-| **URL Microsoft Stream** |  |
-
-**Screenshot del video:**
 
