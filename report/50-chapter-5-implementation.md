@@ -147,7 +147,7 @@ Todos los componentes de software y la documentación del proyecto están agrupa
 
 
 
-* **Repositorio del Informe del Proyecto (Project Report):**  https://github.com/dymbia-aplicaciones-web/sumaqAgro-report
+* **Repositorio del Informe del Proyecto (Project Report):**  https://github.com/dymbia-aplicaciones-web/sumaq-agro-report
 
 
 ---
@@ -291,12 +291,12 @@ Se adoptan las guías oficiales exigidas para el proyecto: **C# Coding Conventio
 
 #### Estructura de Namespaces
 La estructura de la solución no utiliza paquetes invertidos, sino **Namespaces** redactados en `PascalCase` e inglés, separados por puntos, siguiendo el patrón:  
-`SumaqAgro.<BoundedContext>.<Layer>`
+`SumaqAgro.Platform.<BoundedContext>.<Layer>`
 
 *Ejemplo de capas:*
-* `SumaqAgro.Monitoring.Domain.Models`
-* `SumaqAgro.Monitoring.Infrastructure.Persistence`
-* `SumaqAgro.Monitoring.Interfaces.REST`
+* `SumaqAgro.Platform.Farming.Domain.Model`
+* `SumaqAgro.Platform.Farming.Infrastructure.Persistence`
+* `SumaqAgro.Platform.Farming.Interfaces.Rest`
 
 #### Convenciones de Nombres en C#
 * **Clases y Records:** Se redactan en `PascalCase` e inglés utilizando sustantivos claros.  
@@ -894,7 +894,7 @@ Para evidenciar el funcionamiento de la Web Application de SumaqAgro, se present
 * **Enlace de Reproducción (Microsoft Stream):** [Video "Video de Exposición AV1"](https://upcedupe-my.sharepoint.com/personal/u202422128_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202422128%5Fupc%5Fedu%5Fpe%2FDocuments%2FRecording%2D20261009%5F092557%2Ewebm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E418bacb5%2D22ff%2D4d75%2Daa54%2Db24e02149c8b)
 
 
-#### 5.2.1.6. Services Documentation Evidence for Sprint Review
+#### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
 
 En esta sección se presenta la documentación de los servicios utilizados por la Web Application de **SumaqAgro** durante el **Sprint 2**. Para esta iteración se empleó una **Fake REST API implementada con `json-server`**, que administra los datos de demostración almacenados en `server/db.json`.
@@ -1001,7 +1001,7 @@ La documentación presentada corresponde a la configuración y los contratos imp
 ---
 
 
-#### 5.2.1.7. Software Deployment Evidence for Sprint Review
+#### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
 Durante el **Sprint 2**, el equipo **Dymbia** publicó la **Web Application de SumaqAgro**, desarrollada en **Vue**, en **Firebase Hosting**, y utilizó una **Fake REST API** con `json-server` publicada en **Render** para los datos de demostración.
 
@@ -1068,7 +1068,7 @@ La Fake REST API utiliza `server/db.json` para los datos de demostración y `ser
 
 La captura del panel de Render muestra el servicio en estado **Live**, la rama `develop` y el historial de despliegues automáticos de la Fake REST API utilizada durante esta etapa.
 
-![Render](assets/img/chapter-V/sprint-2/render-vue.jpeg)
+![Render](assets/img/chapter-V/sprint-2/render-vue.png)
 
 La Fake REST API corresponde al Sprint 2. La versión final utiliza el backend real desarrollado en **C# con ASP.NET Core**, persistencia en **MySQL** y despliegue en **Railway**, documentado en el Sprint 3.
 
@@ -1087,7 +1087,7 @@ Vite carga `.env.development` al ejecutar `npm run dev` y `.env.production` al c
 ---
 
 
-#### 5.2.1.8. Team Collaboration Insights during Sprint
+#### 5.2.2.8. Team Collaboration Insights during Sprint
 
 
 En esta sección se describe la colaboración del equipo **Dymbia** durante la implementación de la **Web Application de SumaqAgro** correspondiente al **Sprint 2**. Se presentan las evidencias de participación mediante el historial de commits y los analíticos de contribución disponibles en GitHub.
@@ -1272,7 +1272,7 @@ En esta sección se presentan los avances de implementación del **Sprint 3**. E
 
 El equipo trabajó bajo **GitFlow**: cada funcionalidad se desarrolló en una rama `feature/<bounded-context>-<funcionalidad>` creada desde `develop` y se integró nuevamente en `develop` mediante *merge*. Todos los mensajes siguen el estándar **Conventional Commits** en inglés, con el *scope* del Bounded Context o agregado modificado. Los mensajes se conservan literalmente como están registrados en Git.
 
-En el repositorio de RESTful Web Services se registraron **264 commits** durante el sprint; a continuación se presenta una selección de **58 commits** representativos de todos los integrantes, ordenados desde el más antiguo hasta el más reciente:
+A continuación se presenta una selección de commits del repositorio de RESTful Web Services, con aportes de los integrantes del equipo. Esta selección documenta avances de implementación; el conteo de contribuciones del periodo se presenta en la sección 5.2.3.8:
 
 Repository
 `dymbia-aplicaciones-web/sumaq-agro-platform`
@@ -1536,7 +1536,7 @@ El equipo organizó la implementación de los servicios por Bounded Context, seg
 | Benjamin Solorzano | 17 | 98 | 41 |
 | Miguel Sanca | 0 | 24 | 80 |
 | Yamil Tejada | 0 | 11 | 83 |
-| Jose Vargas | 0 | 5 | 23 | |
+| Jose Vargas | 0 | 5 | 23 |
 | Drago Duarte| 0 | 27 | 55 |
 | **Total** | **17** | **165** | **282** |
 
