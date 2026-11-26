@@ -102,8 +102,12 @@ Un agricultor sin conocimientos sobre estos índices puede visualizar los datos 
 
 **Imagen:**
 
-[Insertar la captura de “Crop Health”, señalando los controles NDVI/NDWI y sus valores en el panel “Recorded values”.]
+![Crop](../assets/img/heuristics/crop-health-hs.png)
 
 **Recomendación:**
 
 Incluir una descripción breve de cada indicador en lenguaje sencillo y una escala de interpretación contextualizada al cultivo. Complementar los valores con etiquetas descriptivas y ayudas consultables, explicando las limitaciones de los índices para evitar que se interpreten como un diagnóstico definitivo.
+
+
+
+
