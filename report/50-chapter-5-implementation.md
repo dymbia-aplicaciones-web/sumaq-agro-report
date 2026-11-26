@@ -1103,7 +1103,7 @@ En la imagen se evidencia las contribuciones registradas por cada integrante. Es
 
 ### 5.2.3. Sprint 3
 
-El Sprint 3 marca el inicio del desarrollo de los RESTful Web Services de SumaqAgro, construidos con C#, .NET, ASP.NET Core, Entity Framework Core y MySQL, y documentados mediante OpenAPI / Swagger UI. El backend se organiza por Bounded Contexts (IAM, Profiles, Subscriptions, Farming, Crop y Certification) y, dentro de cada uno, en las capas domain, application, infrastructure e interfaces, siguiendo los patrones tácticos de Domain-Driven Design: agregados, value objects, comandos, consultas, eventos de dominio, puertos de repositorio y fachadas de contexto (ACL). En paralelo, la Web Application en Vue 3 evolucionó hacia su segunda versión con los flujos de autenticación, suscripción, perfil y cooperativa, y la Landing Page se reestructuró en su tercera versión. El sprint abarca las semanas 9 a 12 del ciclo y culmina con la entrega AV2.
+El Sprint 3 marca el inicio del desarrollo de los RESTful Web Services de SumaqAgro, construidos con C#, .NET, ASP.NET Core, Entity Framework Core y MySQL, y documentados mediante OpenAPI con Scalar. El backend se organiza por Bounded Contexts (IAM, Profiles, Subscriptions, Farming, Crop y Certification) y, dentro de cada uno, en las capas domain, application, infrastructure e interfaces, siguiendo los patrones tácticos de Domain-Driven Design: agregados, value objects, comandos, consultas, eventos de dominio, puertos de repositorio y fachadas de contexto (ACL). En paralelo, la Web Application en Vue 3 evolucionó hacia su segunda versión con los flujos de autenticación, suscripción, perfil y cooperativa, y la Landing Page se reestructuró en su tercera versión. El sprint abarca las semanas 9 a 12 del ciclo y culmina con la entrega AV2.
 
 #### 5.2.3.1. Sprint Planning 3
 
@@ -1117,10 +1117,10 @@ En esta sección se especifican los aspectos principales de la reunión de plani
 | Location | Discord / GitHub / Jira Software |
 | Prepared By | Sanca Condori, Miguel |
 | Attendees (to planning meeting) | Vargas Enrique, Jose vargas / Sanca Condori, Miguel / Solorzano Sullca, Benjamin / Tejada Pumacayo, Yamil Jared / Duarte Ruffner, Drago Derick |
-| Sprint 2 Review Summary | Se publicó la primera versión de la Web Application en Angular (`v1.0.0`, y su *patch* `v1.0.1` con el CHANGELOG y la guía de contribución) en Firebase Hosting, conectada a una Fake REST API (`json-server`) desplegada en Render. Asimismo, se publicó la nueva versión de la Landing Page (`v2.0.0` y `v2.0.1`) con las secciones reorganizadas, contenido i18n en español e inglés y la sección del video About-the-Team. Se demostraron los flujos de Crop Health (visor Leaflet con NDVI/NDWI, alertas regionales, reportes de plagas, bandeja, inspecciones y recetas agronómicas) y las vistas iniciales de Field Management, Profiles y Harvest Certification. Quedaron pendientes la preparación de alertas demo por región (TSK-08), la validación integrada del circuito productor–ingeniero (TSK-22) y la consistencia de los datos relacionados (TSK-23). |
-| Sprint 2 Retrospective Summary | El equipo valoró la organización por Bounded Contexts y el uso de GitFlow con Conventional Commits. Como oportunidades de mejora se identificó que la Fake REST API no permite validar reglas de negocio ni seguridad, que los datos demo entre contextos eran inconsistentes y que la integración de ramas se concentró al final del sprint. Se acordó: (1) modelar primero el dominio de cada contexto en el backend antes de exponer endpoints, (2) separar el modelo de dominio de las entidades de persistencia JPA mediante puertos de repositorio, (3) integrar a `develop` cada funcionalidad terminada sin esperar al cierre y (4) asignar a cada nuevo integrante un Bounded Context completo para acelerar su incorporación. |
+| Sprint 2 Review Summary | Se publicó la primera versión de la Web Application en Vue (`v1.0.0`, y su *patch* `v1.0.1` con el CHANGELOG y la guía de contribución) en Firebase Hosting, conectada a una Fake REST API (`json-server`) desplegada en Render. Asimismo, se publicó la nueva versión de la Landing Page (`v2.0.0` y `v2.0.1`) con las secciones reorganizadas, contenido i18n en español e inglés y la sección del video About-the-Team. Se demostraron los flujos de Crop Health (visor Leaflet con NDVI/NDWI, alertas regionales, reportes de plagas, bandeja, inspecciones y recetas agronómicas) y las vistas iniciales de Field Management, Profiles y Harvest Certification. Quedaron pendientes la preparación de alertas demo por región (TSK-08), la validación integrada del circuito productor–ingeniero (TSK-22) y la consistencia de los datos relacionados (TSK-23). |
+| Sprint 2 Retrospective Summary | El equipo valoró la organización por Bounded Contexts y el uso de GitFlow con Conventional Commits. Como oportunidades de mejora se identificó que la Fake REST API no permite validar reglas de negocio ni seguridad, que los datos demo entre contextos eran inconsistentes y que la integración de ramas se concentró al final del sprint. Se acordó: (1) modelar primero el dominio de cada contexto en el backend antes de exponer endpoints, (2) mantener el modelo de dominio independiente de la configuración de persistencia mediante puertos de repositorio y mapeos Fluent API de Entity Framework Core, (3) integrar a `develop` cada funcionalidad terminada sin esperar al cierre y (4) asignar a cada nuevo integrante un Bounded Context completo para acelerar su incorporación. |
 | **Sprint Goal & User Stories** | |
-| Sprint 3 Goal | Our focus is on delivering the first deployed version of the SumaqAgro RESTful Web Services, built with Spring Boot, Spring Data JPA and MySQL and documented with OpenAPI/Swagger, and connecting it to a new version of the Angular Web Application. Users will sign up, sign in and sign out with JWT-based authentication, producers will register plots with validated GPS boundaries and open crop campaigns, farmers will report pests and consult regional agroclimatic alerts, users will update their profiles and register cooperatives, and collection centers will register harvest batches, all stored in a real database instead of the fake API. We believe it delivers a secure and persistent foundation for the platform. This will be confirmed when the Web Services v1.0.0 and the Web App v2.0.0 are publicly deployed, every endpoint is documented in Swagger UI, and these flows work end to end. |
+| Sprint 3 Goal | Our focus is on delivering the first deployed version of the SumaqAgro RESTful Web Services, built with ASP.NET Core, Entity Framework Core and MySQL and documented with OpenAPI/Scalar, and connecting it to a new version of the Vue Web Application. Users will sign up, sign in and sign out with JWT-based authentication, producers will register plots with validated GPS boundaries and open crop campaigns, farmers will report pests and consult regional agroclimatic alerts, users will update their profiles and register cooperatives, and collection centers will register harvest batches, all stored in a real database instead of the fake API. We believe it delivers a secure and persistent foundation for the platform. This will be confirmed when the Web Services v1.0.0 and the Web App v2.0.0 are publicly deployed, every endpoint is documented in Scalar, and these flows work end to end. |
 | Sprint 3 Velocity | 111 Story Points |
 | Sum of Story Points | 111 Story Points |
 
@@ -1131,7 +1131,7 @@ A continuación, se detallan las historias de usuario y técnicas comprometidas 
 | IAM | **US-10** | Registro de usuario en la plataforma (Sign Up) | 3 |
 | IAM | **US-11** | Inicio de sesión seguro (Sign In) | 3 |
 | IAM | **US-14** | Cierre de sesión seguro (Sign Out) | 2 |
-| IAM | **TS-02** | Servicio de autenticación JWT y Spring Security | 8 |
+| IAM | **TS-02** | Servicio de autenticación JWT y autenticación JWT Bearer de ASP.NET Core | 8 |
 | Subscriptions | **US-12** | Consulta de catálogo de planes durante Onboarding | 2 |
 | Subscriptions | **US-22** | Control de cuota de parcelas según el plan | 2 |
 | Profiles | **US-16** | Actualización de perfil y datos de contacto | 3 |
@@ -1154,18 +1154,18 @@ A continuación, se detallan las historias de usuario y técnicas comprometidas 
 | Certification | **US-54** | Registro de lote de cosecha ingresado a acopio | 3 |
 | Certification | **US-56** | Extracción y registro de muestra representativa | 3 |
 | Certification | **US-59** | Asignación de score de calidad global del lote | 5 |
-| Transversal | **TS-06** | Documentación de API RESTful con OpenAPI y Swagger UI | 5 |
+| Transversal | **TS-06** | Documentación de API RESTful con OpenAPI y Scalar | 5 |
 | Transversal | **US-05** | Demostración del producto mediante video | 2 |
 | **Total** | | | **111** |
 
-simismo, el equipo acordó las versiones que cada producto debe alcanzar al cierre del Sprint 3, aplicando **Semantic Versioning 2.0.0** y publicándolas mediante ramas `release/*` integradas en `main`:
+Asimismo, el equipo acordó las versiones que cada producto debe alcanzar al cierre del Sprint 3, aplicando **Semantic Versioning 2.0.0** y publicándolas mediante ramas `release/*` integradas en `main`:
 
 | Producto | Repositorio | Versión al cierre del Sprint 2 | Versión objetivo del Sprint 3 |
 | :--- | :--- | :---: | :---: |
-| Report | `dymbia-aplicacionbesweb/sumaqAgro-report` | 2.0.0 | 3.0.0 |
-| Landing Page (Website) | `dymbia-aplicacionbesweb/sumaqAgro-landing-page` | 2.0.1 | 3.0.0 |
-| Web Application | `dymbia-aplicacionbesweb/sumaqAgro-appweb` | 1.0.1 | 2.0.0 |
-| RESTful Web Services | `dymbia-aplicacionbesweb/sumaqAgro-backend` | — | 1.0.0 |
+| Report | `dymbia-aplicaciones-web/sumaq-agro-report` | 2.0.0 | 3.0.0 |
+| Landing Page (Website) | `dymbia-aplicaciones-web/sumaq-agro-website` | 2.0.1 | 3.0.0 |
+| Web Application | `dymbia-aplicaciones-web/sumaq-agro-web-app` | 1.0.1 | 2.0.0 |
+| RESTful Web Services | `dymbia-aplicaciones-web/sumaq-agro-platform` | — | 1.0.0 |
 
 #### 5.2.3.2. Aspect Leaders and Collaborators
 
@@ -1173,13 +1173,13 @@ En esta sección se presenta la matriz **Leadership-and-Collaboration Matrix (LA
 
 Los aspectos considerados en el Sprint 3 son los siguientes:
 
-* **Aspect 1 — IAM & Subscriptions:** registro e inicio de sesión con JWT, protección de rutas con Spring Security, catálogo de planes y suscripción (US-10, US-11, US-14, US-12, TS-02).
-* **Aspect 2 — Farming & Shared Kernel:** parcelas, linderos GPS, cuota de parcelas, campañas agrícolas y egresos, además del *shared kernel* (manejo de errores, patrón `Result`, auditoría JPA, configuración e internacionalización de mensajes) (US-22, US-29, US-32, US-33, US-34, US-37, US-38, US-39).
+* **Aspect 1 — IAM & Subscriptions:** registro e inicio de sesión con JWT, protección de rutas con autenticación JWT Bearer de ASP.NET Core, catálogo de planes y suscripción (US-10, US-11, US-14, US-12, TS-02).
+* **Aspect 2 — Farming & Shared Kernel:** parcelas, linderos GPS, cuota de parcelas, campañas agrícolas y egresos, además del *shared kernel* (manejo de errores, patrón `Result`, auditoría con Entity Framework Core, configuración e internacionalización de mensajes) (US-22, US-29, US-32, US-33, US-34, US-37, US-38, US-39).
 * **Aspect 3 — Crop & AgroMonitoring:** observaciones satelitales, integración con AgroMonitoring, alertas agroclimáticas, reportes de plagas, inspecciones y recetas técnicas (TS-01, US-42, US-43, US-45, US-48, US-52).
 * **Aspect 4 — Profiles & Cooperatives:** perfiles de usuario, cooperativas, padrón de socios, asignación de agrónomos y fachada del contexto para otros Bounded Contexts (US-16, US-17, US-18, US-21).
 * **Aspect 5 — Certification:** lotes de cosecha, pesaje, muestreo, calificación de calidad, certificados y trazabilidad pública (US-54, US-56, US-59).
 
-La documentación OpenAPI (TS-06) y el video demostrativo (US-05) son responsabilidad compartida: cada líder documenta en Swagger UI los endpoints de su aspecto.
+La documentación OpenAPI (TS-06) y el video demostrativo (US-05) son responsabilidad compartida: cada líder documenta en Scalar los endpoints de su aspecto.
 
 ##### Leadership-and-Collaboration Matrix (LACX) — Sprint 3
 
@@ -1253,29 +1253,29 @@ El objetivo principal del **Sprint 3** es construir y documentar la primera vers
 | **US-56** | Extracción y registro de muestra representativa | **TSK-48** | Registro de muestra | Implementar el comando de muestreo del lote y su validación. | 3 h | Jose Varga Enrique | To-Review |
 | **US-59** | Asignación de score de calidad global del lote | **TSK-49** | Calificación de calidad | Implementar la graduación de papa y la catación de café, el evento `BatchGradedEvent` y su manejador. | 4 h | Jose Varga Enrique | To-Review |
 | **US-59** | Asignación de score de calidad global del lote | **TSK-50** | Certificados y trazabilidad | Implementar `QualityCertificate`, la generación de PDF/QR y la consulta pública de trazabilidad. | 5 h | Jose Varga Enrique | To-Review |
-| **TS-06** | Documentación de API RESTful con OpenAPI y Swagger UI | **TSK-51** | Documentación OpenAPI | Configurar OpenAPI y Swagger UI en ASP.NET Core y documentar los endpoints de cada contexto. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
+| **TS-06** | Documentación de API RESTful con OpenAPI y Scalar | **TSK-51** | Documentación OpenAPI | Configurar OpenAPI con Scalar en ASP.NET Core y documentar los endpoints de cada contexto. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
 | **US-05** | Demostración del producto mediante video | **TSK-52** | Video demostrativo | Grabar y editar el video de demostración de los flujos implementados en el sprint. | 2 h | Sanca Condori, Miguel | To-do |
 
 Adicionalmente, se registraron tareas transversales que no dependen de una historia en particular, pero que son necesarias para satisfacer restricciones generales del backend:
 
 | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 | :---: | :--- | :--- | :---: | :--- | :---: |
-| **TSK-T1** | Shared kernel | Implementar el patrón `Result`, el manejo estructurado de errores, el *exception handler* global, los *assemblers* de `ProblemDetail`, la auditoría JPA y la estrategia de nombres en *snake case* con tablas en plural. | 6 h | Sanca Condori, Miguel | Done |
+| **TSK-T1** | Shared kernel | Implementar el patrón `Result`, el manejo estructurado de errores, el *exception handler* global, los *assemblers* de `ProblemDetail`, la auditoría con Entity Framework Core y la estrategia de nombres en *snake case* con tablas en plural. | 6 h | Sanca Condori, Miguel | Done |
 | **TSK-T2** | Configuración por entornos e i18n | Definir las propiedades por entorno y los mensajes de error en inglés y español. | 2 h | Sanca Condori, Miguel | Done |
-| **TSK-T3** | Separación dominio–persistencia | Separar los agregados de las entidades JPA mediante puertos de repositorio y publicador de eventos de dominio. | 4 h | Sanca Condori, Miguel | Done |
+| **TSK-T3** | Separación dominio–persistencia | Mantener los agregados independientes de la configuración de persistencia mediante puertos de repositorio, mapeos Fluent API de Entity Framework Core y publicación de eventos de dominio. | 4 h | Sanca Condori, Miguel | Done |
 
 ---
 
 #### 5.2.3.4. Development Evidence for Sprint Review
 
-En esta sección se presentan los avances de implementación del **Sprint 3**. El esfuerzo principal se concentró en el nuevo repositorio de **RESTful Web Services** (`sumaqAgro-backend`), que al cierre del sprint expone en `develop` los endpoints de los contextos **IAM**, **Profiles**, **Farming** y **Crop**, documentados con Swagger UI. Los contextos **Certification** y **Subscriptions** y la importación desde AgroMonitoring se encuentran en sus ramas `feature/*`, pendientes de revisión e integración. En la **Web Application** (`sumaqAgro-appweb`) se implementaron los flujos de autenticación, suscripción, cuenta de usuario y cooperativa, que aún consumen la Fake REST API y se conectarán a los Web Services en la siguiente iteración. En la **Landing Page** (`sumaqAgro-landing-page`) se publicaron los *releases* `v3.0.0`, `v3.1.0` y `v3.2.0`, que reestructuran el proyecto con *partials* reutilizables para el encabezado y el pie de página, extraen los íconos SVG a archivos dedicados e incorporan a los nuevos integrantes del equipo.
+En esta sección se presentan los avances de implementación del **Sprint 3**. El desarrollo de los **RESTful Web Services** se concentra en el repositorio `sumaq-agro-platform`, con **C#, ASP.NET Core, Entity Framework Core y MySQL**, organizado en los contextos **IAM**, **Profiles**, **Subscriptions**, **Farming**, **Crop** y **Certification**. Los contratos HTTP se documentan mediante **OpenAPI con Scalar**. En la **Web Application**, alojada en `sumaq-agro-web-app`, se implementaron los flujos de autenticación, suscripción, cuenta de usuario y cooperativa y su integración mediante Axios con el backend real. La Fake REST API corresponde al soporte de demostración del Sprint 2 y no al backend de esta iteración. En la **Landing Page** (`sumaq-agro-website`) se trabajó en la estructura con *partials* reutilizables para el encabezado y el pie de página, los íconos SVG y el contenido de los integrantes del equipo.
 
 El equipo trabajó bajo **GitFlow**: cada funcionalidad se desarrolló en una rama `feature/<bounded-context>-<funcionalidad>` creada desde `develop` y se integró nuevamente en `develop` mediante *merge*. Todos los mensajes siguen el estándar **Conventional Commits** en inglés, con el *scope* del Bounded Context o agregado modificado. Los mensajes se conservan literalmente como están registrados en Git.
 
 En el repositorio de RESTful Web Services se registraron **264 commits** durante el sprint; a continuación se presenta una selección de **58 commits** representativos de todos los integrantes, ordenados desde el más antiguo hasta el más reciente:
 
 Repository
-`dymbia-aplicacionweb/sumaqAgro-backend`
+`dymbia-aplicaciones-web/sumaq-agro-platform`
 
 | Sprint # | Sprint 3 | | | | | | |
 | :--- | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
@@ -1330,13 +1330,13 @@ Repository
 | **US-56** | Extracción y registro de muestra representativa | **TSK-48** | Registro de muestra | Implementar la entidad `HarvestSample`, el comando `SampleHarvestBatchCommand` y el servicio de certificación para gestionar operaciones sobre lotes. Commits: `70b0c16`, `456ee0e`, `22ba40b`, `3f6581d`. | 3 h | Jose Varga Enrique | To-Review |
 | **US-59** | Asignación de score de calidad global del lote | **TSK-49** | Calificación de calidad | Implementar los comandos de catación de café y clasificación de papa, los value objects de distribución de calibres y la corrección del comando de clasificación. Commits: `7350b5a`, `f0cd67d`, `0392cab`, `91271e2`. | 4 h | Jose Varga Enrique | To-Review |
 | **US-59** | Asignación de score de calidad global del lote | **TSK-50** | Certificados y trazabilidad | Implementar los recursos y comandos de certificados, los servicios de consulta y trazabilidad y el controlador público; corregir la consulta de certificados y la respuesta de trazabilidad. Commits: `68189ab`, `d967d3a`, `9ca880e`, `a5456c0`, `15fc221`, `1bd9758`, `1931121`, `6734283`, `96b0a0e`. Las capturas no muestran generación de PDF/QR. | 5 h | Jose Varga Enrique | To-Review |
-| **TS-06** | Documentación de API RESTful con OpenAPI y Swagger UI | **TSK-51** | Documentación y ejemplos HTTP | Incorporar soporte Bearer en OpenAPI, ejemplos HTTP de IAM, Crop, Certification y Subscriptions y documentación en inglés para los seis contextos del backend. Commits: `501e177`, `585ed25`, `3223863`, `6d0ec77`, `5bc616e`, `3a72244`, `654d438`, `569927b`, `b83ad9b`, `7d46103`, `b343022`, `09dc570`, `1c875aa`, `bba1b6f`. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
+| **TS-06** | Documentación de API RESTful con OpenAPI y Scalar | **TSK-51** | Documentación y ejemplos HTTP | Incorporar soporte Bearer en OpenAPI, ejemplos HTTP de IAM, Crop, Certification y Subscriptions y documentación en inglés para los seis contextos del backend. Commits: `501e177`, `585ed25`, `3223863`, `6d0ec77`, `5bc616e`, `3a72244`, `654d438`, `569927b`, `b83ad9b`, `7d46103`, `b343022`, `09dc570`, `1c875aa`, `bba1b6f`. | 4 h | Tejada Pumacayo, Yamil Jared | Done |
 | **US-05** | Demostración del producto mediante video | **TSK-52** | Video demostrativo | Grabar y editar el video de demostración de los flujos implementados en el sprint. No se muestra un commit o evidencia del video en las capturas. | 2 h | Sanca Condori, Miguel | To-do |
 
 
-#### 5.2.3.5. Execution Evidence for Sprint Review**
+#### 5.2.3.5. Execution Evidence for Sprint Review
 
-Durante el Sprint 3 se actualizó la Landing Page y se desarrollaron en la Web Application los flujos de ingreso, registro por rol, suscripciones y gestión de cooperativas. En paralelo, el equipo implementó los servicios Spring Boot para sustituir la API simulada del Sprint 2. Las capturas de esta sección muestran las vistas públicas que se pudieron comprobar en Cloudflare Pages y Firebase Hosting.
+Durante el Sprint 3 se actualizó la Landing Page y se desarrollaron en la Web Application los flujos de ingreso, registro por rol, suscripciones y gestión de cooperativas. En paralelo, el equipo implementó los servicios ASP.NET Core para sustituir la API simulada del Sprint 2. Las capturas de esta sección muestran las vistas públicas que se pudieron comprobar en Cloudflare Pages y Firebase Hosting.
 
 ##### Landing Page
 
