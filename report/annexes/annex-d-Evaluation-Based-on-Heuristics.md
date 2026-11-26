@@ -13,12 +13,13 @@ El alcance de esta evaluación incluye la revisión de las siguientes tareas:
 3. Consultar el estado de salud de una parcela mediante los indicadores NDVI y NDWI.
 4. Consultar y administrar una suscripción activa.
 5. Registrar una cooperativa desde el segmento de director de cooperativa.
+6. Delimitar geográficamente una parcela mediante el mapa.
 
 ### No están incluidas en esta etapa:
 
 1. Recuperar o restablecer la contraseña.
-2. Delimitar geográficamente una parcela en el mapa.
-3. Crear campañas agrícolas y registrar sus gastos.
+2. Crear y administrar campañas agrícolas.
+3. Registrar gastos e ingresos de una campaña.
 4. Emitir y verificar certificados de calidad de cosecha.
 5. Realizar pagos y descargar comprobantes.
 6. Administrar miembros de cooperativas y asignar agrónomos.
@@ -43,6 +44,7 @@ El alcance de esta evaluación incluye la revisión de las siguientes tareas:
 | 3 | Los indicadores NDVI y NDWI no incluyen una explicación para interpretar sus valores. | 2 | Usabilidad — Correspondencia entre el sistema y el mundo real. |
 | 4 | No se explica el efecto de cancelar la renovación de la suscripción. | 2 | Usabilidad — Prevención de errores. |
 | 5 | El campo “Región” no indica el formato de información esperado. | 2 | Usabilidad — Prevención de errores. |
+| 6 | No se presenta una alternativa visible al mapa para ingresar los vértices del terreno. | 3 | Diseño inclusivo — Proporcionar experiencias comparables. |
 
 ### DESCRIPCIÓN DE PROBLEMAS
 
@@ -160,4 +162,30 @@ Esta ambigüedad puede provocar que los usuarios registren ubicaciones con disti
 **Recomendación:**
 
 Precisar la etiqueta según la información requerida, por ejemplo, “Región / Departamento”. Si corresponde a una división territorial definida, utilizar un selector con opciones estandarizadas. Si se mantiene el ingreso libre, incluir un ejemplo visible como “Ej.: Junín”.
+
+
+
+
+### PROBLEMA #6: No se presenta una alternativa visible al mapa para ingresar los vértices del terreno
+
+**Tarea evaluada:** Delimitar geográficamente una parcela.
+
+**Severidad:** 3 — Problema mayor.
+
+**Heurística violada:** Diseño inclusivo — Proporcionar experiencias comparables.
+
+**Problema:**
+
+La pantalla indica que el usuario debe hacer clic en el mapa para marcar las esquinas del terreno. Aunque presenta una lista de coordenadas y un campo para buscar una ubicación, no se observa una alternativa para introducir o editar numéricamente cada vértice del polígono.
+
+Esta interacción puede dificultar la tarea para personas con limitaciones motoras o que utilizan dispositivos de entrada alternativos. Buscar una ubicación o utilizar el GPS no sustituye la definición de todos los límites de la parcela. La operación mediante teclado requiere una comprobación adicional.
+
+**Imagen:**
+
+![Map](../assets/img/heuristics/map-hs.png)
+
+**Recomendación:**
+
+Ofrecer un formulario complementario para agregar, editar y eliminar vértices mediante sus valores de latitud y longitud. Sincronizar estos datos con el mapa y permitir completar la delimitación mediante teclado, con un orden de navegación y un foco visibles.
+
 
